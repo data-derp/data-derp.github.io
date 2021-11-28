@@ -10,62 +10,60 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "Tutorial Intro",
+        "label": "Tour Agenda",
         "href": "/docs/intro"
       },
       {
         "type": "category",
-        "label": "Tutorial - Basics",
+        "label": "Data Engineering: The Good Parts",
         "collapsible": true,
         "collapsed": true,
         "items": [
           {
             "type": "link",
-            "label": "Create a Page",
-            "href": "/docs/tutorial-basics/create-a-page"
+            "label": "Lesson one",
+            "href": "/docs/data-engineering-the-good-parts/lesson-one"
           },
           {
             "type": "link",
-            "label": "Create a Document",
-            "href": "/docs/tutorial-basics/create-a-document"
-          },
-          {
-            "type": "link",
-            "label": "Create a Blog Post",
-            "href": "/docs/tutorial-basics/create-a-blog-post"
-          },
-          {
-            "type": "link",
-            "label": "Markdown Features",
-            "href": "/docs/tutorial-basics/markdown-features"
-          },
-          {
-            "type": "link",
-            "label": "Deploy your site",
-            "href": "/docs/tutorial-basics/deploy-your-site"
-          },
-          {
-            "type": "link",
-            "label": "Congratulations!",
-            "href": "/docs/tutorial-basics/congratulations"
+            "label": "Lesson two",
+            "href": "/docs/data-engineering-the-good-parts/lesson-two"
           }
         ]
       },
       {
         "type": "category",
-        "label": "Tutorial - Extras",
+        "label": "Data Ingestion",
         "collapsible": true,
         "collapsed": true,
         "items": [
           {
             "type": "link",
-            "label": "Manage Docs Versions",
-            "href": "/docs/tutorial-extras/manage-docs-versions"
+            "label": "Lesson one",
+            "href": "/docs/data-ingestion/lesson-one"
           },
           {
             "type": "link",
-            "label": "Translate your site",
-            "href": "/docs/tutorial-extras/translate-your-site"
+            "label": "Lesson two",
+            "href": "/docs/data-ingestion/lesson-two"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Data Transformation",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Lesson one",
+            "href": "/docs/data-transformation/lesson-one"
+          },
+          {
+            "type": "link",
+            "label": "Lesson two",
+            "href": "/docs/data-transformation/lesson-two"
           }
         ]
       }

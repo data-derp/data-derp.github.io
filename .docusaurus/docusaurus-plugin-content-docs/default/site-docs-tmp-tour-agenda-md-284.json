@@ -1,0 +1,23 @@
+{
+  "unversionedId": "tmp/tour-agenda",
+  "id": "tmp/tour-agenda",
+  "isDocsHomePage": false,
+  "title": "Tour Agenda",
+  "description": "* Data Engineering: The Good Parts",
+  "source": "@site/docs/tmp/tour-agenda.md",
+  "sourceDirName": "tmp",
+  "slug": "/tmp/tour-agenda",
+  "permalink": "/docs/tmp/tour-agenda",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/main/website/docs/tmp/tour-agenda.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lesson two",
+    "permalink": "/docs/data-ingestion/lesson-two"
+  }
+}

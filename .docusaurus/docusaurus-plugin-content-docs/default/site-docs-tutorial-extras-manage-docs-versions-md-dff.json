@@ -17,8 +17,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Congratulations!",
-    "permalink": "/docs/tutorial-basics/congratulations"
+    "title": "Tutorial Intro",
+    "permalink": "/docs/intro"
   },
   "next": {
     "title": "Translate your site",

@@ -1,0 +1,20 @@
+{
+  "unversionedId": "tmp/data-transformation/lesson-two",
+  "id": "tmp/data-transformation/lesson-two",
+  "isDocsHomePage": false,
+  "title": "Lesson two",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
+  "source": "@site/docs/tmp/data-transformation/lesson-two.md",
+  "sourceDirName": "tmp/data-transformation",
+  "slug": "/tmp/data-transformation/lesson-two",
+  "permalink": "/docs/tmp/data-transformation/lesson-two",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/main/website/docs/tmp/data-transformation/lesson-two.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lesson one",
+    "permalink": "/docs/tmp/data-transformation/lesson-one"
+  }
+}

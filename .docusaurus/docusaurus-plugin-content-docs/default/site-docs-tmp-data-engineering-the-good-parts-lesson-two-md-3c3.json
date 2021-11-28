@@ -1,0 +1,24 @@
+{
+  "unversionedId": "tmp/data-engineering-the-good-parts/lesson-two",
+  "id": "tmp/data-engineering-the-good-parts/lesson-two",
+  "isDocsHomePage": false,
+  "title": "Lesson two",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
+  "source": "@site/docs/tmp/data-engineering-the-good-parts/lesson-two.md",
+  "sourceDirName": "tmp/data-engineering-the-good-parts",
+  "slug": "/tmp/data-engineering-the-good-parts/lesson-two",
+  "permalink": "/docs/tmp/data-engineering-the-good-parts/lesson-two",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/main/website/docs/tmp/data-engineering-the-good-parts/lesson-two.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lesson one",
+    "permalink": "/docs/tmp/data-engineering-the-good-parts/lesson-one"
+  },
+  "next": {
+    "title": "Lesson one",
+    "permalink": "/docs/tmp/data-ingestion/lesson-one"
+  }
+}

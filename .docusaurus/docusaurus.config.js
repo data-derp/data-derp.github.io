@@ -29,7 +29,7 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "My Site",
+      "title": "Data Derp",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"
@@ -39,7 +39,7 @@ export default {
           "type": "doc",
           "docId": "intro",
           "position": "left",
-          "label": "Tutorial"
+          "label": "Lessons"
         },
         {
           "to": "/blog",
@@ -47,7 +47,7 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/facebook/docusaurus",
+          "href": "https://github.com/data-derp/data-derp.github.io",
           "label": "GitHub",
           "position": "right"
         }
@@ -61,7 +61,7 @@ export default {
           "title": "Docs",
           "items": [
             {
-              "label": "Tutorial",
+              "label": "Lessons",
               "to": "/docs/intro"
             }
           ]
