@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'data-derp', // Usually your GitHub org/user name.
-  projectName: 'data-derp.github,io', // Usually your repo name.
+  projectName: 'data-derp.github.io', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
   presets: [
