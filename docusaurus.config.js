@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'data-derp', // Usually your GitHub org/user name.
   projectName: 'data-derp.github,io', // Usually your repo name.
-  deploymentBranch: 'master',
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [

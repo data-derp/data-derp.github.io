@@ -8,7 +8,7 @@ export default {
   "favicon": "img/favicon.ico",
   "organizationName": "data-derp",
   "projectName": "data-derp.github,io",
-  "deploymentBranch": "master",
+  "deploymentBranch": "gh-pages",
   "presets": [
     [
       "@docusaurus/preset-classic",
@@ -29,7 +29,7 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "Data Derp",
+      "title": "My Site",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.svg"
@@ -39,7 +39,7 @@ export default {
           "type": "doc",
           "docId": "intro",
           "position": "left",
-          "label": "Lessons"
+          "label": "Tutorial"
         },
         {
           "to": "/blog",
@@ -47,7 +47,7 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/data-derp/data-derp.github.io",
+          "href": "https://github.com/facebook/docusaurus",
           "label": "GitHub",
           "position": "right"
         }
@@ -61,7 +61,7 @@ export default {
           "title": "Docs",
           "items": [
             {
-              "label": "Lessons",
+              "label": "Tutorial",
               "to": "/docs/intro"
             }
           ]
