@@ -4,7 +4,7 @@ Install NVM: https://github.com/nvm-sh/nvm
 ```bash
 nvm install 16
 nvm use 16
-npx docusaurus start
+yarn run start
 ```
 
 Navigate to [http://localhost:3000](http://localhost:3000)
