@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Data Ingestion Overview
+# Project Overview
 
 ![project-structure-ingestion-navi.png](./assets/project-structure-ingestion-navi.png)
 
