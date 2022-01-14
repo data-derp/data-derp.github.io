@@ -2,6 +2,8 @@
 
 ![project-structure-navi.png](./assets/project-structure-navi.png)
 
+We'll take **Example 1: Jess** as our core use case for our project.
+
 For this training, our goal is to study the relationship between CO2 and Temperature around the world. Some questions that we aim to answer:
 * Which countries are worse-hit (higher temperature anomalies)?
 * Which countries are the biggest emitters?
