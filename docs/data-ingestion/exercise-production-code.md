@@ -8,4 +8,4 @@ Now that you've created the ingestion logic in Databricks, let's see what that l
 
 ## Notes
 * Copy and paste the logic from the [previous Databricks exercise](https://github.com/data-derp/exercise-co2-vs-temperature-databricks#data-ingestion)
-  * HINT: If this is too painful, there's a `solutions` branch to switch to
+* HINT: If copy-pasting is too painful, there's a `solutions` branch to switch to
