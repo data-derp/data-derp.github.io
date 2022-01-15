@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Data Milky Way
 Too much jargon... too little time
 

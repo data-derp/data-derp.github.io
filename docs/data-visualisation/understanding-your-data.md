@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Understanding Your Data
 
 ## Using a Critical Eye

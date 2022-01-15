@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Data Formats
 ## Wait...what’s data serialization again?
 (extract from [Devopedia](https://devopedia.org/data-serialization))

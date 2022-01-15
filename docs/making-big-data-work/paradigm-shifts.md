@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+---
+
+
 # Paradigm Shifts
 ## History of Big Data - Revisited
 * Databases

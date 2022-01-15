@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+---
+
+
 # Exercise
 
 > TODO: move this to a better place?
