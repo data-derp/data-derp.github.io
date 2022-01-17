@@ -4,32 +4,36 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Wide Breadth',
+    Svg: require('../../static/img/wide-breadth.png').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          Give enough context across the whole domain in order to enable deeper dive into relevant and advanced topics later
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Real World Slice',
+    Svg: require('../../static/img/real-world-slice.png').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          * Storage
+          * Data Ingestion
+          * Transformation
+          * Visualisation
+          * Streaming
+          * Business Value
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Real World Scenario',
+    Svg: require('../../static/img/real-world-scenario.png').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          * Projecting and Visualising CO2 emissions vs. Global temperature
+          * Perform analytics to interpret and communicate findings to stakeholders
+          * Treat data problems mindfully
       </>
     ),
   },
