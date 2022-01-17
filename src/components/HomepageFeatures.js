@@ -17,7 +17,7 @@ const FeatureList = [
     img: require('../../static/img/real-world-slice.png').default,
     description: (
       <>
-          <ul>
+          <ul style="list-style-type:none;">
               <li>Storage</li>
               <li>Data Ingestion</li>
               <li>Data Transformation</li>
@@ -33,7 +33,7 @@ const FeatureList = [
     img: require('../../static/img/real-world-scenario.png').default,
     description: (
       <>
-          <ul>
+          <ul style="list-style-type:none;">
               <li>Projecting and Visualising CO2 emissions vs. Global temperature</li>
               <li>Perform analytics to interpret and communicate findings to stakeholders</li>
               <li>Treat data problems mindfully</li>
@@ -47,7 +47,7 @@ const FeatureList = [
       // img: require('../../static/img/real-world-scenario.png').default,
       description: (
           <>
-              <ul>
+              <ul style="list-style-type:none;">
                   <li>Data Curiosity</li>
                   <li>Basic Understanding of AWS</li>
                   <li>Docker</li>
@@ -63,7 +63,7 @@ const FeatureList = [
       // img: require('../../static/img/real-world-scenario.png').default,
       description: (
           <>
-              <ul>
+              <ul style="list-style-type:none;">
                   <li>Batch vs. Streaming</li>
                   <li>Distributed Systems: CAP Theorem</li>
                   <li>Storage & Compute Considerations</li>
@@ -81,7 +81,7 @@ const FeatureList = [
       // img: require('../../static/img/real-world-scenario.png').default,
       description: (
           <>
-              <ul>
+              <ul style="list-style-type:none;">
                   <li>Databricks exercises</li>
                   <li>Ingesting data into AWS S3</li>
                   <li>Data Wrangling in Apache Spark</li>
