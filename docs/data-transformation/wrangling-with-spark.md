@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Wrangling with Spark
 
 ## Working with Databricks

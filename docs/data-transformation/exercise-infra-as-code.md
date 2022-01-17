@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 ---
-# Infrastructure as Code
+# Exercise: Infrastructure as Code
 ![project-structure-transformation-navi.png](./assets/project-structure-transformation-navi.png)
 
 Creating resources in the AWS Console can be sometimes prone to mistakes, but we have [Infrastructure as Code](https://infrastructure-as-code.com/book/) to the rescue.
