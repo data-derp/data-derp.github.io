@@ -16,6 +16,7 @@ const config = {
   organizationName: 'data-derp', // Usually your GitHub org/user name.
   projectName: 'data-derp.github.io', // Usually your repo name.
   deploymentBranch: 'gh-pages',
+  staticDirectories: ['public', 'static'],
 
   presets: [
     [

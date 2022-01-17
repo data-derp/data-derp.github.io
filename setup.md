@@ -11,8 +11,8 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Building Production
 ```bash
-npm run build
-npm run serve
+yarn run build
+yarn run serve
 ```
 
 
