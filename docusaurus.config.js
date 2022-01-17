@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/data-derp/data-derp.github.io',
+                href: 'https://github.com/data-derp',
               },
             ],
           },
