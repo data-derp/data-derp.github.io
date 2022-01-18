@@ -8,28 +8,18 @@ sidebar_position: 3
 Relative to ‘humanized’ time, to give you an idea of the enormous difference
 (demonstrates the massive impact of using memory vs disk vs network in Big Data)
 
+<div style={{textAlign: 'center'}}>
+
 <figure class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/DXq5MOYGK1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
 
+</div>
+
 * Gives you a feel for the latency nightmare when only using disk and network (i.e. MapReduce)
 * Hopefully demonstrates the orders of magnitude in performance gain with Spark!
 
-## Unified Analytics Engines
 
-Common Misconceptions:
-* “Spark & Presto are NoSQL databases/data stores”
-  * They’re not. But they can read/write from them 😀
-* “Spark or Presto can replace all my databases”
-* “Spark is an ‘In-Memory’ technology”
-  * PostgreSQL/MySQL also cache data in RAM to speed up queries...but would you dare to call them ‘In-Memory’ technologies? 😅
-
-![spark.png](./assets/spark.png)
-![presto-cluster.png](./assets/presto-cluster.png)
-
-Many companies (especially tech giants) can even often have both Spark and Presto/Athena in their stack
-
-![presto-spark-netflix-platform.png](./assets/presto-spark-netflix-platform.png)
 
 ## But...
 Okay, sounds like the OLAP world is in good hands...
@@ -39,8 +29,17 @@ But what about OLTP?
 ## Distributed Data Systems
 NoSQL Technologies
 [Great introduction by Martin Fowler](https://www.youtube.com/watch?v=qI_g07C_Q5I)
+<div style={{textAlign: 'center'}}>
 
-[CAP Theorem](https://www.ibm.com/cloud/learn/cap-theorem#toc-the-cap-in-9y9p3uen)
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qI_g07C_Q5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Great introduction by Martin Fowler
+</figure>
+
+</div>
+
+Read: [CAP Theorem](https://www.ibm.com/cloud/learn/cap-theorem#toc-the-cap-in-9y9p3uen)
 **C** (consistency) **A** (availability) **P** (partition tolerance) : pick two
 * [Is this really true in the real world?](https://www.youtube.com/watch?v=9SSvdLnmDiI&ab_channel=MarkRichards)
 * What unrealistic assumption are we making here?
@@ -52,11 +51,22 @@ NoSQL Technologies
 
 **Summary**
 a CP system will say “sorry, I can’t be sure yet” to the client, in order to avoid giving an out-of-date answer
+
+<div style={{textAlign: 'center'}}>
+
 ![cap.png](./assets/cap.png)
+
+</div>
+
 an AP system tries to spits out an answer even if it might not be the most up-to-date one
 
+<div style={{textAlign: 'center'}}>
+
 ![cap-wikipedia.png](./assets/cap-wikipedia.png)
+
 From [Wikipedia](https://en.wikipedia.org/wiki/CAP_theorem)
+
+</div>
 
 ## OLTP Workloads
 Big Data in OLTP is quite an advanced topic and has far less consolidation/standardization. The tech stacks for different problems/businesses vary a lot more than in OLAP workloads!
@@ -65,66 +75,9 @@ For the reasons above, we’ll focus on OLAP technologies for the rest of the co
 However, feel free to check out some common NoSQL technologies:
 
 
-[Amazon DynamoDB](https://www.youtube.com/watch?v=lVJXehUvYew&ab_channel=Serverless)
-[Azure CosmosDB](https://www.youtube.com/watch?v=3UGNBFiq1rg&ab_channel=MicrosoftAzure)
-Redis
-Elasticsearch
-
-
-[Cassandra](https://www.youtube.com/watch?v=d7o6a75sfY0&ab_channel=DataStaxDevelopers)
-[MongoDB](https://www.youtube.com/watch?v=RGfFpQF0NpE&ab_channel=MongoDB)
-
-## Evolution of Data Processing
-![map-reduce-processing.png](./assets/map-reduce-processing.png)
-![data-processing-vision.png](./assets/data-processing-vision.png)
-
-* [Hadoop to Spark w/ Object Storage](https://www.xplenty.com/blog/apache-spark-vs-hadoop-mapreduce/), [Data Catalogs](https://lakefs.io/metadata-management-hive-metastore-vs-aws-glue/)
-* [Batch and Micro-Batch Streaming](https://www.upsolver.com/blog/batch-stream-a-cheat-sheet)
-* [Continuous Processing](https://hazelcast.com/glossary/stream-processing/)
-
-
-[One syntax to rule them all?](https://beam.apache.org/)
-* Apache Beam is based on the [Dataflow model introduced by Google](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43864.pdf)
-* Aims to unify the semantics of batch & streaming processing across engines (Flink, Spark, etc.)
-
-**You don’t necessarily need streaming, let alone Beam!** evaluate your own project’s needs
-Advanced (optional): [Practice developing a Beam app in AWS Kinesis](https://docs.aws.amazon.com/kinesisanalytics/latest/java/examples-beam.html)
-We’ll mention Flink more in later sections 🌰
-
-
-## Practical Data Workloads
-![big-data-sword.png](./assets/big-data-sword.png)
-We’re here to teach you big data skills, but in reality...
-
-Single-Node vs. Cluster: not everything is Big Data!
-[You don’t always need Spark](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/)
-([sometimes Pandas deployed on a single node function/container is just fine!](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/))
-
-Batch vs Streaming: [streaming isn’t always the solution](https://www.section.io/engineering-education/batch-processing-vs-stream-processing/)!
-
-Batch Orchestration options
-* [CRON](https://en.wikipedia.org/wiki/Cron), [Apache Airflow](https://airflow.apache.org/), Triggers (e.g. AWS Lambda, AWS Step Functions, [Glue Triggers](https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html))
-* Simple CRON schedules (e.g. on Databricks) might work just fine, depends on the use-case
-
-## Typical Data Pipeline
-![typical-data-pipeline.png](./assets/typical-data-pipeline.png)
-
-## Orchestration Core Concepts
-But how do we make our pipeline **flow**? 🌊
-* Data Engineering workflows often involve transforming and transferring data from one place to another
-* Workflows in real-life have multiple steps and stages
-
-
-* Sometimes, everything might work fine with just CRON jobs
-* However, other times, you might want to control the state transitions of these steps:
-  * e.g. if Step A doesn’t run properly, don’t run Step B because the data could be corrupt, instead run Step C
-  * Once again, the concept of Directed Acyclic Graphs (DAGs) can come to our rescue
-
-* Apache Airflow is just one nice way of setting up DAGs to orchestrate jobs 🌈
-  * Note: Airflow is primarily designed as a task orchestration tool
-  * You can trigger tasks on the Airflow cluster itself or on remote targets (e.g. AWS Fargate, Databricks, etc.)
-  * NOT designed for transferring large amounts of actual data
-  * Reference
-  * Play around with Airflow locally
-
-
+* [Amazon DynamoDB](https://www.youtube.com/watch?v=lVJXehUvYew&ab_channel=Serverless)
+* [Azure CosmosDB](https://www.youtube.com/watch?v=3UGNBFiq1rg&ab_channel=MicrosoftAzure)
+* Redis
+* Elasticsearch
+* [Cassandra](https://www.youtube.com/watch?v=d7o6a75sfY0&ab_channel=DataStaxDevelopers)
+* [MongoDB](https://www.youtube.com/watch?v=RGfFpQF0NpE&ab_channel=MongoDB)

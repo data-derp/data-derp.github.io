@@ -17,18 +17,35 @@ sidebar_position: 5
 ## Data Formats
 [Big Data File Formats](https://luminousmen.com/post/big-data-file-formats)
 
+<div style={{textAlign: 'center'}}>
+    <figure class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jKfKmBdPuT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </figure>
+Avro vs. Parquet
+</div>
 
-* Video: [Avro vs Parquet](https://www.youtube.com/watch?v=jKfKmBdPuT4)
-[Blog article comparing the two formats](https://www.datanami.com/2018/05/16/big-data-file-formats-demystified/#:~:text=The%20biggest%20difference%20between%20ORC,in%20a%20row%2Dbased%20format.&text=While%20column%2Doriented%20stores%20like,might%20be%20the%20better%20choice.)
+<div style={{textAlign: 'center'}}>
+Avro vs. Parquet
+</div>
+
+
+Read: [Comparing the two formats](https://www.datanami.com/2018/05/16/big-data-file-formats-demystified/#:~:text=The%20biggest%20difference%20between%20ORC,in%20a%20row%2Dbased%20format.&text=While%20column%2Doriented%20stores%20like,might%20be%20the%20better%20choice.)
 * [Example with Python](https://www.confessionsofadataguy.com/big-data-file-showdown-avro-vs-parquet-with-python/)
 * We’ll cover Parquet quite extensively, but here is where you’ll often find Avro:
   * [Popular choice for streaming](https://www.confluent.io/blog/avro-kafka-data/) and persisting streaming data into data lakes (e.g. [Azure Event Hubs Capture](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-capture-overview#exploring-the-captured-files-and-working-with-avro))
 * [Deeper Dive](https://www.youtube.com/watch?v=1j8SdS7s_NY&ab_channel=Databricks)
 
 ## Apache Parquet Recap
+
+<div style={{textAlign: 'center'}}>
+
 ![parquet-columnar-storage.png](./assets/parquet-columnar-storage.png)
+
 ![parquet-columnar-storage-for-the-people.png](./assets/parquet-columnar-storage-for-the-people.png)
+
 ![parquet-access-only-data-you-need.png](./assets/parquet-access-only-data-you-need.png)
+
+</div>
 
 ## Apache Avro Recap
 The only things you need to take away are that Avro files:
@@ -37,7 +54,11 @@ The only things you need to take away are that Avro files:
 * support schema evolution
 * are a popular serialization format for **message streams**
 
+<div style={{textAlign: 'center'}}>
+
 ![avro-recap.png](./assets/avro-recap.png)
+
+</div>
 
 ## Check Your Learning!
 Unlike MapReduce vs Spark, there’s no clear winner.

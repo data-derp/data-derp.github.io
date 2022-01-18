@@ -3,16 +3,24 @@ sidebar_position: 2
 ---
 
 # Data Milky Way: Evolution
+<div style={{textAlign: 'center'}}>
+
 <figure class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Pf6xfgsVuSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
 
+</div>
+
 ## Databases & Data Warehouses
 Read: [Databases: Scale Up vs Scale Out](https://hackernoon.com/database-scaling-horizontal-and-vertical-scaling-85edd2fd9944)
+
+<div style={{textAlign: 'center'}}>
 
 <figure class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/-v3PhEtOuxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
+
+</div>
 
 Up until the mid-late 2000s, businesses predominantly stored both [OLTP and OLAP (above video)](https://www.youtube.com/watch?v=-v3PhEtOuxw&ab_channel=DataCamp) data in relational databases (RDBMS)
 * e.g. Oracle, Microsoft SQL Server, MySQL, PostgreSQL, etc.
@@ -111,5 +119,29 @@ use-cases** but can also support SQL queries
 ![urs-hoelzle.png](./assets/urs-hoelzle.png)
 
 Senior Vice President of Technical Infrastructure, Google
+
+</div>
+
+## Unified Analytics Engines
+
+Common Misconceptions:
+* “Spark & Presto are NoSQL databases/data stores”
+  * They’re not. But they can read/write from them 😀
+* “Spark or Presto can replace all my databases”
+* “Spark is an ‘In-Memory’ technology”
+  * PostgreSQL/MySQL also cache data in RAM to speed up queries...but would you dare to call them ‘In-Memory’ technologies? 😅
+
+<div style={{textAlign: 'center'}}>
+
+![spark.png](./assets/spark.png)
+![presto-cluster.png](./assets/presto-cluster.png)
+
+</div>
+
+Many companies (especially tech giants) can even often have both Spark and Presto/Athena in their stack
+
+<div style={{textAlign: 'center'}}>
+
+![presto-spark-netflix-platform.png](./assets/presto-spark-netflix-platform.png)
 
 </div>
