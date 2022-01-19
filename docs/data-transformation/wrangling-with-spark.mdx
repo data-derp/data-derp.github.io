@@ -1,8 +1,17 @@
 ---
 sidebar_position: 8
 ---
-
 # Wrangling with Spark
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/r418tWNnAq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+
 
 ## Working with Databricks
 We'll walk through some of the basic transformation methods using notebooks
@@ -13,8 +22,11 @@ We'll walk through some of the basic transformation methods using notebooks
     ![databricks-import.png](./assets/databricks-import.png)
 
 ## What's Missing from These Notebooks?
+<div style={{textAlign: 'center'}}>
 
 ![cool-stuff-missing.png](./assets/cool-stuff-missing.png)
+
+</div>
 
 Short Answer:
 * The really cool stuff
@@ -36,7 +48,12 @@ Just make sure you understand everything about window function semantics
 These are all also concepts in SQL.
 
 ## Python UDFs
+
+<div style={{textAlign: 'center'}}>
+
 ![python-udfs.png](./assets/python-udfs.png)
+
+</div>
 
 ### How can I bring in my own custom Python logic?
 (needs other libraries, not available as pyspark built-in functions)
@@ -48,7 +65,11 @@ How does this work?
   * Python process deserializes, then serializes it back to the JVM 
   * JVM deserializes the data for running next operations/steps
 
+<div style={{textAlign: 'center'}}>
+
 ![python-udf-execution.png](./assets/python-udf-execution.png)
+
+</div>
 
 ### But..how can we be more efficient when switching between the JVM and Python??
 **Basic Answer:** Vectorization
@@ -61,7 +82,13 @@ How does this work? (the Apache Arrow project is basically dedicated to this!)
 
 > A pandas user-defined function (UDF)—also known as vectorized UDF—is a user-defined function that uses Apache Arrow to transfer data and pandas to work with the data. pandas UDFs allow vectorized operations that can increase performance up to 100x compared to row-at-a-time Python UDFs. ([Reference](https://docs.databricks.com/spark/latest/spark-sql/udf-python-pandas.html#pandas-user-defined-functions))
 
+<div style={{textAlign: 'center'}}>
+
 ![apply-in-pandas.png](./assets/apply-in-pandas.png)
+
+</div>
+
+
 This even allows you to run custom logic per each group of data in a distributed manner:
 
 Pandas DataFrame **IN**
