@@ -5,7 +5,6 @@ sidebar_position: 2
 
 # Paradigm Shifts
 
-
 <div style={{textAlign: 'center'}}>
 
 <figure class="video-container">
@@ -31,10 +30,15 @@ sidebar_position: 2
 ## Cloud Big Data Paradigms
 
 ### Cloud Data Warehouses
+
+<div style={{textAlign: 'center'}}>
+
 ![cloud-data-warehouses-amazon-redshift.png](./assets/cloud-data-warehouses-amazon-redshift.png)
 ![cloud-data-warehouses-azure-synapse-analytics.png](./assets/cloud-data-warehouses-azure-synapse-analytics.png)
 ![cloud-data-warehouses-google-big-query.png](./assets/cloud-data-warehouses-google-big-query.png)
 ![cloud-data-warehouses-snowflake.png](./assets/cloud-data-warehouses-snowflake.png)
+
+</div>
 
 
 Pros:
@@ -48,10 +52,15 @@ Cons
 
 
 ### (Vanilla) Cloud Data Lakes
+
+<div style={{textAlign: 'center'}}>
+
 ![cloud-data-lakes-aws-s3.png](./assets/cloud-data-lakes-aws-s3.png)
 ![cloud-data-lakes-adls](./assets/cloud-data-lakes-adls.png)
 ![cloud-data-lakes-aws-emr.png](./assets/cloud-data-lakes-aws-emr.png)
 ![cloud-data-lakes-aws-glue.png](./assets/cloud-data-lakes-aws-glue.png)
+
+</div>
 
 Pros
 * Decoupled storage, compute, and data
@@ -65,24 +74,36 @@ Cons
 
 ### Can we get the best of both worlds?
 Data Lakehouse
+<div style={{textAlign: 'center'}}>
+
 ![lakehouse-paradigm.png](./assets/lakehouse-paradigm.png)
+
 Source: [Databricks](https://databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html)
 
+</div>
+
 ## Example Lakehouse Contenders
+
+<div style={{textAlign: 'center'}}>
+
 ![delta-lakehouse.png](./assets/delta-lakehouse.png)
 ![databricks-lakehouse.png](./assets/databricks-lakehouse.png)
+
+</div>
 
 **The Cloud Providers**
 [AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/): Glue Ecosystem, Athena, Lake Formation, etc.
 [Azure](https://techcommunity.microsoft.com/t5/analytics-on-azure/simplify-your-lakehouse-architecture-with-azure-databricks-delta/ba-p/2027272): Azure Databricks, Azure Synapse Ecosystem, etc.
 
 **Databricks**
-[Photon engine](https://docs.databricks.com/runtime/photon.html): shifting Spark from the JVM to C++
-[Databricks SQL](https://databricks.com/product/databricks-sql):
+* [Webpage](https://databricks.com/)
+* [Photon engine](https://docs.databricks.com/runtime/photon.html): shifting Spark from the JVM to C++
+* [Databricks SQL](https://databricks.com/product/databricks-sql):
 * Takes advantage of Delta Lake for data integrity
 * Photon for fast, interactive queries
 
 **Dremio**
+* [Webpage](https://www.dremio.com/)
 * Utilizes Apache Arrow (the very same underlying technology in Vectorized UDFs (aka Pandas UDFs)! for scalable data transfer and serialization
 * Informally, think of it as next-gen Presto/Athena
 

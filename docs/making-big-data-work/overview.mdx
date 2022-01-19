@@ -14,12 +14,17 @@ sidebar_position: 1
 
 
 ## Preface
+<div style={{textAlign: 'center'}}>
+
 ![not-everything-is-big-data.png](./assets/not-everything-is-big-data.png)
+
+</div>
+
 We’re here to teach you big data skills, but in reality...
 
 Single-Node vs. Cluster: not everything is Big Data!
-[You don’t always need Spark](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/)
-([sometimes Pandas deployed on a single node function/container is just fine!](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/))
+Read: [You don’t always need Spark](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/)
+Read: [Sometimes Pandas deployed on a single node function/container is just fine!](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/))
 
 Batch vs Streaming: [streaming isn’t always the solution](https://www.section.io/engineering-education/batch-processing-vs-stream-processing/)!
 
@@ -42,7 +47,18 @@ On-Prem Data Lakes
 
 
 ## Some Problems with Big Data Workloads
-* [ACID transactions](https://www.youtube.com/watch?v=VRm2UMsFVz0)
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VRm2UMsFVz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+ACID Transactions
+
+</div>
+
+* ACID transactions
 * Corrupt/incomplete data
 * Editability, schema evolution
 * GDPR requests
@@ -58,7 +74,16 @@ On-Prem Data Lakes
   * Moral of the story: streaming/Kappa architecture isn’t a silver bullet
 
 ## Modern Solutions
-[Delta Lake](https://delta.io/) ([please try to watch the whole video](https://www.youtube.com/watch?v=LJtShrQqYZY))
+<div style={{textAlign: 'center'}}>
+
+[Delta Lake](https://delta.io/)
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LJtShrQqYZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
 * This presentation is actually from early/mid 2019 (ignore the upload date on YouTube),
 * Delta Lake’s gotten even better since then!
 * **Executive Summary:**

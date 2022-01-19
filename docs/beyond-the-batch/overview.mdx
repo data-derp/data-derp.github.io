@@ -16,10 +16,17 @@ sidebar_position: 1
 
 
 ## Apache Kafka
-![apache-kafka.png](./assets/apache-kafka.png)
-![topic-partitions.png](./assets/topic-partitions.png)
 
-[Kafka in 5 mins](https://youtu.be/PzPXRmVHMxI)
+<div style={{textAlign: 'center'}}>
+
+**Kafka in 5 mins**
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PzPXRmVHMxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
 
 ([from Stephane Maarek's playlist](https://www.youtube.com/watch?v=XFqm_ILuhs0&list=PLt1SIbA8guusxiHz9bveV-UHs_biWFegU&ab_channel=StephaneMaarek)) deeper dive, definitely worth watching the rest of
 this playlist after the Kafka 101 playlist below
@@ -43,22 +50,68 @@ If you’re not too bored, try to watch all of the videos on the playlist (at 1.
 
 [optional - do this after reading everything] Walkthrough of Kafka ([official tutorial](http://kafka.apache.org/quickstart)) (run in [this docker container](https://github.com/kelseymok/kafka-example))
 
+<div style={{textAlign: 'center'}}>
+
+![apache-kafka.png](./assets/apache-kafka.png)
+
+![topic-partitions.png](./assets/topic-partitions.png)
+
+</div>
+
+
 ## Cloud Offerings
+
+<div style={{textAlign: 'center'}}>
+
 ![kafka-vs-standard-messaging.png](./assets/kafka-vs-standard-messaging.png)
-[Amazon Kinesis](https://www.youtube.com/watch?v=07iZOEl0knc&ab_channel=StephaneMaarek) (Explore the [main service categories of Kinesis](https://aws.amazon.com/kinesis/))
+
+</div>
+
+### Amazon Kinesis
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/07iZOEl0knc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+Explore the [main service categories of Kinesis](https://aws.amazon.com/kinesis/)
+
 Kinesis is a managed alternative to Kafka for AWS, supporting most of the same features + autoscaling.
+
+### Amazon MSK
 [Amazon Managed Streaming for Apache Kafka (Amazon MSK)](https://aws.amazon.com/msk/) has also been recently launched
 
+### Azue Event Hubs
 [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)
+
 Like Kinesis, Event Hubs also has auto-scaling capabilities (auto-inflate).
+
 However, unlike Amazon Kinesis, Azure Event Hubs endpoints are fully-compatible with Kafka’s Producer and Consumer APIs
 
-Bigger Picture
-* [Should I use Kafka (pub/sub) or a standard message queue (e.g. RabbitMQ)?](https://www.youtube.com/watch?v=lwMjjTT1Q-Q&ab_channel=MarkRichards)
-* [Comprehensive comparison](https://betterprogramming.pub/rabbitmq-vs-kafka-1ef22a041793) ([there's also a Part 2 to this article - scroll to the bottom](https://betterprogramming.pub/rabbitmq-vs-kafka-1ef22a041793))
+## Bigger Picture
+<div style={{textAlign: 'center'}}>
+
+**Should I use Kafka (pub/sub) or a standard message queue (e.g. RabbitMQ)?**
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/lwMjjTT1Q-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+Read: [Comprehensive comparison](https://betterprogramming.pub/rabbitmq-vs-kafka-1ef22a041793) ([there's also a Part 2 to this article - scroll to the bottom](https://betterprogramming.pub/rabbitmq-vs-kafka-1ef22a041793))
 
 ## Streaming Processing Concepts
+
+<div style={{textAlign: 'center'}}>
+
 ![two-problems-distributed-systems.png](./assets/two-problems-distributed-systems.png)
+
+</div>
+
 [Delivery Semantics](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/)
 * Exactly-Once
   * (may not be available in all frameworks)
@@ -66,19 +119,33 @@ Bigger Picture
 * At-Least-Once
 
 How would you decide which strategy to go with?
-[Concrete Example](https://keen.io/blog/demystifying-apache-kafka-message-delivery-semantics-at-most-once-at-least-once-exactly-once/)
+
+Read: [Concrete Example](https://keen.io/blog/demystifying-apache-kafka-message-delivery-semantics-at-most-once-at-least-once-exactly-once/)
 
 ## Advanced Considerations
-[How many Partitions should I set per topic?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/)
+Read: [How many Partitions should I set per topic?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/)
 
+<div style={{textAlign: 'center'}}>
 
-[Comparing Streaming Processing Frameworks](https://www.youtube.com/watch?v=PiEQR9AXgl4&ab_channel=Databricks)
-For all intents and purposes, Apache Flink and Apache Spark are almost interchangeable in that comparison (vs Kafka Streams and Akka Streams). The only difference is that Flink can naturally run in Continuous Processing mode 
+**Comparing Streaming Processing Frameworks**
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PiEQR9AXgl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+For all intents and purposes, Apache Flink and Apache Spark are almost interchangeable in that comparison (vs Kafka Streams and Akka Streams). The only difference is that Flink can naturally run in Continuous Processing mode
 
 
 ## Streaming Analytics Concepts
+<div style={{textAlign: 'center'}}>
+
 ![windowed-grouped-aggregation.png](./assets/windowed-grouped-aggregation.png)
-[Windows](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/windows.html)
+
+</div>
+
+Read: [Windows](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/windows.html)
 * Tumbling Windows
 * Sliding Windows
 * Session Windows
@@ -96,10 +163,20 @@ Splitting the stream logically for your domain
   * ListState
   * MapState
 
+<div style={{textAlign: 'center'}}>
+
 ![checkpoints.png](./assets/checkpoints.png)
+
+</div>
+
 [Checkpointing](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/checkpointing/)
-Making sure we can recover from failures seamlessly
-Analogous to log based recovery for database systems
+* Making sure we can recover from failures seamlessly
+* Analogous to log based recovery for database systems
 
 ## Stateful Streaming in a Nutshell
+
+<div style={{textAlign: 'center'}}>
+
 ![stateful-streaming-in-a-nutshell.png](./assets/stateful-streaming-in-a-nutshell.png)
+
+</div>
