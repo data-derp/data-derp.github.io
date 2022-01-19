@@ -5,6 +5,16 @@ sidebar_position: 1
 
 # Intro to Streaming
 
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5HD6rGNX2nA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+
+
 ## Apache Kafka
 ![apache-kafka.png](./assets/apache-kafka.png)
 ![topic-partitions.png](./assets/topic-partitions.png)
