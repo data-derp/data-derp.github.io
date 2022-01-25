@@ -1,0 +1,80 @@
+---
+sidebar_position: 25
+---
+
+# Quiz
+
+## What are some key differences between OLAP and OLTP systems?
+<div style={{textAlign: 'center'}}>
+
+![olap-oltp.png](./assets/olap-oltp.png)
+
+</div>
+
+> **OLTP**
+> 
+> Frequent updates, transactional behaviour/requirements
+> 
+> Query priorities:
+> * low-latency, up-to-date, consistent data for standard business operations
+
+> **OLAP**
+> 
+> Oriented towards analysis, modelling, reporting, business intelligence
+> 
+> Query Priorities:
+> * asking big questions against big data, supporting flexible queries/analyses
+> * efficiently processing millions of rows and returning thousands/millions of rows
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-v3PhEtOuxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+
+## Why did people start moving from traditional databases and data warehouses to HDFS for Big Data Analytics in the mid 2000s?
+And subsequently, why did people move from HDFS to Object Storage for Big Data Analytics?
+
+> **Why did people start moving from traditional databases and data warehouses to the Hadoop Ecosystem for Big Data Analytics in the mid 2000s?**
+> Traditional relational databases and data warehouses relied on vertical scaling which required expensive/specialized hardware and was hard to plan for
+> HDFS and MapReduce allowed for horizontal scalability with cheap commodity hardware
+
+> **Subsequently, why are people moving away from the Hadoop Ecosystem for Big Data Analytics?**
+> Cloud-based Object Storage is super scalable and cheap, far more than HDFS (which is only often used in on-prem environments these days). It was also great for storing all sorts of file formats (unstructured text, images, video, etc.)
+> Most modern cloud-based Data Lakes are built-on Object Storage technologies.
+> Modern query engines such as Apache Spark, Presto, Dremio, etc. can efficiently scan data laying on object stores. To summarize:
+> object storage + (on-demand) query engines = fully decoupled storage and compute
+> (great for scalability, elasticity, cost)
+
+## Name some object storage offerings from the 3 major cloud providers
+
+>**AWS**
+> * Amazon S3 (general purpose)
+> * Amazon S3 Glacier (for archiving)
+
+>**Microsoft Azure**
+> * Azure Blob Storage (general purpose)
+> * Azure Data Lake Storage Gen2 (has a file systems hierarchy, great for large structured and semi-structured datasets)
+
+>**GCP**
+> * Google Cloud Storage or GCS (general purpose)
+
+## Assign either the word OLTP or OLAP to the following technologies
+* Operational Databases: `???`
+* MongoDB or Cassandra: `???`
+* Data Warehouses (e.g. Oracle, Snowflake, Redshift): `???`
+* Apache Spark: `???`
+* Presto/Athena: `???`
+
+> * Operational Databases: `OLTP`
+> * MongoDB or Cassandra: `Depends (you’ll find use-cases online for either)`
+> * Data Warehouses (e.g. Oracle, Snowflake, Redshift): `OLAP`
+> * Apache Spark: `OLAP`
+> * Presto/Athena: `OLAP`
+
+
+
+`
