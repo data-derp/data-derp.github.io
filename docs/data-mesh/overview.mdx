@@ -1,35 +1,101 @@
 ---
 sidebar_position: 1
 ---
-# Data Mesh
+# Overview
 
 ## How we got to Data Mesh
-TBD
+Data Mesh is a paradigm shift in analytical data management at scale. It came in response to the pattern which was emerging,
+of having a gap between data consumers and producers. The gap between data consumers and producers is often caused by 
+a lack of data domain alignment, and siloed work between data sources, analytical teams, and data consumers. 
+
+Some of the symptoms seen as a result of these patterns are:
+- difficulty onboarding new data sources in a timely manner
+- inability to scale to meet consumer needs / use cases
+- tech-initiatives driven within siloes instead of being centred on use cases fail to be bootstraped
+- unable to realise data-driven value
 
 Read (optional): [Curse of the data lake monster](https://www.thoughtworks.com/insights/blog/curse-data-lake-monster)
 
-## The Theory
-Read: [The Original Data Mesh Article](https://martinfowler.com/articles/data-monolith-to-mesh.html) and the [Newer Principles](https://martinfowler.com/articles/data-mesh-principles.html)
+## The Data Mesh approach
+We've now covered some of the practises and failure patterns that highlighted the need for a different way to treat data 
+and the ownership of data in the analytical space. 
 
+The approach aims to address some of these issues through the application of the following four principles:
+- [Domain-driven ownership of data](#principle-1)
+- [Treating data as a product](#principle-2)
+- [Enabling data owners with a self-serve data platform](#principle-3)
+- [Federated, computational data governance](#principle-4)
 
-<div style={{textAlign: 'center'}}>
+<a name="principle-1"></a>
 
-An overview by Emily Gorcenski and Arif Wilder
+### Domain-driven ownership of data
 
+Data should be managed close to its soruce of origin. Data Mesh achieves this through a distributed domain driven
+architecture which aligns data with the domain boundaries of an organisation.  This allows us to scale, by moving 
+away from monolithic analytical archtiectures / team structures which can become a bottleneck, and close the gap
+between data producers and their consumers. It also helps to establish proper ownership and accountability for data.
+
+<div style={{textAlign: 'center'}} > 
 <figure class="video-container">
-    <iframe src="//fast.wistia.net/embed/iframe/7uegix6aqe" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
-
+    <iframe src="//fast.wistia.net/embed/iframe/rqa9599gof" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
 </figure>
 
+*Danilo and Zhamak explore the principle of domain ownership in this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-mesh-and-domain-ownership)*
 </div>
 
 
-Quite often, we get caught up about the tech implementation of a theory. The same follows for Data Mesh. Before we move on to talk about the technical concepts behind Data Mesh, we must stress that [it's not about tech, it's about ownership](https://www.thoughtworks.com/en-in/insights/blog/data-mesh-its-not-about-tech-its-about-ownership-and-communication).
 
-<div style={{textAlign: 'center'}}>
 
-Want more? [Read the book.](https://www.oreilly.com/library/view/data-mesh/9781492092384/)
 
-![data-mesh-book.jpeg](./assets/data-mesh-book.jpeg)
+<a name="principle-2"></a>
 
+### Treating data as a product
+
+// todo description
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/zed92ui3r7" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*In this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-as-a-product)*
+Zhamak covers the principle of treating data as a product
 </div>
+
+
+
+
+
+<a name="principle-3"></a>
+
+### Data Mesh platform
+
+// todo description
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/403h0uo0lt" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*Emily and Zhamak dive into the role of the data platform in the Data Mesh in this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-platform-in-a-mesh-architecture)*
+</div>
+
+
+
+
+
+<a name="principle-4"></a>
+
+### Federated, computational data governance
+
+// todo description
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/l28tj8notl" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*Chris, Jason, and Zhamak talk to the need for federated computational governance in this [webinar and planel discussion](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-platform-in-a-mesh-architecture)*
+</div>
+
+## Additional Material
