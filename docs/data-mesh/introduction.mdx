@@ -9,8 +9,24 @@ there was a widening gap between data consumers and producers. The gap between d
 a lack of data domain alignment, and siloed work between data sources, analytical teams, and data consumers. 
 
 #### What led to this gap? 
+Through the evolutions of the data environment, the pattern of having a central data function to move data from 
+data producers to data consumers has remained (e.g. a central data team ETL'ing prodcer data into a data lake). Even when the technologies
+improved or became more advanced, the monolithic central team stayed as a constant in the analytical space. 
 
+<div style={{textAlign: 'center'}} > 
 
+![central-data-function.png](./assets/central-data-function.png)
+</div>
+
+This created inevitable friction 
+in the cycle of intelligence, with the producers or acquirers of the data being far removed from the consumers asking questions of the data. 
+The central data function acted as a bottleneck, putting strain on a central team or set of teams that was too far removed from the production
+of the data, and ended up working on the byproducts of operational systems.
+
+<div style={{textAlign: 'center'}} > 
+
+![cycle-of-intelligence-basic.png](./assets/cycle-of-intelligence-basic.png)
+</div>
 
 #### Some of the symptoms seen as a result of these patterns:
 - difficulty onboarding new data sources in a timely manner
