@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Visualization helps bring out the story of your data and being able to tell these stories with data is of great significance for data‐driven decision making.
 
-<div style="textAlign:center;height:90%;width:90%">
+<div style={{textAlign:"center",height:"90%",width:"90%"}}>
 
 ![ticket_example.png](./assets/ticket_example.png)
 
@@ -22,7 +22,7 @@ For example,
 
 **Exploratory vs Explanatory Analysis**
 
-<div style="textAlign:center;height:50%;width:50%">
+<div style={{textAlign:"center",height:"50%",width:"50%"}}>
 
 ![explanatory_vs_exploratory.png](./assets/explanatory_vs_exploratory.png)
 
@@ -37,7 +37,7 @@ For example,
 
 Simple text is used for communicating for numbers by making the numbers as prominent as possible and a few supporting words to clearly make your point.
 
-<div style="textAlign:center;height:25%;width:25%">
+<div style={{textAlign:"center",height:"25%",width:"25%"}}>
 
 ![simple_text.png](./assets/simple_text.png)
 
@@ -51,7 +51,7 @@ Tables can be used for communicating to a mixed audience whose members will each
 - Allow the data to take a center stage and lighten the borders
 - Heat maps can be used to provide visual cues so that potential points of interest can be easily spotted
 
-<div style="textAlign:center;height:55%;width:55%">
+<div style={{textAlign:"center",height:"55%",width:"55%"}}>
 
 ![heatmap_vs_table.png](./assets/heatmap_vs_table.png)
 
@@ -63,7 +63,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 **1. Points**
 
-<div style="textAlign:center;height:45%;width:45%">
+<div style={{textAlign:"center",height:"45%",width:"45%"}}>
 
 ![scatterplot.png](./assets/scatterplot.png)
 
@@ -75,7 +75,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 **2. Lines**
 
-<div style="textAlign:center;height:45%;width:45%">
+<div style={{textAlign:"center",height:"45%",width:"45%"}}>
 
 ![line_plot.png](./assets/line_plot.png)
 
@@ -90,7 +90,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Bar charts must always have a zero baseline
 - In general the bars should be wider than the white space between the bars
 
-<div style="textAlign:center;height:45%;width:45%">
+<div style={{textAlign:"center",height:"45%",width:"45%"}}>
 
 ![bar_plot_width.png](./assets/bar_plot_width.png)
 
@@ -98,7 +98,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Beware of stacked bar plots as they can overwhelm your audience with information
 
-<div style="textAlign:center;height:45%;width:45%">
+<div style={{textAlign:"center",height:"45%",width:"45%"}}>
 
 ![stacked_bar_plot.png](./assets/stacked_bar_plot.png)
 
@@ -106,7 +106,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Horizontal bar charts are extremely useful for categorical data with long category names
 
-<div style="textAlign:center;height:45%;width:45%">
+<div style={{textAlign:"center",height:"45%",width:"45%"}}>
 
 ![horizontal_bar_plot.png](./assets/horizontal_bar_plot.png)
 
@@ -118,7 +118,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Pie charts should be mostly avoided when representing quantitative information as it becomes almost impossible to discern segments close in size. (Use bar charts instead)
 - Avoid using secondary axes as it makes the interpretation of the data tedious
 
-<div style="textAlign:center;height:40%;width:40%">
+<div style={{textAlign:"center",height:"40%",width:"40%"}}>
 
 ![secondary_axes.png](./assets/secondary_axes.png)
 
@@ -126,7 +126,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 ## Eliminate clutter
 
-<div style="textAlign:center;height:50%;width:50%">
+<div style={{textAlign:"center",height:"50%",width:"50%"}}>
 
 ![you_see_with_your_brain.png](./assets/you_see_with_your_brain.png)
 
@@ -138,7 +138,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Clutter has to be avoided at all costs as it simply eats up space and make the visualization feel more complicated
 - [Gestalt Principles of Visual Perception](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information
 
-<div style="textAlign:center;height:65%;width:65%">
+<div style={{textAlign:"center",height:"65%",width:"65%"}}>
 
 ![visual_order.png](./assets/visual_order.png)
 

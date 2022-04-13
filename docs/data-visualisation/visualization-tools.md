@@ -13,8 +13,8 @@ sidebar_position: 2
 
 ## Analytics and Visualisation Dashboards
 
-- Tableau
-- Microsoft Power BI
+- [Tableau](https://www.tableau.com/)
+- [Microsoft Power BI](https://powerbi.microsoft.com/en-au/)
 
 ## Analytical web apps (for data science)
 
