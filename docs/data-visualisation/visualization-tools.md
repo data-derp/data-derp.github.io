@@ -4,14 +4,14 @@ sidebar_position: 2
 
 # Visualization Tools
 
-## Plotting and Visualisation Libraries
+## Plotting and Visualization Libraries
 
-- [Matplotlib](https://matplotlib.org/) visualisation library in python
-- [Seaborn](https://seaborn.pydata.org/) statistical data visualisation in python built upon matplotlib
+- [Matplotlib](https://matplotlib.org/) Visualization library in python
+- [Seaborn](https://seaborn.pydata.org/) statistical data Visualization in python built upon matplotlib
 - [Plotly](https://plotly.com/graphing-libraries/): build beautiful interactive visualizations without needing loads and loads of Javascript
 - [Plotly Express](https://plotly.com/python/plotly-express/): build beautiful interactive visualizations in literally a few lines!
 
-## Analytics and Visualisation Dashboards
+## Analytics and Visualization Dashboards
 
 - [Tableau](https://www.tableau.com/)
 - [Microsoft Power BI](https://powerbi.microsoft.com/en-au/)
