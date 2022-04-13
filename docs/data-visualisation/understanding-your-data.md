@@ -17,7 +17,7 @@ Visualization helps bring out the story of your data and being able to tell thes
 For example,
 
 - How does the volume of received and processed tickets vary per month?
-- Are falling behind in terms of processing the recieved tickets? If so, from when and why?
+- Are we falling behind in terms of processing the recieved tickets? If so, from when and why?
 - What are the factors slowing down the ticket processing? Are these factors correlated? [Correlation is NOT causation](https://www.youtube.com/watch?v=ROpbdO-gRUo)
 
 **Exploratory vs Explanatory Analysis**
@@ -90,7 +90,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Bar charts must always have a zero baseline
 - In general the bars should be wider than the white space between the bars
 
-<div style={{textAlign:"center",height:"45%",width:"45%"}}>
+<div style={{textAlign:"center",height:"60%",width:"60%"}}>
 
 ![bar_plot_width.png](./assets/bar_plot_width.png)
 
@@ -98,7 +98,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Beware of stacked bar plots as they can overwhelm your audience with information
 
-<div style={{textAlign:"center",height:"45%",width:"45%"}}>
+<div style={{textAlign:"center",height:"60%",width:"60%"}}>
 
 ![stacked_bar_plot.png](./assets/stacked_bar_plot.png)
 
@@ -106,7 +106,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Horizontal bar charts are extremely useful for categorical data with long category names
 
-<div style={{textAlign:"center",height:"45%",width:"45%"}}>
+<div style={{textAlign:"center",height:"70%",width:"70%"}}>
 
 ![horizontal_bar_plot.png](./assets/horizontal_bar_plot.png)
 
@@ -118,7 +118,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Pie charts should be mostly avoided when representing quantitative information as it becomes almost impossible to discern segments close in size. (Use bar charts instead)
 - Avoid using secondary axes as it makes the interpretation of the data tedious
 
-<div style={{textAlign:"center",height:"40%",width:"40%"}}>
+<div style={{textAlign:"center",height:"70%",width:"70%"}}>
 
 ![secondary_axes.png](./assets/secondary_axes.png)
 
@@ -138,7 +138,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Clutter has to be avoided at all costs as it simply eats up space and make the visualization feel more complicated
 - [Gestalt Principles of Visual Perception](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information
 
-<div style={{textAlign:"center",height:"65%",width:"65%"}}>
+<div style={{textAlign:"center",height:"75%",width:"75%"}}>
 
 ![visual_order.png](./assets/visual_order.png)
 
