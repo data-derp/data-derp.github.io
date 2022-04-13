@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Using a Critical Eye
 
-Visualization helps bring out the story of your data and being able to tell these stories with data is of great significance for data‐driven decision making.<br><br>
+Visualization helps bring out the story of your data and being able to tell these stories with data is of great significance for data‐driven decision making.
 
 <div style="textAlign:center;height:90%;width:90%">
 
@@ -18,7 +18,7 @@ For example,
 
 - How does the volume of received and processed tickets vary per month?
 - Are falling behind in terms of processing the recieved tickets? If so, from when and why?
-- What are the factors slowing down the ticket processing? Are these factors correlated? [Correlation is NOT causation](https://www.youtube.com/watch?v=ROpbdO-gRUo)<br><br>
+- What are the factors slowing down the ticket processing? Are these factors correlated? [Correlation is NOT causation](https://www.youtube.com/watch?v=ROpbdO-gRUo)
 
 **Exploratory vs Explanatory Analysis**
 
@@ -29,13 +29,13 @@ For example,
 </div>
 
 - Exploratory analysis is what you do to understand the data, finding patterns, outliers, relationships and so on.
-- Explanatory analysis is communicating the key insights of the analysis to decision-makers, stakeholders, etc.<br><br>
+- Explanatory analysis is communicating the key insights of the analysis to decision-makers, stakeholders, etc.
 
 ## Choose an effective visual
 
 ### **Simple Text**
 
-Simple text is used for communicating for numbers by making the numbers as prominent as possible and a few supporting words to clearly make your point.<br>
+Simple text is used for communicating for numbers by making the numbers as prominent as possible and a few supporting words to clearly make your point.
 
 <div style="textAlign:center;height:25%;width:25%">
 
@@ -49,7 +49,7 @@ Tables can be used for communicating to a mixed audience whose members will each
 
 - Different units of measure can be elegantly displayed on tables
 - Allow the data to take a center stage and lighten the borders
-- Heat maps can be used to provide visual cues so that potential points of interest can be easily spotted<br><br>
+- Heat maps can be used to provide visual cues so that potential points of interest can be easily spotted
 
 <div style="textAlign:center;height:55%;width:55%">
 
@@ -59,7 +59,7 @@ Tables can be used for communicating to a mixed audience whose members will each
 
 ### **Graphs**
 
-A well-designed graph is more effective than a table as it interacts with our visual processing system.<br><br>
+A well-designed graph is more effective than a table as it interacts with our visual processing system.
 
 **1. Points**
 
@@ -88,7 +88,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Bar charts are allow for easy processing of visual information as our eyes compare the end points of the bars to find the largest, smallest and incremental difference
 - Bar charts must always have a zero baseline
-- In general the bars should be wider than the white space between the bars<br>
+- In general the bars should be wider than the white space between the bars
 
 <div style="textAlign:center;height:45%;width:45%">
 
@@ -96,7 +96,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 </div>
 
-- Beware of stacked bar plots as they can overwhelm your audience with information<br>
+- Beware of stacked bar plots as they can overwhelm your audience with information
 
 <div style="textAlign:center;height:45%;width:45%">
 
@@ -104,7 +104,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 </div>
 
-- Horizontal bar charts are extremely useful for categorical data with long category names<br>
+- Horizontal bar charts are extremely useful for categorical data with long category names
 
 <div style="textAlign:center;height:45%;width:45%">
 
@@ -116,7 +116,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 - Never use 3D charts unless it is absolutely necessary to add a third dimension. 3D charts introduce skews, making the data difficult to interpret and compare
 - Pie charts should be mostly avoided when representing quantitative information as it becomes almost impossible to discern segments close in size. (Use bar charts instead)
-- Avoid using secondary axes as it makes the interpretation of the data tedious<br>
+- Avoid using secondary axes as it makes the interpretation of the data tedious
 
 <div style="textAlign:center;height:40%;width:40%">
 
@@ -136,7 +136,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Cognitive load is the mental effort that is required to learn new information
 - Clutter in our visualization results in extraneous cognitive load and processing that takes up mental resources but doesn’t necessarily improve one's understanding of the data
 - Clutter has to be avoided at all costs as it simply eats up space and make the visualization feel more complicated
-- [Gestalt Principles of Visual Perception](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information <br><br>
+- [Gestalt Principles of Visual Perception](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information
 
 <div style="textAlign:center;height:65%;width:65%">
 
