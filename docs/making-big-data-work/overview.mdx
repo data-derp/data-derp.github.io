@@ -86,12 +86,16 @@ ACID Transactions
 
 * This presentation is actually from early/mid 2019 (ignore the upload date on YouTube),
 * Delta Lake’s gotten even better since then!
+* [Demo video](https://databricks.com/discover/demos/delta-lake)
 * **Executive Summary:**
   * Delta Lake is just Apache Parquet with **a transaction log on top**!
-  * Delta Lake can optimize the layout of your underlying parquet files (via OPTIMIZE)
-  * **However**, writing/updating Delta Lake tables often requires a big data engine such as Spark
+  * Keep using your preferred storage technology (e.g. S3, Azure Data Lake Storage)
+  * Allows fine-grained updates, deletes to big data (GDPR)
+  * Allows data versioning, time travel, rollbacks, audit history
+  * Optimizes the layout of your underlying parquet files (via OPTIMIZE) for query performance
 
 ## Delta Lake Key Features
+[Link](https://delta.io/)
 * ACID Transactions
   * Ensures data integrity, using the transaction log
 * Updates, Deletes, Upserts
