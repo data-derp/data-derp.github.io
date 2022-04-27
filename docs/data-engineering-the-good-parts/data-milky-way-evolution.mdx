@@ -76,7 +76,7 @@ Important excerpts:
 
 :::info
 
-Hadoop is great if you're a datascientist who knows how to code in MapReduce or Pig, Johnson says, but as you go higher up the stack, the **abstraction layers have mostly failed to deliver on the promise of enabling business analystics to get at the data.**
+Hadoop is great if you're a data scientist who knows how to code in MapReduce or Pig, Johnson says, but as you go higher up the stack, the **abstraction layers have mostly failed to deliver on the promise of enabling business analystics to get at the data.**
 
 :::
 
@@ -104,15 +104,11 @@ Cloud Revolution: [Why object storage wins over Hadoop-based storage](https://ww
 
 Time for unified analytics/query engines such as Spark and Presto to shine  💫
 * [Spark](https://www.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch01.html) & [Presto](https://prestodb.io/overview.html)
-* 2021 newcomer: [Dremio](https://www.dremio.com/)
 Both engines excel when running analytical queries against data stored on Object Storage (e.g. Amazon S3, Azure Blob Storage)
 Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce which read/writes data via disk only)
 
-Presto is very popular for **ad-hoc interactive SQL queries**
-(fun fact: AWS Athena is a serverless offering based on Presto)
-
-Spark is **extremely popular for programmatic (Python/Scala/Java/R)
-use-cases** but can also support SQL queries
+Spark is **extremely popular for programmatic (Python/Scala/Java/R) use-cases** but can also support SQL queries  
+Presto is a popular choice for **ad-hoc interactive SQL queries** (fun fact: AWS Athena is a serverless offering based on Presto)
 
 <div style={{textAlign: 'center'}}>
 
@@ -129,7 +125,7 @@ Common Misconceptions:
   * They’re not. But they can read/write from them 😀
 * “Spark or Presto can replace all my databases”
 * “Spark is an ‘In-Memory’ technology”
-  * PostgreSQL/MySQL also cache data in RAM to speed up queries...but would you dare to call them ‘In-Memory’ technologies? 😅
+  * PostgreSQL/MySQL also cache data in RAM to speed up queries...but would you call them ‘In-Memory’ technologies? 😅
 
 <div style={{textAlign: 'center'}}>
 
