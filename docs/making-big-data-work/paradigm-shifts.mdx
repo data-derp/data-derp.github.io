@@ -91,21 +91,22 @@ Source: [Databricks](https://databricks.com/blog/2020/01/30/what-is-a-data-lakeh
 
 </div>
 
-**The Cloud Providers**
-[AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/): Glue Ecosystem, Athena, Lake Formation, etc.
-[Azure](https://techcommunity.microsoft.com/t5/analytics-on-azure/simplify-your-lakehouse-architecture-with-azure-databricks-delta/ba-p/2027272): Azure Databricks, Azure Synapse Ecosystem, etc.
-
 **Databricks**
 * [Webpage](https://databricks.com/)
 * [Photon engine](https://docs.databricks.com/runtime/photon.html): shifting Spark from the JVM to C++
+* [Delta Lake](https://docs.databricks.com/runtime/photon.html) ensures data reliability and consistency
 * [Databricks SQL](https://databricks.com/product/databricks-sql):
     * Takes advantage of Delta Lake for data integrity
     * Photon for fast, interactive queries
 
 **Dremio**
 * [Webpage](https://www.dremio.com/)
-* Utilizes Apache Arrow (the very same underlying technology in Vectorized UDFs (aka Pandas UDFs)! for scalable data transfer and serialization
-* Informally, think of it as next-gen Presto/Athena
+* Utilizes Apache Arrow for scalable data transfer and serialization
+* Informally, think of it as next-gen Presto/Athena (SQL Engine for directly querying the lake)
+
+**The Cloud Providers**
+[AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/): Glue Ecosystem, Athena, Lake Formation, etc.
+[Azure](https://techcommunity.microsoft.com/t5/analytics-on-azure/simplify-your-lakehouse-architecture-with-azure-databricks-delta/ba-p/2027272): Azure Databricks, Azure Synapse Ecosystem, etc.
 
 ## Takeaways
 Big Data Technology is rapidly maturing to support the needs of Data Mesh
