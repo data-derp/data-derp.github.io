@@ -84,25 +84,30 @@ Source: [Databricks](https://databricks.com/blog/2020/01/30/what-is-a-data-lakeh
 
 ## Example Lakehouse Contenders
 
-<div style={{textAlign: 'center'}}>
-
-![delta-lakehouse.png](./assets/delta-lakehouse.png)
-![databricks-lakehouse.png](./assets/databricks-lakehouse.png)
-
-</div>
-
 **Databricks**
 * [Webpage](https://databricks.com/)
-* [Photon engine](https://docs.databricks.com/runtime/photon.html): shifting Spark from the JVM to C++
+* [Photon engine](https://docs.databricks.com/runtime/photon.html): taking advantage of modern hardware with C++
 * [Delta Lake](https://docs.databricks.com/runtime/photon.html) ensures data reliability and consistency
 * [Databricks SQL](https://databricks.com/product/databricks-sql):
     * Takes advantage of Delta Lake for data integrity
     * Photon for fast, interactive queries
 
+<div style={{textAlign: 'center'}}>
+
+![delta-lakehouse.png](./assets/delta-lakehouse.png)
+
+</div>
+
 **Dremio**
 * [Webpage](https://www.dremio.com/)
 * Utilizes Apache Arrow for scalable data transfer and serialization
 * Informally, think of it as next-gen Presto/Athena (SQL Engine for directly querying the lake)
+
+<div style={{textAlign: 'center'}}>
+
+![databricks-lakehouse.png](./assets/databricks-lakehouse.png)
+
+</div>
 
 **The Cloud Providers**
 [AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/data-lake-house/): Glue Ecosystem, Athena, Lake Formation, etc.
