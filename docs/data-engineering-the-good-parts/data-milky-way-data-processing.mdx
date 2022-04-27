@@ -30,9 +30,8 @@ sidebar_position: 3
 * Apache Beam is based on the [Dataflow model introduced by Google](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43864.pdf)
 * Aims to unify the semantics of batch & streaming processing across engines (Flink, Spark, etc.)
 
-**You don’t necessarily need streaming, let alone Beam!** evaluate your own project’s needs
-Advanced (optional): [Practice developing a Beam app in AWS Kinesis](https://docs.aws.amazon.com/kinesisanalytics/latest/java/examples-beam.html)
-We’ll mention Flink more in later sections 🌰
+**You don’t necessarily need streaming, let alone Beam!** evaluate your own project’s needs. 
+From our experience, most teams actually simply choose either Spark Structured Streaming or Flink (without Beam)
 
 
 ## Practical Data Workloads
@@ -52,8 +51,9 @@ Single-Node vs. Cluster: not everything is Big Data!
 Batch vs Streaming: [streaming isn’t always the solution](https://www.section.io/engineering-education/batch-processing-vs-stream-processing/)!
 
 Batch Orchestration options
-* [CRON](https://en.wikipedia.org/wiki/Cron), [Apache Airflow](https://airflow.apache.org/), Triggers (e.g. AWS Lambda, AWS Step Functions, [Glue Triggers](https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html))
-* Simple CRON schedules (e.g. on Databricks) might work just fine, depends on the use-case
+* DAG-based approaches: [Apache Airflow](https://airflow.apache.org/), [Databricks Jobs Orchestration](https://databricks.com/blog/2021/07/13/announcement-orchestrating-multiple-tasks-with-databricks-jobs-public-preview.html), [Dagster](https://dagster.io/)  
+* Event-Driven + Declarative (e.g. [Databricks Auto Loader](https://databricks.com/discover/demos/delta-lake-data-integration-demo-auto-loader-and-copy-into), [Delta Live Tables](https://databricks.com/discover/demos/delta-live-tables-demo)
+* Other triggers (e.g. AWS Lambda, [Glue Triggers](https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html))
 
 ## Typical Data Pipeline
 
