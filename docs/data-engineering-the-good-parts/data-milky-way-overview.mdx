@@ -29,7 +29,7 @@ To answer that question, we must first understand if the data is OLTP or OLAP in
     
 
 
-### OLTP vs. OLAP
+## OLTP vs. OLAP
 
 #### OLTP (Online Transactional Processing)
 Makes sure that the systems can keep up with high volumes of transactions but often very small and fast in nature (e.g. online banking, FinTech application)
@@ -39,7 +39,7 @@ Some use cases:
 * SQL and NoSQL ("Not Only SQL")
 * **Hint:** lots of diff tech in OLTP
 
-#### OLAP (Online Analytical Processing)
+### OLAP (Online Analytical Processing)
 Makes sure that you can crunch through millions or billions of rows of data for your complex and large theories, where they need to run some fancy aggregation or calcuations for data Analytics purposes
 
 Some use cases:
@@ -60,7 +60,7 @@ and even within OLAP, the story doesn't end with warehouses.
 </div>
 
 
-### Application Databases: NoSQL vs SQL
+## Application Databases: NoSQL vs SQL
 <div style={{textAlign: 'center'}}>
 
 **Read:** [NoSQL vs SQL](https://www.mongodb.com/nosql-explained/nosql-vs-sql)
@@ -68,7 +68,7 @@ and even within OLAP, the story doesn't end with warehouses.
 </div>
 
 
-### Database vs. Data Warehouse
+## Database vs. Data Warehouse
 
 <div style={{textAlign: 'center'}}>
 
@@ -82,14 +82,14 @@ and even within OLAP, the story doesn't end with warehouses.
 </div>
 
 
-### Predominant OLAP Technologies
+## Predominant OLAP Technologies
 <div style={{textAlign: 'center'}}>
 
 **Read:** [Data Warehouse vs Data Lake](https://panoply.io/data-warehouse-guide/data-warehouse-vs-data-lake/)
 
 </div>
 
-### Tech Choice is driven by Business Needs
+## Tech Choice is driven by Business Needs
 * **When** do I need this data?
   * Primary driver = Latency. How fast or frequent should my queries be?
 * **How many people** need this data?
@@ -101,3 +101,19 @@ and even within OLAP, the story doesn't end with warehouses.
   * Dashboards? Machine Learning algorithms?
 * **How much does it cost** me to maintain?
 
+## Focus of this course - OLAP workloads
+**Why are we focusing more on OLAP than OLTP?**
+* OLTP databases (sometimes interchangeably referred to as application databases) are often an
+advanced topic as they concern stability and performance of your operations / live applications
+* OLTP data models and tech stacks for different problems/businesses vary a lot more
+than those for OLAP workloads!
+* When people/customers talk about developing Data & AI, Analytics, Data Science, Machine Learning,
+they’re most likely referring to OLAP-style workloads. 
+
+**However, feel free to check out some prominent NoSQL technologies:**
+* Amazon DynamoDB
+* Azure CosmosDB
+* Redis
+* Elasticsearch
+* Cassandra
+* MongoDB
