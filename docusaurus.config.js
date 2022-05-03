@@ -27,6 +27,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/data-derp/data-derp.github.io/tree/master/docs',
+          showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
