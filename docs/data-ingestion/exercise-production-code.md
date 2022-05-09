@@ -3,7 +3,8 @@ sidebar_position: 3
 ---
 # Exercise: Production Code
 
-Now that you've created the ingestion logic in Databricks, let's see what that logic looks like in production code (switch to the `solutions` branch). 
+Now that you've created the ingestion logic in Databricks, let's see what that logic looks like in production code.
+
 1. Watch the following video below to get an overview of the Production Code
     <div style={{textAlign: 'center'}}>
 
