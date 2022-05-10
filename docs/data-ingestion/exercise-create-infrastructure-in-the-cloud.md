@@ -22,7 +22,7 @@ Now that we've created artifacts (`main.py`, `data_ingestion-0.1-py3.egg`) in ou
 
 Follow the instructions [here](https://github.com/data-derp/exercise-co2-vs-temperature-infrastructure/blob/master/data-ingestion.md) to get started.
 
-Watch the video below after you've completed the exercise to understand what's next:
+Watch the video below **after** you've completed the exercise to understand what's next (warning: spoiler alert):
 
 
 <div style={{textAlign: 'center'}}>
