@@ -3,6 +3,14 @@ sidebar_position: 46
 ---
 # Project Overview
 
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JMJL5XL5858" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+</div>
+
+
 ![project-structure-transformation-navi.png](./assets/project-structure-transformation-navi.png)
 
 The figure above represents our final state for this project, but the box in red highlights the salient steps for "Data Transformation". At high level, we are concerned with transforming (cleaning and reshaping) our ingested data into a shape that makes it easy to answer some questions in our analysis. Remember that some transformations are expensive, depending on the transformation and how much data that you have. These expensive transformations can leverage Spark (and its distributed architecture) for its speed.

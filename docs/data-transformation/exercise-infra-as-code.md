@@ -2,7 +2,12 @@
 sidebar_position: 50
 ---
 # Exercise: Infrastructure as Code  (Optional)
+
+<div style={{textAlign: 'center'}}>
+
 ![project-structure-transformation-navi.png](./assets/project-structure-transformation-navi.png)
+
+</div>
 
 Creating resources in the AWS Console can be sometimes prone to mistakes, but we have [Infrastructure as Code](https://infrastructure-as-code.com/book/) to the rescue.
 

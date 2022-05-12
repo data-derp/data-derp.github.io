@@ -2,7 +2,12 @@
 sidebar_position: 49
 ---
 # Exercise: Create Infrastructure in the Cloud
+
+<div style={{textAlign: 'center'}}>
+
 ![project-structure-transformation-navi.png](./assets/project-structure-transformation-navi.png)
+
+</div>
 
 Now that we've created artifacts (`main.py`, `data_transformation-0.1-py3.egg`) in our S3 bucket, our next step is to run that logic in AWS Glue. In this exercise, we'll learn how to create AWS Glue Jobs and Crawlers and how to view the resulting data in AWS Athena.
 
