@@ -1,7 +1,7 @@
 ---
 sidebar_position: 49
 ---
-# Exercise: Create Infrastructure in the Cloud
+# Exercise: Create Infrastructure in the Cloud (Transformation)
 
 <div style={{textAlign: 'center'}}>
 
