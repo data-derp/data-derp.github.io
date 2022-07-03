@@ -1,7 +1,7 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
-# Wrangling with Spark
+# Advanced Wrangling
 
 <div style={{textAlign: 'center'}}>
 
@@ -11,12 +11,6 @@ sidebar_position: 8
 
 </div>
 
-
-
-## Working with Databricks
-We'll walk through some of the basic transformation methods using notebooks.
-
-Follow the instructions [here](https://github.com/data-derp/small-exercises/blob/master/databricks-spark-certification/README.md) to get started.
 
 ## What's Missing from These Notebooks?
 <div style={{textAlign: 'center'}}>
@@ -34,11 +28,11 @@ Short Answer:
 Just make sure you understand everything about window function semantics
 
 * partitionBy
-  * similar to groupBy (but doesn’t reduce/aggregate information down to a single row)
+    * similar to groupBy (but doesn’t reduce/aggregate information down to a single row)
 * orderBy
-  * Just FYI, you can orderBy(F.col(“myColumn”).desc()) for descending order.
+    * Just FYI, you can orderBy(F.col(“myColumn”).desc()) for descending order.
 * rowsBetween
-  * You should look up the default arguments for different window functions (e.g. lag, lead, first, last, max, min, row_number)
+    * You should look up the default arguments for different window functions (e.g. lag, lead, first, last, max, min, row_number)
 * rangeBetween
   Can you explain the difference between rowsBetween and rangeBetween?
 
@@ -57,10 +51,10 @@ These are all also concepts in SQL.
 
 **Basic Answer:** [Python UDFs](https://docs.databricks.com/spark/latest/spark-sql/udf-python-pandas.html)
 
-How does this work? 
-  * JVM serializes data and sends it to the Python process 
-  * Python process deserializes, then serializes it back to the JVM 
-  * JVM deserializes the data for running next operations/steps
+How does this work?
+* JVM serializes data and sends it to the Python process
+* Python process deserializes, then serializes it back to the JVM
+* JVM deserializes the data for running next operations/steps
 
 <div style={{textAlign: 'center'}}>
 
@@ -74,7 +68,7 @@ How does this work?
 How does this work? (the Apache Arrow project is basically dedicated to this!)
 * Batches/chunks of a single/multiple column(s) are serialized compactly/efficiently then sent to the Python process
 * Which Python library is really good at vectorized operations on data again?
-  * Pandas! uses NumPy (written in C) under the hood
+    * Pandas! uses NumPy (written in C) under the hood
 * Chunks of data are serialized then finally sent back to the JVM
 
 > A pandas user-defined function (UDF)—also known as vectorized UDF—is a user-defined function that uses Apache Arrow to transfer data and pandas to work with the data. pandas UDFs allow vectorized operations that can increase performance up to 100x compared to row-at-a-time Python UDFs. ([Reference](https://docs.databricks.com/spark/latest/spark-sql/udf-python-pandas.html#pandas-user-defined-functions))
@@ -101,7 +95,7 @@ This is **massive**.
 * Example blog post ([potentially outdated](https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html))
 * Series to Series (these can often directly replace your Python UDFs)
 * Grouped Map (Pandas Functions APIs)
-  * This is **THE holy grail**, you can parallelize data processing by treating each “group” as an independent Pandas DataFrame
+    * This is **THE holy grail**, you can parallelize data processing by treating each “group” as an independent Pandas DataFrame
 
 ## A Deeper Reference
 Check out O'Reilly's ["Learning Spark" book](https://www.oreilly.com/library/view/learning-spark/9781449359034/)

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 47
 ---
-# Exercise
+# Exercise: Core Logic
 
 <div style={{textAlign: 'center'}}>
 
