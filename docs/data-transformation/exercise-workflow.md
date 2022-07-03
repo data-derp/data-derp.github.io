@@ -5,4 +5,4 @@ sidebar_position: 48
 
 For this exercise, we will create a workflow to trigger our ingestion job which will then automatically trigger our transformation job.
 
-To get started, [follow these instructions](https://github.com/data-derp/exercise-co2-vs-temperature-databricks/tree/master/data-workflow)
+To get started, [follow these instructions](https://github.com/data-derp/exercise-co2-vs-temperature-databricks/tree/master/data-workflow).
