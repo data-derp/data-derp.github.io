@@ -127,7 +127,7 @@ Short Answer: either!
       * however, it does not guarantee how many .snappy.parquet files will be in each folder 
     * Sometimes you might even need to do both e.g. `df.repartition(“year”, “month”).write.partitionBy(“year”, ”month”)...` in order to guarantee exactly 1 .snappy.parquet file per each month folder
   * Try to read up on the difference between repartition and coalesce 
-    * Short Answer: [The coalesce transformation applied to a DataFrame](https://spark.apache.org/docs/2.1.0/api/python/pyspark.sql.html#pyspark.sql.DataFrame.coalesce) (not to be confused with [coalesce() applied to a column](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.functions.coalesce.html)), will try to merge partitions to reach your desired number. You only use coalesce when you want to reduce the number of partitions in your data.
+    * Short Answer: [The coalesce transformation applied to a DataFrame](https://spark.apache.org/docs/2.1.0/api/python/pyspark.sql.html#pyspark.sql.DataFrame.coalesce) (not to be confused with [coalesce() applied to a column](https://spark.apache.org/docs/latest/api/python//reference/pyspark.sql/api/pyspark.sql.functions.coalesce.html)), will try to merge partitions to reach your desired number. You only use coalesce when you want to reduce the number of partitions in your data.
     * On the other hand, repartition() will full shuffle all of the data around (more expensive).
     * If you need to increase the number of partitions in your data, then you will need repartition()
 * [Practice Repartitioning vs PartitionBy in DataBricks](https://github.com/data-derp/small-exercises/blob/master/databricks-repartition-vs-write-partition-by.dbc)
