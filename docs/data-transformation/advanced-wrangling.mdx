@@ -12,7 +12,7 @@ sidebar_position: 8
 </div>
 
 
-## What's Missing from These Notebooks?
+## What's missing?
 <div style={{textAlign: 'center'}}>
 
 ![cool-stuff-missing.png](./assets/cool-stuff-missing.png)
@@ -25,7 +25,7 @@ Short Answer:
 * Pandas UDFs (Vectorised UDFs)
 
 ## Window Functions
-Just make sure you understand everything about window function semantics
+It is important to make sure you understand everything about window function semantics
 
 * partitionBy
     * similar to groupBy (but doesn’t reduce/aggregate information down to a single row)
@@ -37,6 +37,9 @@ Just make sure you understand everything about window function semantics
   Can you explain the difference between rowsBetween and rangeBetween?
 
 These are [all also concepts in SQL and not special to Spark](https://towardsdatascience.com/a-guide-to-advanced-sql-window-functions-f63f2642cbf9).
+
+### Try it yourself
+Follow the instructions here for the [Windows Walkthrough](https://github.com/data-derp/small-exercises/tree/master/window-functions)
 
 ## Python UDFs
 
@@ -98,7 +101,7 @@ This is **massive**.
     * This is **THE holy grail**, you can parallelize data processing by treating each “group” as an independent Pandas DataFrame
     * 
 ### Try it yourself (optional)
-Import the following notebook into Databricks using the URL method:
+Import the following Pandas UDF benchmark notebook into Databricks using the URL method:
 ```
 https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/1281142885375883/2174302049319883/7729323681064935/latest.html?_gl=1*1dt6rri*_gcl_aw*R0NMLjE2NTgwNTYzNjguRUFJYUlRb2JDaE1JME1mR24tWF8tQUlWVHRrUkNCMHdqd05IRUFFWUFTQUFFZ0pJM3ZEX0J3RQ..&_ga=2.69934608.18112261.1660751261-1602603096.1651760939&_gac=1.262850872.1658056369.EAIaIQobChMI0MfGn-X_-AIVTtkRCB0wjwNHEAEYASAAEgJI3vD_BwE
 ```
