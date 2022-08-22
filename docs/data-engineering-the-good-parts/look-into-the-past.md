@@ -11,8 +11,6 @@ Hadoop/MapReduce are in the past but it is still important to understand what th
 </figure>
 </div>
 
-
-
 ...and why we have moved on
 <div>
 <figure class="video-container">
