@@ -120,23 +120,8 @@ scale up just one or the other
 and difficult to maintain
 * Query performance was **lackluster** and other beneficial properties of RDBMS were gone
 
-## Cloud Revolution
-Cloud Revolution: [Why object storage wins over Hadoop-based storage](https://www.ibm.com/cloud/blog/cutting-cord-separating-data-compute-data-lake-object-storage)
-* To scale cost-effectively, we need to really separate compute and storage
-  * e.g. simply provision more CPU-intensive clusters only when needed, while leaving storage the same
-* As analytics and AI began to involve images, audio, unstructured data:
-  * Cloud Data Lakes (often based on object storage) became the ideal storage solution
-
-Time for unified analytics/query engines such as Spark and Presto to shine  💫
-* [Spark](https://www.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch01.html) & [Presto](https://prestodb.io/overview.html)
-Both engines excel when running analytical queries against data stored on Object Storage (e.g. Amazon S3, Azure Blob Storage)
-Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce which read/writes data via disk only)
-
-Spark is **extremely popular for programmatic (Python/Scala/Java/R) use-cases** but can also support SQL queries  
-Presto is a popular choice for **ad-hoc interactive SQL queries** (fun fact: AWS Athena is a serverless offering based on Presto)
-
 ## Latency
-Relative to ‘humanized’ time, to give you an idea of the enormous difference
+Latency nightmare when only using disk and network (i.e. MapReduce). Let's get a feel for it relative to "humanized" time.
 
 <div style={{textAlign: 'center'}}>
 
@@ -150,6 +135,24 @@ Optional: [Latency in Big Data](https://www.youtube.com/watch?v=DXq5MOYGK1U) (de
 
 * Gives you a feel for the latency nightmare when only using disk and network (i.e. MapReduce)
 * Hopefully demonstrates the orders of magnitude in performance gain with Spark!
+
+
+## Cloud Revolution
+Cloud Revolution: [Why object storage wins over Hadoop-based storage](https://www.ibm.com/cloud/blog/cutting-cord-separating-data-compute-data-lake-object-storage)
+* To scale cost-effectively, we need to really separate compute and storage
+  * e.g. simply provision more CPU-intensive clusters only when needed, while leaving storage the same
+* As analytics and AI began to involve images, audio, unstructured data:
+  * Cloud Data Lakes (often based on object storage) became the ideal storage solution
+
+Time for **unified analytics/query engines** such as **Spark** and **Presto** to shine  💫
+* [Spark](https://www.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch01.html) & [Presto](https://prestodb.io/overview.html)
+Both engines excel when running analytical queries against data stored on Object Storage (e.g. Amazon S3, Azure Blob Storage)
+Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce which read/writes data via disk only)
+
+**Spark** (much more on this later) is **extremely popular for programmatic (Python/Scala/Java/R) use-cases** but can also support SQL queries.
+
+**Presto** is a popular choice for **ad-hoc interactive SQL queries** (fun fact: AWS Athena is a serverless offering based on Presto)
+
 
 
 
