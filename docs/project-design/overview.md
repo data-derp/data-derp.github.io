@@ -2,28 +2,36 @@
 sidebar_position: 1
 ---
 
+# Overview
+Now that we've covered the theory behind Data Engineering, we'll spend the next few sections putting that to practice in the context of a domain. We'll do that by asking a relevant domain question and then walking through the data processing steps and architectures required to answer that question.
 
-# Background
-Generally, there are a few common landmarks that are encountered on Data projects: 
-* a **data source**
-* an **Ingestion** step to pull and store data in a form closest to that of the source to allow for easy debugging and reprocessing
-* a **Transformation** step to shape the data into a form that would help answer a question
-* a **Visualisation** step to answer a question
-* an **Intelligence** step which might include AI/ML use cases
+## The Question Matters
+ It is pertinent to note that it is impportant to truly understand the problem we are solving and the requirements around the freshness of data, because different problems/requirements can result in vastly different data processing architectures.
 
-Before we can start ingesting any data, it is important to truly understand the problem we are solving, because different problems result in different architectures.
+For example, a supplier might process historic trends of a particular product to predict how much supply that they might need to meet a regular demand. In this case, a simple batch job once per night (or even better, on the first of every month) is sufficient. In a situation where demand is unpredictable or spikes unexpectedly, the supplier might require closer to real-time data (in which we would consider streaming solutions), in order to calculate new pricing (for example Uber's surge pricing) on the fly.
 
+Regardless of whether we answer our question using batch or streaming architectures, we often come across a few common landmarks of Data Processing
 
-## Example 1: Jess
-A colleague on your team, Jess (who is a stellar analyst), needs to consume data on global temperatures between the years 1850 and 2020 in order to create projections for a report. The data required here exists and will not change. The data can be ingested once (**Batch Processing**), transformations can be written to shape the data into a format easily consumable by the Analytical software that Jess uses, and that transformed data can be stored in a place that can be easily accessed.
+## Common Landmarks of Data Processing
+### Data Source
+This is the source of data. For many of our Data Engineering use cases, it is often data that is generated as a result of a transactional application (e.g. e-commerce application) and stored in a database that fits the transactional application's usecase. This could be a Postgres or mysql database, but it could also be json/csv files, as a result of previous processing.
 
-## Example 2: Toni
-Toni, a Data Scientist on your team, needs to design an alert system for an Intelligent Home System for home offices. Because high concentrations of CO2 can result in deteriorated mental performance (headaches, sleepiness, etc), Toni's customers would like their homes to have a max CO2 contentration of less than 1000ppm. This system comprises a set a CO2 sensors placed at strategic locations in a customer's home and sends CO2 readings to a storage solution in the cloud. Toni, has been asked to predict whether the concentration of CO2 molecules will surpass 1000ppm and automatically triggers a window in the room to be cracked open. For this solution, Toni needs needs near-real time data in order to accurately predict when to open a window, for example, within 5 minutes. For this data will need to ingested (**Streamed**) at a rate that allows data to become available to Toni within 5 minutes of the reading.
+### Ingestion
+This step is the action of reading from the data source. We often read or ingest data as-is or close to as-is so that it allows us to debug or reprocess data in case of pipeline/processing failures. 
 
-## Deeper Dive
-Let's have a listen to Ammara Gafoor and Deepthi Karuppusami as they talk about why it's important to not just understand the problem but the also consumers of your product. 
+### Transformation
+Once the data has been ingested, transformation logic aggregates and shapes the data into a form that can be easily underestood and analysed, or used downstream in another pipeline.
 
 
+### Visualisation
+
+
+### Ingelligence
+A step which might include AI/ML use cases
+
+
+
+## TODO: move this to data mesh
 <figure class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/uIDy7GKYv9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
