@@ -49,10 +49,7 @@ const FeatureList = [
           <>
               <ul style={{ listStyleType: "none" }}>
                   <li>Data Curiosity</li>
-                  <li>Basic Understanding of AWS</li>
-                  <li>Docker</li>
-                  <li>Terraform</li>
-                  <li>Python</li>
+                  <li>Basic Python knowledge</li>
               </ul>
 
           </>
