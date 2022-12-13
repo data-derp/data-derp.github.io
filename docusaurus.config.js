@@ -108,6 +108,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  themes: ['docusaurus-theme-frontmatter'],
 };
 
 module.exports = config;
