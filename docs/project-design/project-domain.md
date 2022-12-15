@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-minutesToComplete: 20
+minutesToComplete: 40
 ---
 
 
