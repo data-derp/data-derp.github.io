@@ -281,10 +281,10 @@ Based on the sample OCPP actions and data we have displayed above, we should be 
 
 | Question | Context |
 | --- | --- |
-| What Charge Points are currently active? |  A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point |
-| What is the last known charging dispense value for a given Charge Point and transaction? | The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register") |
 | When was the last connection time of a Charge Point? | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. |
 | What is the final charge time and final charge dispense for every completed transaction for a given month? |  The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register"). This also requires finding the start time of the transaction in question (transactional data not captured as part of the OCPP payloads). |
+| What Charge Points are currently active? |  A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point |
+| What is the last known charging dispense value for a given Charge Point and ongoing transaction? | The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register") |
 
 ### Discussion Points
 For each of these "Simple Questions" and Context notes above, please answer the following questions:
