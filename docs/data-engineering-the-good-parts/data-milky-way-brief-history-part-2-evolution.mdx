@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+authors: [plaosunthara, tklae]
+minutesToComplete: 140
 ---
 
 # Data Milky Way: A Brief History (Part 2) - Evolution
@@ -67,7 +69,7 @@ Arrival of On-Prem Data Lakes
 
 ![hadoop-network.png](./assets/hadoop-network.png)
 
-Read: [What you need to know about Hadoop](https://www.oreilly.com/content/hadoop-what-you-need-to-know/)
+**Bonus content**: [What you need to know about Hadoop](https://www.oreilly.com/content/hadoop-what-you-need-to-know/) (Very detailed and not required for the remainder of the course!)
 
 </div>
 
@@ -82,7 +84,7 @@ Several years later, people became [disillusioned about Hadoop](https://www.data
 </div>
 
 
-Working with distributed computing can be extremely challenging with respect to the learning curve, especially for business analysts. Instead of working with SQL, they'd have to learn Java libraries and frameworks related to MapReduce. 
+Working with distributed computing can be extremely challenging with respect to the learning curve, especially for business analysts. Instead of working with SQL, they'd have to learn Java libraries and frameworks related to MapReduce.
 
 Excerpt:
 
@@ -112,7 +114,7 @@ Senior Vice President of Technical Infrastructure, Google
 
 </div>
 
-While data locality + coupling storage and compute in Hadoop clusters was a decent idea for data throughput… 
+While data locality + coupling storage and compute in Hadoop clusters was a decent idea for data throughput…
 * Businesses were forced to increase **both** CPU & Disk when they often only needed to
 scale up just one or the other
 * You’d have to pay for more CPU just to store inactive, rarely-utilized data, what a waste!
@@ -123,6 +125,10 @@ and difficult to maintain
 ## Latency
 Latency nightmare when only using disk and network (i.e. MapReduce). Let's get a feel for it relative to "humanized" time.
 
+![Latency numbers every programmer should know](./assets/latency_numbers.png) (Source: https://twitter.com/srigi/status/917998817051541504)
+
+
+**Bonus content**: 24 minute video version of Latency in Big Data (demonstrates the massive impact of using memory vs disk vs network in Big Data):
 <div style={{textAlign: 'center'}}>
 
 <figure class="video-container">
@@ -130,8 +136,6 @@ Latency nightmare when only using disk and network (i.e. MapReduce). Let's get a
 </figure>
 
 </div>
-
-Optional: [Latency in Big Data](https://www.youtube.com/watch?v=DXq5MOYGK1U) (demonstrates the massive impact of using memory vs disk vs network in Big Data)
 
 * Gives you a feel for the latency nightmare when only using disk and network (i.e. MapReduce)
 * Hopefully demonstrates the orders of magnitude in performance gain with Spark!
@@ -151,28 +155,21 @@ Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce
 
 **Spark** (much more on this later) is **extremely popular for programmatic (Python/Scala/Java/R) use-cases** but can also support SQL queries.
 
-**Presto** is a popular choice for **ad-hoc interactive SQL queries** (fun fact: AWS Athena is a serverless offering based on Presto)
+**Presto** is a popular choice for **ad-hoc interactive SQL queries** (e.g. AWS Athena is a serverless offering based on Presto).
 
-
-
-
-## Unified Analytics Engines
-
-**Common Misconceptions**
-* “Spark & Presto are NoSQL databases/data stores”
-  * They’re not. But they can read/write from them 😀
-* “Spark or Presto can replace all my databases”
-* “Spark is an ‘In-Memory’ technology”
-  * PostgreSQL/MySQL also cache data in RAM to speed up queries...but would you call them ‘In-Memory’ technologies? 😅
-
-
-Many companies (especially tech giants) can even often have both Spark and Presto/Athena in their stack
+Many companies (especially tech giants) can even often have both Spark and Presto/Athena in their stack:
 
 <div style={{textAlign: 'center'}}>
 
 ![presto-spark-netflix-platform.png](./assets/presto-spark-netflix-platform.png)
 
 </div>
+
+## Unified Analytics Engines
+
+Both Spark and Presto can be considered **Unified Analytics Engines**, meaning they can cover most of your data needs
+from ingestion from different sources over transformation to visualisations. What's special is that this multi-purpose
+approach enables you to adjust the technologies to your needs (and the arrangement of your data) and not vice versa.
 
 <div style={{textAlign: 'center'}}>
 
@@ -182,7 +179,9 @@ Many companies (especially tech giants) can even often have both Spark and Prest
 </div>
 
 ### Mission Accomplished?
-While being able to directly query your cloud object storage (e.g. S3, Azure Data Lake Storage) with big data engines such as Spark and Presto moved the field in a great direction, some missing pieces still remained
+While being able to directly query your cloud object storage (e.g. S3, Azure Data Lake Storage)
+with big data engines such as Spark and Presto moved the field in a great direction, some missing pieces still remained.
+Let's have a look at the setup of traditional data lakes versus more versatile solutions.
 
 
 ## 2000s - 2010s: Traditional Data Lakes
@@ -192,12 +191,12 @@ While being able to directly query your cloud object storage (e.g. S3, Azure Dat
 
 </div>
 
-Pros
+**Pros**
 * Extremely cheap and scalable
 * Open, arbitrary data formats and big ecosystem
 * Supports ML
 
-Cons
+**Cons**
 * Some BI workloads still not snappy enough
 * Complex data quality problems
 * No data management layer
@@ -205,12 +204,19 @@ Cons
 
 
 ## Can we get the best of both worlds?
-One approach: **Data Lakehouse** (we’ll revisit this - keep it in mind!)
+The goal in this space is to get rid of the current shortcomings listed above. We want to continue to use cheap and
+scalable computing resources and a wide ecosystem while being able to tackle more advanced problems, opening up
+data related problems to entire companies while maintaining appropriate data security and access policies.
+
+One approach is the so-called **Data Lakehouse** which we’ll revisit in the second week of the course.
+
+<div style={{textAlign: 'center'}}>
 
 ![data-lakehouse.png](./assets/data-lakehouse.png)
 
-If you’ve ever heard about [Delta Lake](https://delta.io/), [Dremio](https://www.dremio.com/), [Databricks Photon](https://databricks.com/product/photon) stay tuned for the next lessons!
-We’ll also cover how Lakehouse can serve as the technological foundation to support philosophies such as Data Mesh
+</div>
 
-* Data Mesh = Organizational & Operating Principles 
-* Data Lakehouse = Storage, Compute, Data Management, Governance layers
+Other challengers in this area are [Delta Lake](https://delta.io/), [Dremio](https://www.dremio.com/) or
+[Databricks Photon](https://databricks.com/product/photon).
+We’ll also cover how Lakehouse can serve as the technological foundation to support philosophies such as Data Mesh near
+the end of this course.
