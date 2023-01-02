@@ -11,7 +11,7 @@ For example, a supplier might process historic trends of a particular product to
 On the other hand, in a situation where demand is unpredictable or spikes unexpectedly, the supplier might require closer to real-time data (in which we would consider streaming solutions), in order to calculate new pricing (for example Uber's surge pricing) on the fly.
 
 :::info
-Don't worry about understanding what batch/streaming are right at this point, we'll cover the details in a later section. The key takeaway is: the question that you are trying to answer matters to architecture.
+Don't worry about understanding the deeper details behind batch/streaming right at this point, we'll cover the details in a later section. The key takeaway is: the question that you are trying to answer matters to architecture.
 :::
 
 Regardless of whether we answer our question using batch or streaming architectures, we often come across a few common landmarks of Data Processing, which we'll cover in the next section.
