@@ -16,4 +16,4 @@ Since we know that we only need to calculate this once per day for a daily repor
 
 In this exercise, we'll ingest some data, transform it, write it out to various formats according to our consumers' needs, and visualise it.
 
-Follow the directions [here](https://github.com/data-derp/exercise-ev-databricks/tree/main/last-connection-time-charge-point) to get started!
+Follow the directions [here](https://github.com/data-derp/exercise-ev-databricks/tree/main/last-connection-time-charge-points) to get started!
