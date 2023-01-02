@@ -1,13 +1,16 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 minutesToComplete: 40
 ---
 
 
-# Project Domain: EV Charging
+# Practice Domain: EV Charging
+Now that we've covered the theory behind Data Engineering, we'll spend the next few sections putting that to practice in the context of a domain. We'll do that by asking some relevant domain questions, walking through the data processing steps and architectures required to answer those questions, and then implementing them in exercises for the rest of the training.
+
+But first, a little more context about our domain...
 
 ## Context
-In the time of climate change, the world is attempting to reduce its dependency on coal and gas (and thereby CO2 emissions) for energy by adopting green/renewable technologies. One of those technologies are Electric Vehicles (henceforth, "EVs" or "EV" [singular]). Governments have additionally announced bans on the sale of gasoline-powered vehicles, effective in the next 15 years in order to reduce CO2 emissions, putting pressure of automobile companies to invest in the betterment of EV-technology to make it more widespread and accessible. Logistics and large city public transportation fleets are also becoming electrified and charging technology is becoming more widespread and efficient, allowing for an even more larger spread of EVs. There are also a multitude of companies whose sole purpose is to coordinate the efforts of at-home Charger installations to make it even more convenient for the typical consumer, which also lays the groundwork for decentralised home energy management (leveraging bi-directional charging and home energy optimisers by way of home Photovoltalics and other energy generators). 
+In the time of climate change, the world is attempting to reduce its dependency on coal and gas (and thereby CO2 emissions) for energy by adopting green/renewable technologies. One of those technologies are Electric Vehicles (henceforth, "EVs" or "EV" [singular]). Governments have additionally announced bans on the sale of gasoline-powered vehicles, some effective in the next 15 years in order to reduce CO2 emissions, putting pressure of automobile companies to invest in the betterment of EV-technology to make it more widespread and accessible. Logistics and large city public transportation fleets are also becoming electrified and charging technology is becoming more widespread and efficient, allowing for an even more larger spread of EVs. There are also a multitude of companies whose sole purpose is to coordinate the efforts of at-home Charger installations to make it even more convenient for the typical consumer, which also lays the groundwork for decentralised home energy management (leveraging bi-directional charging and home energy optimisers by way of home Photovoltalics and other energy generators). 
 
 While the trend towards EVs seems optimistic, EVs aren't [yet] the hallmark of sustainability and socio-economic equality: battery technology largely still uses precious minerals whose method of acquisition are questionable, EVs are expensive thereby making them only available to those who are wealthy enough to afford both the vehicle and access to an at-home charging station, and EV charging networks are more prolific in cities whose living costs are already relatively expensive. There are continued efforts to improve both aspects (sustainability, socio-economic equality) and make it cheaper, more convenient, and accessible to the wider public which would even more reduce the dependency on oil and gas.
 
@@ -263,7 +266,6 @@ Informs the CSMS that a transaction has been started
 
 ```
 
-
 ### StopTransaction
 Informs the CSMS that a transaction has been stopped
 
@@ -281,12 +283,12 @@ Based on the sample OCPP actions and data we have displayed above, we should be 
 
 | Question | Context |
 | --- | --- |
-| When was the last connection time of a Charge Point? | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. |
+| When was the last connection time of a Charge Point? | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point.  This information goes into a daily end of day report in order to figure out which Charge Points to send a technician to in order to bring it back online. |
 | What is the final charge time and final charge dispense for every completed transaction for a given month? |  The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register"). This also requires finding the start time of the transaction in question (transactional data not captured as part of the OCPP payloads). |
-| What Charge Points are currently active? |  A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point |
+| What Charge Points are currently active? |  A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. We want to know at any given time. |
 | What is the last known charging dispense value for a given Charge Point and ongoing transaction? | The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register") |
 
 ### Discussion Points
-For each of these "Simple Questions" and Context notes above, please answer the following questions:
+For each of the above questions, please answer the following:
 * Does the data need to be near real-time? Could you calculate it in a calculated interval time without losing meaning?
 * How might you represent the data in a Visualisation? What is the most efficient method of visual communication?
