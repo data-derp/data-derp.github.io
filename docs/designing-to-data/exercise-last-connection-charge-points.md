@@ -12,7 +12,7 @@ minutesToComplete: 120
 
 In this exercise, we'll take ourselves through the Data Processing milestones to answer the question: **When was the last connection time of a Charge Point?**.
 
-Since we know that we only need to calculate this once per day for a daily report, we'll use a **batch** transformation. This means, once per day, this transformation will run and generate a report that can be sent to email addresses, viewed from a dashboard, or used for automated downstream processing.
+Since we know that we only need to calculate this once per day for a daily report, we'll use a **batch** transformation. This means, once per day, this transformation will run and generate a report (table, dataset, or visualisation) that can be sent to email addresses, viewed from a dashboard, or used for automated downstream processing.
 
 In this exercise, we'll ingest some data, transform it, write it out to various formats according to our consumers' needs, and visualise it.
 
