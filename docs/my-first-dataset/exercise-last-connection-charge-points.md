@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-minutesToComplete: 120
+minutesToComplete: 60
 ---
 
 # Exercise: Last Connection Time of Charge Points
