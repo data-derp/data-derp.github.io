@@ -13,7 +13,7 @@ In the next sections, we'll talk about how we might handle this OCPP data in the
 ## Q&A
 > We didn't handle any large data in the last exercises. Why did we need to use Spark?
 
-You're right, we didn't need to use Spark and it was probably a bit heavy for what we needed to do. A single-node Pandas would have served just fine. But for the purposes of this training, the curators wanted to be consistent with the tech that we used and we often can't get enough Spark practice.
+You're right, we didn't need to use Spark and it was probably a bit heavy for what we needed to do and the volume of data that we had. A single-node Pandas would have served just fine. But for the purposes of this training, the curators wanted to be consistent with the tech that we used throughout the training and we often can't get enough Spark practice. :)
 
 > Do I need to memorize the entire Spark API? There's a lot of functions.
 
