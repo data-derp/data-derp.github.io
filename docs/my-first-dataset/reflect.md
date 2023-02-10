@@ -13,7 +13,7 @@ In the next sections, we'll talk about how we might handle this OCPP data in the
 ## Note
 For the eagle-eyed, we're referring to a Data Platform for business use cases here which differs from Data Platforms in the infrastructural sense, that offer self-serve services like Kubernetes, deploy targets, CI/CD tools, etc. More on this in the next section!
 
-## Q&Ah
+## Q&A
 > We didn't handle any large data in the last exercises. Why did we need to use Spark?
 
 You're right, we didn't need to use Spark and it was probably a bit heavy for what we needed to do and the volume of data that we had. A single-node Pandas would have served just fine. But for the purposes of this training, the curators wanted to be consistent with the tech that we used throughout the training and we often can't get enough Spark practice. :)

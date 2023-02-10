@@ -1,4 +1,9 @@
-## Domain Questions
+---
+sidebar_position: 1
+minutesToComplete: 5
+---
+
+# Domain Questions
 Based on the sample OCPP actions and data we have displayed above, we should be able to answer some domain questions.
 
 | Question | Context |

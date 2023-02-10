@@ -1,9 +1,16 @@
 ---
-sidebar_position: 6
-minutesToComplete: 15
+sidebar_position: 2
+minutesToComplete: 30
 ---
 
 # Common Landmarks of Data Processing
+Regardless of whether or we are doing batch processing or streaming, there are a few landmarks which we can look out for in the world of data processing. 
+* Data Source
+* Ingestion
+* Transformation
+* Visualisation
+* Intelligence
+
 ## Data Source
 This is the source of data. For many of our Data Engineering use cases, it is often data that is generated as a result of a transactional application (e.g. e-commerce application) and stored in a database that fits the transactional application's usecase. This could be a Postgres or mysql database, but it could also be json/csv files, as a result of previous processing.
 
@@ -32,7 +39,7 @@ Once the data has been ingested, transformation logic aggregates and shapes the 
 
 </div>
 
-In this space, we typically work with data frames (think: spreadsheets with columns and many rows that could be turned into a CSV file, but way cooler than spreadsheets :sunglasses:) and transform them using a SQL-like language and distributed compute like Spark (for handling large amounts of data quickly). This part requires some deeper knowledge of SQL.
+In this space, we typically work with data frames (think: spreadsheets with columns and many rows that could be turned into a CSV file, but way cooler than spreadsheets :sunglasses:) and transform them using a SQL-like language and (if needed) distributed compute like Spark (for handling large amounts of data quickly). This part requires some deeper knowledge of SQL.
 
 ## Visualisation
 Typically, we spend quite some energy in the Ingestion/Transaformation space to get the data into a specific shape but we mustn't forget about why we ingested/transformed data in the first place: to give transparency and insights into a system in order to make an informed decision or opinion. Visualisations is just one form of how we use data to bring value to a consumer and can come in the form of a graph/charts or list of data. Different forms of visualisations are deemed appropriate in efficiently communicating different kinds of messages.
