@@ -2,18 +2,33 @@
 sidebar_position: 1
 minutesToComplete: 5
 ---
+# Our Batch Domain Questions
+Let's bring back the domain questions from our earlier exercises and the steps taken to answer them:
 
-# Domain Questions
-Based on the sample OCPP actions and data we have displayed above, we should be able to answer some domain questions.
-
-| Question | Context |
+| **1. When was the last connection time of a Charge Point?** | **2. What is the final charge time and final charge dispense for every completed transaction?** |
 | --- | --- |
-| When was the last connection time of a Charge Point? | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point.  This information goes into a daily end of day report in order to figure out which Charge Points to send a technician to in order to bring it back online. |
-| What is the final charge time and final charge dispense for every completed transaction for a given month? |  The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register"). This also requires finding the start time of the transaction in question (transactional data not captured as part of the OCPP payloads). |
-| What Charge Points are currently active? |  A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. We want to know at any given time. |
-| What is the last known charging dispense value for a given Charge Point and ongoing transaction? | The MeterValues payload gives a cumulative reading of the charge that has been dispensed (measurand = "Energy.Active.Import.Register") |
+| Read Data with a Schema | Read OCPP Data (data.csv) |
+| Time Conversion | Read Transactions Data (transactions.csv)|
+| Windows and Rows | Return only StopTransaction (filter) |
+| Cleanup | Unpack JSON in StopTransaction (from_json) |
+|  | Flattening your Data (select) |
+| | Flattening your Data (select) | 
+| | Join Transactions with Stop Transaction Records that exist for those transactions (inner join) |
+| | Rename timestamp column to "stop_timestamp" (withColumnRenamed) |
+| | Convert the start_timestamp and stop_timestamp fields to timestamp type (to_timestamp, withColumn) |
+| | Calculate the Charge Session Duration (withColumn, cast, round, mathops) |
+| | Cleanup extra columns (select) |
+| | Unpack JSON in StopTransaction (from_json) |
+| | Flatten MeterValues JSON (select, explode, alias) |
+| | Most recent Energy.Active.Import.Register Reading (filter, to_timestamp, window, order by) |
+| | Cast Value to double (cast) |
+| | All together now! (left join) |
 
-### Discussion Points
-For each of the above questions, please answer the following:
-* Does the data need to be near real-time? Could you calculate it in a calculated interval time without losing meaning?
-* How might you represent the data in a Visualisation? What is the most efficient method of visual communication?
+There are some **non-business case transformations**  that could be relevant to both use cases (or new ones) or just good curation/cleanup activities in preparation for further transformation:
+* Read from a data source (in this case a csv)
+* Unpack from string to JSON
+* Flatten
+* Casting columns to types
+
+
+<<< TODO: Insert image about the curation steps and additional transformation steps happening after that >>>
