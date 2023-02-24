@@ -29,7 +29,7 @@ Some important questions to ask yourself when selecting a data source are:
 This step is the action of reading from the data source. We often read or ingest data as-is or close to as-is so that it allows us to debug or reprocess data in case of pipeline/processing failures.
 
 ## Transformation
-Once the data has been ingested, transformation logic aggregates and shapes the data into a form that can be easily underestood and analysed, or used downstream in another pipeline. We sometimes see this in the form of Bronze, Silver, Gold stages which represent increasingly curated levels of data. It's not required to use the Bronze, Silver, and Gold model all the time - sometimes it is enough to think through your problem and determine relevant and pragmatic stages from there (for example: just bronze or bronze/silver or a completely different naming scheme).
+Once the data has been ingested, transformation logic aggregates and shapes the data into a form that can be easily underestood and analysed, or used downstream in another pipeline. We sometimes see this in the form of Bronze, Silver, Gold stages (called "multi-hop" architecture) which represent increasingly curated levels of data. While they're a helpful guideline, it's not required to use the Bronze, Silver, and Gold multi-hop architecture strictly - sometimes it is enough to think through your problem and determine relevant and pragmatic stages from there.
 
 <div style={{textAlign: 'center'}}>
 
