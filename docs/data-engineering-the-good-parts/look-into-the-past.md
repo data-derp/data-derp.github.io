@@ -3,7 +3,7 @@ sidebar_position: 20
 minutesToComplete: 10
 ---
 
-# Look into the Past (optional)
+# Look into the Past (Bonus)
 
 Hadoop/MapReduce are in the past, but it is still important to understand what they are...
 <div>
