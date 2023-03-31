@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-minutesToComplete: 300
+minutesToComplete: 480
 ---
 
 # Exercise: Final Charge Time and Charge Dispense for Completed Charges
