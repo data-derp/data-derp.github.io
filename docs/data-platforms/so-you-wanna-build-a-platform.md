@@ -7,7 +7,7 @@ minutesToComplete: 15
 
 If you think back to the introduction of our domain, there are some very specific questions that we could answer with data, but we never talked about who was actually asking for that data. Some example personas could be:
 * a **business intelligence analyst** responsible for reporting to the business about the performance of a product against defined business metrics
-* a **product owner** of an adjacent department looking to use specific parts of your data to generate business value through another product
+* a **product owner** of an adjacent department or team looking to use specific parts of your data to generate business value through another another product (ML-based product, a product to help make a business decision)
 * a **machine learning specialist** creating a recommendation engine using your data.
 
 All of these personas have different requirements of how their data is delivered (e.g. APIs for highly aggregated small amount of data, emailable CSVs, a data stream, or location to the data) and how curated their data should be. A business analyst might want historical data at a high level of aggregation grouped by a time measure delivered to a visualisation tool like Power BI. A product owner might require a lightly-aggregated [near] real time stream of data so that they can get real-time data that can be further transformed by the team for their use case. A machine learning specialist might require **a lot** of lightly-transformed historical signal data via Blob Storage link which can be used to train a model.
