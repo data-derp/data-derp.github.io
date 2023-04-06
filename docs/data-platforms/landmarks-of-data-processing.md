@@ -17,12 +17,14 @@ Regardless of whether or we are doing batch processing or streaming, there are a
 ## Data Source
 This is the source of data. For many of our Data Engineering use cases, it is often data that is generated as a result of a transactional application (e.g. e-commerce application) and stored in a database that fits the transactional application's usecase. This could be a Postgres or mysql database, IoT devices, json/csv files, or another data format as a result of previous processing.
 
-There's also plenty of open source data as well:
+There's also plenty of open source datasets as well:
 * [Our World in Data](https://github.com/owid)
 * [NASA Data](https://data.nasa.gov/)
 * [NYC Taxis](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 * [Open Movie Database](https://www.omdbapi.com/)
 * [Reddit Corpus](https://github.com/webis-de/webis-tldr-17-corpus)
+* [Physical Characteristics of Abalone](https://archive.ics.uci.edu/ml/datasets/abalone)
+* [MNIST Database of Handwritten Digits](http://yann.lecun.com/exdb/mnist/)
 
 Some important questions to ask yourself when selecting a data source are:
 * Does it come from a reputable source? Was the data collected in a trustworthy and responsible fashion?
