@@ -138,7 +138,21 @@ While data locality + coupling storage and compute in Hadoop clusters was a dece
 
 Latency nightmare when only using disk and network (i.e. MapReduce). Let's get a feel for it relative to "humanized" time.
 
-![Latency numbers every programmer should know](./assets/latency_numbers.png) (Source: https://twitter.com/srigi/status/917998817051541504)
+|              Type              |    Time     | Time (humanized form) |
+| :----------------------------: | :---------: | :-------------------: |
+|          1 CPU Cycle           |   0.3 ns    |          1 s          |
+|      Level 1 Cache Access      |   0.9 ns    |          3 s          |
+|      Level 2 Cache Access      |   2.8 ns    |          9 s          |
+|      Level 3 Cache Access      |   12.9 ns   |         43 s          |
+|       Main Memory Access       |   120 ns    |         6 min         |
+|      Solid-state disk I/O      | 50 - 150 µs |      2 - 6 days       |
+|      Rotational disk I/O       |  1 - 10 ms  |     1 - 12 months     |
+|      Internet: SF to NYC       |    40 ms    |        4 years        |
+|   Internet: SF to Australia    |   183 ms    |       19 years        |
+|    OS Virtualization reboot    |     4 s     |       23 years        |
+|     SCSI command time-out      |    30 s     |      3000 years       |
+| Hardware Virtualization reboot |    40 s     |      4000 years       |
+|     Physical System reboot     |     5 m     |      32 millenia      |
 
 ## Latency matters in Hadoop
 
