@@ -2,7 +2,14 @@
 sidebar_position: 1
 minutesToComplete: 5
 ---
-# Our Batch Domain Questions
+# Breakdown of the Multi-Hop Architecture
+Recall that the Multi-Hop Architecture comprises 3 stages: Bronze, Silver, and Gold.
+
+![bronze-silver-gold.png](./assets/bronze-silver-gold.png)
+
+In this section, we'll talk about how to take our domain questions and organise what the input and outputs are of each hop.
+
+## Applying the domain
 Let's bring back the domain questions from our earlier exercises and the steps taken to answer them:
 
 | **1. When was the last connection time of a Charge Point?** | **2. What is the final charge time and final charge dispense for every completed transaction?** |
