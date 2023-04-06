@@ -4,5 +4,6 @@ minutesToComplete: 5
 ---
 
 # Silver
-* unpack and flatten
-* 
+* Unpack from string to JSON
+* Flatten (unpack nested structures and bring to top level)
+* Casting ambiguous columns to types
