@@ -25,6 +25,7 @@ There's also plenty of open source datasets as well:
 * [Reddit Corpus](https://github.com/webis-de/webis-tldr-17-corpus)
 * [Physical Characteristics of Abalone](https://archive.ics.uci.edu/ml/datasets/abalone)
 * [MNIST Database of Handwritten Digits](http://yann.lecun.com/exdb/mnist/)
+* [Transcripts of all Friends (TV Show) episodes](https://www.kaggle.com/datasets/divyansh22/friends-tv-show-script)
 
 Some important questions to ask yourself when selecting a data source are:
 * Does it come from a reputable source? Was the data collected in a trustworthy and responsible fashion?
