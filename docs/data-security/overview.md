@@ -10,4 +10,6 @@ sidebar_position: 1
 </figure>
 </div>
 
-Follow [these instructions](https://github.com/data-derp/exercise-data-security) to set up the Data Security exercise and follow along with the above video
+Follow [these instructions](https://github.com/data-derp/exercise-data-security) to set up the Data Security exercise and follow along with the above video.
+
+**Note** This exercise uses a domain (CO2) from an older iteration of this training.
