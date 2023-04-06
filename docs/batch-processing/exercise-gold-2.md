@@ -1,9 +1,9 @@
 ---
 sidebar_position: 6
-minutesToComplete: 5
+minutesToComplete: 60
 ---
 
-# Gold 2
+# Exercise: Gold 2
 What is the final charge time and final charge dispense for every completed transaction?
 * Find all StopTransaction (filter)
 * Join with StartTransaction Responses, matching on transaction_id (left join)
