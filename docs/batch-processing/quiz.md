@@ -1,24 +1,24 @@
 ---
-sidebar_position: 49
+sidebar_position: 60
 ---
 
 
 # Quiz
 
-<details><summary>Why might you generally want to transform data “close” to its source?
-(e.g. if your huge dataset lies on AWS S3, why would you often/generally want to crunch it within your AWS tenant/account first rather than serving the raw data directly to consumers?)</summary>
-
-<ul>
-<li>Cost: transferring large amounts of data out of your cloud provider/data warehouse can often result in expensive egress fees 😤 </li>
-
-<li>Performance:</li>
-<ul>
-<li>You should deploy your Data Lake and Big Data Compute services on the same cloud provider(s) to minimize data transfer over networks and also to avoid those egress fees mentioned above!</li>
-<li>You should leverage your Big Data Compute services’ (e.g. Databricks, AWS Glue, AWS EMR, Azure Synapse Analytics) highly performant/scalable connectors to S3 (AWS) or ADLS Gen2 (Azure) to scan data efficiently</li>
-</ul>
-</ul>
+<details> 
+<summary>What is one challenge of working with parquet as compared to csv with respect to debugging?</summary>
+It’s not human-readable (compressed) and requires software to read/print it.
 </details>
 
+
+
+<details>
+<summary>When first ingesting from a data source, why do you maintain a copy of the raw data as close to the original format as possible?</summary>
+* You want to maintain your original source of truth in case of bugs/logic changes
+* You don’t want to realize months down the line that you’ve accidentally been overwriting/tampering with the raw data and that it’s no longer irrecoverable!
+* If (..or more like when) ever you want to fix/update your data transformation logic, it’s also good to have an optimized copy of your raw data (e.g. in Parquet vs plain text) so that your re-processing doesn’t take as long!
+* It also helps to debug by breaking the steps into an ingestion step and transformation steps.
+</details>
 
 <details>
 <summary>When should you use ETL vs ELT, why?</summary>
@@ -28,7 +28,6 @@ sidebar_position: 49
 At the end the day, it depends what makes the most sense for your use-case!
 </ul>
 </details>
-
 
 
 

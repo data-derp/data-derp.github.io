@@ -1,7 +1,7 @@
 ---
-sidebar_position: 9
+sidebar_position: 23
 ---
-# Advanced Wrangling
+# UDFs
 
 <div style={{textAlign: 'center'}}>
 
@@ -20,26 +20,7 @@ sidebar_position: 9
 </div>
 
 Short Answer:
-* The really cool stuff
-* Window Functions
 * Pandas UDFs (Vectorised UDFs)
-
-## Window Functions
-It is important to make sure you understand everything about window function semantics
-
-* partitionBy
-    * similar to groupBy (but doesn’t reduce/aggregate information down to a single row)
-* orderBy
-    * Just FYI, you can orderBy(F.col(“myColumn”).desc()) for descending order.
-* rowsBetween
-    * You should look up the default arguments for different window functions (e.g. lag, lead, first, last, max, min, row_number)
-* rangeBetween
-  Can you explain the difference between rowsBetween and rangeBetween?
-
-These are [all also concepts in SQL and not special to Spark](https://towardsdatascience.com/a-guide-to-advanced-sql-window-functions-f63f2642cbf9).
-
-### Try it yourself (optional)
-Follow the instructions here for the [Windows Walkthrough](https://github.com/data-derp/small-exercises/tree/master/window-functions)
 
 ## Python UDFs
 
