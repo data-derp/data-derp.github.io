@@ -8,7 +8,4 @@ When creating long-term storage for analytical use cases, the first step is to i
 1. create a "checkpoint" or "save zone" so that we can more easily debug issues and determine if there were issues at this step or downstream
 2. replay data to downstream steps in the case that there is an error or interruption (data is idempotent)
 
-In this exercise, we will:
-* ingest the raw data in a single pull
-* convert the data to parquet format (a format good for writing)
-* partition the data by YYYY > MM > DD > HH
+Follow the instructions [here](https://github.com/data-derp/exercise-ev-databricks/tree/main/batch-processing-bronze) to get started!
