@@ -41,27 +41,8 @@ A Streaming system computes data directly as it is produced or received.
 
 **Types of Streaming Systems**
 
-<ul>
-  <li>
-    Stateless - processing stream of events without maintaining any state or
-    knowledge of previous events. Example:
-    <ul>
-      <li>
-        Events from an IOT device where each event is individually processed
-      </li>
-    </ul>
-  </li>
-  <li>
-    Statelful - processing stream of events and maintaining state or knowledge
-    of previous events. Examples:
-    <ul>
-      <li>
-        Number of users using the application at given point of time (This is super critical for OTT applications like netflix where password sharing is quite common and the application would want to restrict it)
-      </li>
-       <li>
-        The volumes of a particular product (an iphone, ipad etc.) sold in a particular time interval like an hour for an e-commerce application, requiring real-time analytics and aggregation.
-      </li>
-    </ul>
-
-  </li>
-</ul>
+- Stateless - processing stream of events without maintaining any state or knowledge of previous events. Example:
+  - Events from an IOT device where each event is individually processed
+- Stateful - processing stream of events and maintaining state or knowledge of previous events. Examples:
+  - Number of users using the application at given point of time (This is super critical for OTT applications like netflix where password sharing is quite common and the application would want to restrict it)
+  - The volumes of a particular product (an iphone, ipad etc.) sold in a particular time interval like an hour for an e-commerce application, requiring real-time analytics and aggregation.
