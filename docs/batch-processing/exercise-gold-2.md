@@ -3,12 +3,7 @@ sidebar_position: 12
 minutesToComplete: 60
 ---
 
-# Exercise: Gold 2
-What is the final charge time and final charge dispense for every completed transaction?
-* Find all StopTransaction (filter)
-* Join with StartTransaction Responses, matching on transaction_id (left join)
-* Find the matching StartTransaction Requests (left join)
-* Calculate the total_time (withColumn, cast, maths)
-* Calculate total_energy (withColumn, cast)
-* Calculate total_parking_time (explode, filter, window, groupBy)
-* Join and Shape (left join, select)
+# Exercise: Gold
+We've previously done some standardisation of our data, namely flattening and casting some columns to specific types, in the Silver exercise. In this exercise, we will take our beautifully standardised data and transform it using some business logic. Remember that wonderful Windows exercise? Get ready, because, **(cracks knuckles)** practice makes perfect!
+
+Follow the instructions [here](https://github.com/data-derp/exercise-ev-databricks/tree/main/batch-processing-gold-2) to get started!
