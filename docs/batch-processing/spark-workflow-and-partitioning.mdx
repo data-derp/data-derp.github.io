@@ -1,5 +1,6 @@
 ---
 sidebar_position: 11
+minutesToComplete: 20
 ---
 
 # Spark Workflow and Partitioning
@@ -14,17 +15,18 @@ sidebar_position: 11
 
 
 ## Optimisation
-Okay...I know how to wrangle/transform my data...but how do I actually optimize my job’s performance?
-Golden Rule: In the real world, make sure your dataset/table is partitioned well
+At this point, we've wrangled/transformed our data...but how do we actually optimize our job’s performance?
+**Golden Rule:** In the real world, make sure your dataset/table is partitioned well.
 * Lots of small files are the enemy!
   * Having lots of tiny files will result in S3 needing to do lots of **file listing** operations. These are extremely slow and can even be expensive
   * Lots of small files means lots of data shuffling through the network. **This is slow!**
 * **HUGE** files are also bad
   * Having too few files (all being huge) means you probably won’t take advantage of all of the cores in your cluster. In other words, the data can’t be easily distributed around the cluster
-  * Each node in your cluster might even have to try and break down each of these huge files in order to redistribute some data to other nodes. This is a waste of time and money ([must-watch](https://www.youtube.com/watch?v=982wFqC03v8&ab_channel=pyromaniack))
-* So what’s a suitable strategy?
-  * There’s no ‘best’ number. Try to target each .snappy.parquet file to be somewhere **roughly between 256MB to 1GB**
-  * More importantly, make sure that you’re partitioning on columns that you frequently **filter** or do **groupBy** on
+  * Each node in your cluster might even have to try and break down each of these huge files in order to redistribute some data to other nodes. This is a waste of time and money ([to emphasise the point](https://www.youtube.com/watch?v=982wFqC03v8&ab_channel=pyromaniack)). 
+
+So what’s a suitable strategy?
+  * There’s no "best" number. In parquet, try to target each `.snappy.parquet` file to be somewhere **roughly between 256MB to 1GB**
+  * More importantly, make sure that you’re partitioning on columns that you frequently **filter** or do **groupBy** on (another reason to be Product-minded and ask your consumers what kinds of questions they'll need answered by your data)
   * **DO NOT** partition on columns with high cardinality (e.g. a userId, which has millions of distinct values)
   this will result in lots of **small files and lots of file listing operations**
 
@@ -50,13 +52,13 @@ So how does a partitioned table look?
 * It would actually look like a bunch of hierarchical folders
 * The partitioning values become their own folder (e.g. year=2018)
 * The underlying data will be at the bottom of the hierarchy and will
-* often have a .snappy.parquet file extension (if using Spark)
+* often have a `.snappy.parquet` file extension (if using Spark and Parquet)
 
 Can you give me an example?
 * Partitioning the table based on some notion of time is a popular option
-  (check if that makes sense for your project first though!)
-* e.g. assuming each day of data for the table is of the order of 128MB - 1GB, then
-  your partitioning keys can be (“year”, “month”, “day”)
+  (check if that makes sense for your consumers and your use case though!)
+  * e.g. assuming each day of data for the table is of the order of 128MB - 1GB, then
+    your partitioning keys can be (“year”, “month”, “day”)
 * You don’t need to explicitly define all the values, Spark will smartly
   create a new partition for each distinct combination of your partitioning values
 
@@ -72,29 +74,16 @@ Can you give me an example?
 
 ## Partitioning FAQs
 
-<div style={{textAlign: 'center'}}>
+<details> 
+<summary>So...is a parquet file a file or a folder of files?</summary>
+Either!
+</details>
 
-![partitioning.png](./assets/partitioning.png)
-
-</div>
-
-:::info
-
- Question: So...is a parquet file a file or a folder of files?
-
-:::
-
-:::info
-
-Short Answer: either!
-
-:::
-
-* With a single-node library like Pandas, you can write a single .snappy.parquet file if you want
-* However, in the real-world they are often folders of partitions
+* With a single-node library like [Pandas](https://pandas.pydata.org/), you can write a single `.snappy.parquet` file if you want
+* In the real-world they are often folders of partitions
   * This way you can read/write an entire table with just one path (the root of the table)
-    * e.g. s3://my-bucket/my-table/ or s3://my-bucket/my-table.parquet/ (both of these styles are still folders)
-    * Underneath all of the partitioning folders, you will find your .snappy.parquet files
+    * e.g. `s3://my-bucket/my-table/` or `s3://my-bucket/my-table.parquet/` (both of these styles are still folders)
+    * Underneath all the partitioning folders, you will find `.snappy.parquet` files
   * The query engine (e.g. Spark or Presto) will then take care of understanding the partitioning structure of the table and will optimize your queries around that
   * Spark will always write the output of a DataFrame as a folder at the root level rather than a single file (because it’s designed for distributed/concurrent reading/writing of data, which often involves multiple files)
   
@@ -107,7 +96,9 @@ Short Answer: either!
 [Reference](https://blog.scottlogic.com/2018/03/22/apache-spark-performance.html#:~:text=A%20shuffle%20occurs%20when%20data,likely%20on%20a%20different%20executor.)
 </div>
 
-## Resources
+In general, another way to optimise for speed is to reduce shuffling, which can bottleneck performance as your data is merging all results back together. It's important to know which actions shuffle and which do not in the DataFrame API.
+
+## Resources (Bonus)
 
 <div style={{textAlign: 'center'}}>
 

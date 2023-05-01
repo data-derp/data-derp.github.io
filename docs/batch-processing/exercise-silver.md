@@ -4,7 +4,7 @@ minutesToComplete: 60
 ---
 
 # Exercise: Silver
-In the last exercise, we took our data and partitioned them by YYYY, MM, DD, and HH. In this exercise, we'll take our first step towards curation and cleanup by:
+In the last exercise, we ingested our data. In this exercise, we'll take our first step towards curation and cleanup by:
 * Unpacking strings containing json to JSON
 * Flattening our data (unpack nested structures and bring to top level)
 * Casting ambiguous columns to types

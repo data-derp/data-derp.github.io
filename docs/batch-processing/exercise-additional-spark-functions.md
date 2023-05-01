@@ -3,7 +3,7 @@ sidebar_position: 30
 minutesToComplete: 5
 ---
 
-# Additional Spark Functions
+# Additional Spark Functions (Bonus)
 There are quite a few more Spark functions that haven't been covered in the previous exercises. Have a quick browse (this is more of an FYI), just to get familiarised with it:
 * [na.drop](https://spark.apache.org/docs/3.1.2/api/python/reference/api/pyspark.sql.DataFrame.dropna.html)
 * [na.fill](https://spark.apache.org/docs/3.1.2/api/python/reference/api/pyspark.sql.DataFrameNaFunctions.fill.html)
@@ -18,7 +18,7 @@ There are quite a few more Spark functions that haven't been covered in the prev
 * [coalesce](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.functions.coalesce.html)
 * [UDF](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.sql.functions.udf.html)
 
-## More Advanced Functions (Bonus)
+## More Advanced Functions
 * [cache](https://spark.apache.org/docs/3.2.0/api/python/reference/pyspark.pandas/api/pyspark.pandas.DataFrame.spark.cache.html)
 * [unpersist](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.unpersist.html)
 * [createOrReplaceGlobalTempView](https://spark.apache.org/docs/3.1.2/api/python/reference/api/pyspark.sql.DataFrame.createOrReplaceGlobalTempView.html)

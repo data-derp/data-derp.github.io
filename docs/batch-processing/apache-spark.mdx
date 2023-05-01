@@ -3,18 +3,45 @@ sidebar_position: 4
 ---
 
 # Apache Spark
+Apache Spark is an open-source unified analytics engine for large-scale data processing, employing underlying distributed compute.
 
-## Introduction to Spark
-* [Video from DataBricks](https://www.youtube.com/watch?v=p4PkA2huzVc)
-  * First 3 minutes at least, can skim the rest
-* [slides](https://brookewenig.com/SparkOverview.html#/) from Brooke Wenig
-* [Video](https://www.youtube.com/watch?v=Ud6luYCkkMk&ab_channel=DustinVannoy) from Dustin Vannoy
+<div style={{textAlign: 'center'}}>
 
-## Reflect
-* Understand the difference between Transformations (lazy evaluation) and Actions
-* Understand the difference between Driver and Worker nodes
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ud6luYCkkMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
-## Useful Links
+</div>
+
+## Spark Operations
+In order to wrangle data in Spark, there are two types of Spark Operations:
+* Transformations
+* Actions
+
+Transformations read a Spark DataFrame, reshapes the data, and eventually returns another DataFrame. Examples of a transformation functions include `filter`, `select`, and `union`. Transformation functions are **lazily** executed, meaning that Spark jobs are not executed no matter how many transformation functions are chained together.
+
+Actions, on the other hand, are operations that write to disk (for example, `count`, `collect`, `take`) and are **eagerly** executed, meaning that once an action is declared, Spark runs it (and all other unexecuted transformations).
+
+## Spark Cluster Topology
+
+<div style={{textAlign: 'center'}}>
+
+![spark-cluster-topology.png](./assets/spark-cluster-topology.png)
+
+</div>
+
+**Read:** [Overview of the Spark Cluster Topology](https://spark.apache.org/docs/latest/cluster-overview.html)
+
+Working with a distributed system can be confusing to grasp.
+* Very important that you understand the difference between driver and worker nodes
+* Variables and data in your driver program are not automatically accessible/editable in your worker nodes
+* Constants can be defined in a UDF ([User Defined Function (Bonus)](./udfs.mdx)) via [broadcast/accumulator](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) variables
+
+
+
+## Additional Resources (Bonus)
+* [History of Spark](https://www.youtube.com/watch?v=p4PkA2huzVc) (first 3 minutes, skim the rest)
+* [Overview of Spark (slides) by Brooke Wenig](https://brookewenig.com/SparkOverview.html#/)
 * [Spark SQL Programming Guide (Python or Scala recommended)](http://spark.apache.org/docs/3.1.1/sql-getting-started.html)
 * [DataFrame Methods](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#dataframe-apis) - e.g. df.someMethod()
 * [Column Methods](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#column-apis) - e.g. F.col("myField").someMethod()
@@ -23,16 +50,3 @@ sidebar_position: 4
 * [Windows](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#window) - you’re going to want to read this carefully 😉
 * [Campus PySpark & AWS + Spark Architectures](https://www.udemy.com/course/pyspark-aws-master-big-data-with-pyspark-and-aws/) (optional, when you have time)
 
-## Spark Cluster Topology
-* [Overview](https://spark.apache.org/docs/latest/cluster-overview.html)
-
-Working with a distributed system can be confusing to grasp. Here are the basic must-knows:
-  * Very important that you understand the difference between driver and worker nodes 
-  * Variables and data in your driver program are not automatically accessible/editable in your worker nodes 
-  * You’ll either need to define those constants in your UDF (see Databricks exercises) or look at [broadcast/accumulator](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) variables
-
-<div style={{textAlign: 'center'}}>
-
-![spark-cluster-topology.png](./assets/spark-cluster-topology.png)
-
-</div>
