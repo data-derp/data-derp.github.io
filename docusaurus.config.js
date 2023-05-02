@@ -9,7 +9,7 @@ const config = {
   title: 'Data Derp',
     // tagline: 'Data Derp',
   url: 'https://data-derp.github.io',
-  baseUrl: '/v1.0',
+  baseUrl: 'v1.0/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   // favicon: 'img/favicon.ico',
