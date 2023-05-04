@@ -2,7 +2,7 @@
 sidebar_position: 30
 ---
 
-# Vanilla Spark on your Local Machine (Optional)
+# Vanilla Spark on your Local Machine (Bonus)
 
 Goal: what does Spark look like on your local machine?
 

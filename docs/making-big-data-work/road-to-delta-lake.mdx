@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Road to Delta Lake
 
 <div style={{textAlign: 'center'}}>
 
@@ -12,8 +12,8 @@ sidebar_position: 1
 
 </div>
 
-
-## Preface
+## Presentation Content (to follow along)
+### Preface
 <div style={{textAlign: 'center'}}>
 
 ![not-everything-is-big-data.png](./assets/not-everything-is-big-data.png)
@@ -23,30 +23,27 @@ sidebar_position: 1
 We’re here to teach you big data skills, but in reality...
 
 Single-Node vs. Cluster: not everything is Big Data!
-Read: [You don’t always need Spark](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/)
-Read: [Sometimes Pandas deployed on a single node function/container is just fine!](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/))
+* [You don’t always need Spark (Bonus)](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/)
+* [Sometimes Pandas deployed on a single node function/container is just fine! (Bonus)](https://www.indellient.com/blog/a-journey-from-pandas-to-spark-data-frames/))
 
-Batch vs Streaming: [streaming isn’t always the solution](https://www.section.io/engineering-education/batch-processing-vs-stream-processing/)!
+When it comes to Batch vs Streaming, [streaming isn’t always the solution (Bonus)](https://www.section.io/engineering-education/batch-processing-vs-stream-processing/)!
 
-## History of Big Data - Revisited
-Databases
+### History of Big Data - Revisited
+**Databases**
 * single node servers, vertical scaling only
 * mostly used for operational data, transactions
 
-
-On-Prem Data Warehouses
+**On-Prem Data Warehouses**
 * horizontal scaling possible
 * utilized massively parallel processing (MPP) to run big queries
 * SQL-only interface, low interoperability
 
-
-On-Prem Data Lakes
+**On-Prem Data Lakes**
 * Hadoop ecosystem
 * Data Processing via MapReduce, Hive, Spark, etc.
 * Difficult for data governance and data integrity 
 
-
-## Some Problems with Big Data Workloads
+### Some Problems with Big Data Workloads
 
 <div style={{textAlign: 'center'}}>
 
@@ -76,17 +73,16 @@ ACID Transactions
 ## Modern Solutions
 <div style={{textAlign: 'center'}}>
 
-[Delta Lake](https://delta.io/)
-
 <figure class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/LJtShrQqYZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
+
+[Delta Lake](https://delta.io/)
 
 </div>
 
 * This presentation is actually from early/mid 2019 (ignore the upload date on YouTube),
 * Delta Lake’s gotten even better since then!
-* [Demo video](https://databricks.com/discover/demos/delta-lake)
 * **Executive Summary:**
   * Delta Lake is just Apache Parquet with **a transaction log on top**!
   * Keep using your preferred storage technology (e.g. S3, Azure Data Lake Storage)
@@ -105,3 +101,6 @@ ACID Transactions
   * Enhanced capturing and utilization of metadata
   * Improves query performance compared to standard Parquet
 * Schema Enforcement & Evolution
+
+* [Demo video](https://databricks.com/discover/demos/delta-lake)
+

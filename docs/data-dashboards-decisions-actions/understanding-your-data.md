@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+minutesToComplete: 10
 ---
 
 # Understanding Your Data
@@ -18,7 +19,7 @@ For example,
 
 - How does the volume of received and processed tickets vary per month?
 - Are we falling behind in terms of processing the recieved tickets? If so, from when and why?
-- What are the factors slowing down the ticket processing? Are these factors correlated? [Correlation is NOT causation](https://www.youtube.com/watch?v=ROpbdO-gRUo)
+- What are the factors slowing down the ticket processing? Are these factors correlated? [Correlation is NOT causation (Bonus)](https://www.youtube.com/watch?v=ROpbdO-gRUo)
 
 **Exploratory vs Explanatory Analysis**
 
@@ -136,7 +137,7 @@ A well-designed graph is more effective than a table as it interacts with our vi
 - Cognitive load is the mental effort that is required to learn new information
 - Clutter in our visualization results in extraneous cognitive load and processing that takes up mental resources but doesn’t necessarily improve one's understanding of the data
 - Clutter has to be avoided at all costs as it simply eats up space and make the visualization feel more complicated
-- [Gestalt Principles of Visual Perception](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information
+- [Gestalt Principles of Visual Perception (Bonus)](https://excelcharts.com/data-visualization-excel-users/gestalt-laws/) can help distinguish between clutter and useful information
 
 <div style={{textAlign:"center",height:"75%",width:"75%"}}>
 
@@ -144,6 +145,5 @@ A well-designed graph is more effective than a table as it interacts with our vi
 
 </div>
 
-### References
-
-[Storytelling with data](https://www.storytellingwithdata.com/books)
+### References (Bonus)
+* [Storytelling with data](https://www.storytellingwithdata.com/books)

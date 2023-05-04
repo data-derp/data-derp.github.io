@@ -1,5 +1,6 @@
 ---
 sidebar_position: 14
+minutesToComplete: 10
 ---
 # Exercise: Query your Data
 
