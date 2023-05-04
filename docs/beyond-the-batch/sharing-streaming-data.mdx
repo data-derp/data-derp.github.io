@@ -33,7 +33,7 @@ query = (
     .count()
     .toDF("key", "count")
     .writeStream
-    .foreach(SendToDynamoDB_ForeachWriter())  # => custom code 
+    .foreach(SendToDynamoDB_ForeachWriter())  # => custom code. See https://docs.databricks.com/structured-streaming/examples.html#write-to-amazon-dynamodb-using-foreach-in-scala-and-python for details.
     .outputMode("update")
     .start()
 )
