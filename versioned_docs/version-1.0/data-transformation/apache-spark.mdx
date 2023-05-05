@@ -1,0 +1,38 @@
+---
+sidebar_position: 5
+---
+
+# Apache Spark
+
+## Introduction to Spark
+* [Video from DataBricks](https://www.youtube.com/watch?v=p4PkA2huzVc)
+  * First 3 minutes at least, can skim the rest
+* [slides](https://brookewenig.com/SparkOverview.html#/) from Brooke Wenig
+* [Video](https://www.youtube.com/watch?v=Ud6luYCkkMk&ab_channel=DustinVannoy) from Dustin Vannoy
+
+## Reflect
+* Understand the difference between Transformations (lazy evaluation) and Actions
+* Understand the difference between Driver and Worker nodes
+
+## Useful Links
+* [Spark SQL Programming Guide (Python or Scala recommended)](http://spark.apache.org/docs/3.1.1/sql-getting-started.html)
+* [DataFrame Methods](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#dataframe-apis) - e.g. df.someMethod()
+* [Column Methods](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#column-apis) - e.g. F.col("myField").someMethod()
+* [The different Data Types in Spark!](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#data-types)
+* [The Sacred Texts](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#functions) - pyspark.sql.functions
+* [Windows](http://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#window) - you’re going to want to read this carefully 😉
+* [Campus PySpark & AWS + Spark Architectures](https://www.udemy.com/course/pyspark-aws-master-big-data-with-pyspark-and-aws/) (optional, when you have time)
+
+## Spark Cluster Topology
+* [Overview](https://spark.apache.org/docs/latest/cluster-overview.html)
+
+Working with a distributed system can be confusing to grasp. Here are the basic must-knows:
+  * Very important that you understand the difference between driver and worker nodes 
+  * Variables and data in your driver program are not automatically accessible/editable in your worker nodes 
+  * You’ll either need to define those constants in your UDF (see Databricks exercises) or look at [broadcast/accumulator](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables) variables
+
+<div style={{textAlign: 'center'}}>
+
+![spark-cluster-topology.png](./assets/spark-cluster-topology.png)
+
+</div>

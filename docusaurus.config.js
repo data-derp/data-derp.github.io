@@ -9,7 +9,7 @@ const config = {
   title: 'Data Derp',
     // tagline: 'Data Derp',
   url: 'https://data-derp.github.io',
-  baseUrl: '/v1.0/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   // favicon: 'img/favicon.ico',
@@ -28,6 +28,19 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/data-derp/data-derp.github.io/tree/master/docs',
           showLastUpdateAuthor: true,
+          lastVersion: '1.0',
+          versions: {
+            "1.0": {
+              label: '1.0',
+              path: '1.0',
+              banner: 'none'
+            },
+            "2.0": {
+              label: '2.0',
+              path: '2.0',
+              banner: 'none'
+            },
+          },
         },
         blog: {
           showReadingTime: true,

@@ -1,0 +1,23 @@
+---
+sidebar_position: 9
+authors: [syed-tw, kelseymok]
+minutesToComplete: 10
+---
+
+# Stateful Streaming in a Nutshell
+
+<div style={{textAlign: 'center'}}>
+
+![stateful-streaming-in-a-nutshell.png](./assets/stateful-streaming-in-a-nutshell.png)
+
+</div>
+
+We have come a long way, haven't we? We started with learning the basics of Streaming as a concept. We then moved on to Spark Structured Streaming and appreciated its similarities with Spark SQL with the help of a few examples. Next, we differentiated between Stateless and Stateful programs and lastly, how to handle late data using windows aggregations and fault tolerance through checkpointing.
+
+To summarise, we may use some or all of the above topics in our applications but the typical elements of a Spark Streaming Application would look like this:
+
+1. Streaming Source (production-grade applications typically use Apache Kafka or a similar technology)
+2. Spark Streaming Application (Stateless or Stateful, depending upon the use case)
+3. Checkpointing for Fault Tolerance
+4. Output Sink (production-grade applications will dump the data into a data store to be picked up by the end users of this data)
+5. End Users of Data (Tableau, Matplotlib, ML Pipelines, etc) pick up the near real-time data to drive insights or other products requiring near-real time data

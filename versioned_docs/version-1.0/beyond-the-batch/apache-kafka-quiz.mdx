@@ -1,0 +1,25 @@
+---
+sidebar_position: 6
+---
+
+# Quiz: Apache Kafka
+
+## What is a broker?
+
+> Brokers are machines or nodes within your Kafka cluster.
+
+## How are partitions replicated across brokers?
+
+> Partitions are replicated across brokers such that there is a leader partition, and should that leader partition (or broker) fail, another partition comes into play.
+
+## How is data organized across partitions
+> Objects with the same key will end up in the same partition. Also, data in partitions gets ordered: things that get to the partition first will be consumed first.
+
+## What happens when you don’t provide a partitioning key?
+
+> Data is written to a partition in a round robin style
+
+
+## What happens if two consumers use the same Consumer Group Id?
+
+> The two consumers will share messages. If they were intending on analysing the whole stream, there will be missing data because some data will be received by one consumer, and the remainder of data will be received by another consumer. It is really important to make sure that you're not reusing the same consumer group ID. With pub-sub, you don't have pinpoint control over who you're sending the message to, just that you're sending a message to a topic; from there, a consumer counts as one entity that reads from that topic.

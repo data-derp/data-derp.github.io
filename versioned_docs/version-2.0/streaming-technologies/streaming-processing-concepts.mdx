@@ -1,0 +1,48 @@
+---
+sidebar_position: 26
+---
+
+# Streaming Delivery Semantics
+
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SiOEg4HtsBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+![two-problems-distributed-systems.png](./assets/two-problems-distributed-systems.png)
+
+</div>
+
+## Delivery Semantics
+* Exactly-Once
+  * (may not be available in all frameworks)
+* At-Most-Once
+* At-Least-Once
+
+**Read:** [Exactly-Once Semantics Are Possible: Here’s How Kafka Does It](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/)
+
+
+## How would you decide which strategy to go with?
+**Read:** [Concrete Example](https://keen.io/blog/demystifying-apache-kafka-message-delivery-semantics-at-most-once-at-least-once-exactly-once/)
+
+
+## Advanced Considerations
+Read: [How many Partitions should I set per topic?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/)
+
+<div style={{textAlign: 'center'}}>
+
+**Comparing Streaming Processing Frameworks**
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PiEQR9AXgl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+For all intents and purposes, Apache Flink and Apache Spark are almost interchangeable in that comparison (vs Kafka Streams and Akka Streams). The only difference is that Flink can naturally run in Continuous Processing mode

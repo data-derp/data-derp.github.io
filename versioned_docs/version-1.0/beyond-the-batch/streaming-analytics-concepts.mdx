@@ -1,0 +1,47 @@
+---
+sidebar_position: 18
+---
+
+# Streaming Analytics Concepts
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rAZFrmsub7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+![windowed-grouped-aggregation.png](./assets/windowed-grouped-aggregation.png)
+
+</div>
+
+**Read:** [Windows](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/windows.html)
+* Tumbling Windows
+* Sliding Windows
+* Session Windows
+    * (may not be available in all frameworks)
+
+**Read:** [Handling Lateness & Watermarking](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#handling-late-data-and-watermarking)
+
+**Read:** [keyBy](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/#keyby)
+Splitting the stream logically for your domain
+
+**Read:** [State](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/state/state.html#using-keyed-state) (using Flink as an example)
+* Keyed State vs Operator State
+* Managed Data Structures for State
+    * ValueState
+    * ListState
+    * MapState
+
+<div style={{textAlign: 'center'}}>
+
+![checkpoints.png](./assets/checkpoints.png)
+
+</div>
+
+**Read:** [Checkpointing](https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/datastream/fault-tolerance/checkpointing/)
+* Making sure we can recover from failures seamlessly
+* Analogous to log based recovery for database systems

@@ -1,0 +1,138 @@
+---
+sidebar_position: 3
+---
+# What is Data Mesh? (Optional)
+
+> “Data mesh is a decentralized sociotechnical approach to share, access, and manage analytical data in complex and large-scale
+ environments—within or across organizations.”
+
+-- Zhamak Dehghani
+
+
+Data Mesh calls for a multi-dimensional shift, both technically, and organisationally. It moves the organisation from centralised 
+ownership to decentralised ownership along domain boundaries. It shifts the architecture from a monolithic data system, to a distributed 
+set of analytical products. Technically it takes teams from treating their data as a side-effect or byproduct, to treating the data as a 
+first class citizen and product. It pushes for an operational shift from top-down governance to federated and computational governance. It 
+moves from the principal of having data as a thing to collect and store, to data as a product to share, connect, and evolve. 
+
+## The Data Mesh approach
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="https://www.youtube.com/embed/E7KqqxSVh4A" id="ytplayer"  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+</div>
+
+The approach aims to address some of these issues through the application of the following four principles:
+- [Domain-driven ownership of data](#principle-1)
+- [Treating data as a product](#principle-2)
+- [Enabling data owners with a self-serve data platform](#principle-3)
+- [Federated, computational data governance](#principle-4)
+
+<a name="principle-1"></a>
+
+### Domain-driven ownership of data
+
+Data should be managed close to its source of origin. Data Mesh achieves this through a distributed domain driven
+architecture which aligns data with the domain boundaries of an organisation.  This allows us to scale, by moving 
+away from monolithic analytical architectures / team structures which can become a bottleneck, and close the gap
+between data producers and their consumers. It also helps to establish proper ownership and accountability for data.
+
+In a traditional setup, we might expect to see an organisation segment their operational and analytical spaces quite
+rigigly. Unfortunately this ends up creating a centralised (and monolithic) central analytics function. Instead of 
+having systems and data segmented along domain boundaries, a centralised approach causes friction where teams are 
+siloed (e.g. a central analytics team).
+
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/rqa9599gof" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*Danilo and Zhamak explore the principle of domain ownership in this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-mesh-and-domain-ownership)*
+</div>
+
+
+
+
+
+<a name="principle-2"></a>
+
+### Treating data as a product
+
+The architectural quantum within the data mesh. this is the smallest unit of architecture that can be independently deployed
+with high functional cohesion and containing all of the elements required for it to function. 
+
+A data product provides a representation of analytical data served for a particular 
+purpose within the analytical plane. Ownership exists within the domain, and so the same teams that own the operational systems that 
+produce the data, are also responsible for this analytical product bringing their data into the Data Mesh. 
+As with any other product, a data product should be **usable**, **valuable**, and **feasible**. 
+
+For a data product to be useable, it should be:
+- discoverable
+- understandable
+- trustworthy
+- secure
+- re-usable
+- interoperable
+- accessible
+
+For it to be valuable, we should ensure that the product meets a real business need. "Data product" should not be conflated with "data set".
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/zed92ui3r7" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*In this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-as-a-product)*
+Zhamak covers the principle of treating data as a product
+</div>
+
+
+
+
+
+<a name="principle-3"></a>
+
+### Data Mesh platform
+
+If we want to treat data as a product, and allow teams to not only produce data but also create and own this new type of analytical
+data products - then we need to put the constructs in place to empower those teams, and reduce the cost of ownership and risk of
+re-inventing the wheel between domains. Providing a platform through which teams can self-serve their data products will also allow
+some of the standards and computational governance to be baked into any of the data products being brought into the Data Mesh. 
+
+The Data Mesh platform will provide standardised tooling and domain agnostic capabilities for data products. 
+This will allow for the onboarding of products, allowing for the exchange of value between producers and consumers through a defined 
+set of interfaces (in the data product). It can also provide the guard rails to ensure that the data products develop in a 
+standardised manner, thereby enabling interoperability, consistency, reduced complexity. 
+
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/403h0uo0lt" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*Emily and Zhamak dive into the role of the data platform in the Data Mesh in this [webinar](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-platform-in-a-mesh-architecture)*
+</div>
+
+
+
+
+
+<a name="principle-4"></a>
+
+### Federated, computational data governance
+
+Data Mesh is decentralised at its core. There is however a need for us to have certain policies and structures in place to guide the
+evolution of the decentralised system, and ensure that particular standards are met. Governance in the Data Mesh however moves from policies
+being defined in isolation, but rather build the policies needed into the data products and platform where possible. This federated and computational
+governance will ensure consistent and reliable enforcement of policies across the Data Mesh ecosystem, and enable higher order value by allowing
+data products to interoperate effectively. 
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="//fast.wistia.net/embed/iframe/l28tj8notl" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*Chris, Jason, and Zhamak talk to the need for federated computational governance in this [webinar and panel discussion](https://www.thoughtworks.com/about-us/events/webinars/core-principles-of-data-mesh/data-mesh-and-governance)*
+</div>

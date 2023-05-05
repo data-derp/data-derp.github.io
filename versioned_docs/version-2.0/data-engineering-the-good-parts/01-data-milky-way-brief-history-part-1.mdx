@@ -1,0 +1,100 @@
+---
+sidebar_position: 1
+authors: [plaosunthara, tklae]
+minutesToComplete: 24
+---
+
+# Data Milky Way: A Brief History (Part 1) - OLTP vs. OLAP
+
+We will walk through the history of data processing via a video lecture. Check out Part 1 below:
+<div style={{textAlign: 'center'}}>
+    <figure class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8VD2qoebacA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </figure>
+</div>
+
+
+> History belongs in the past; but understanding it is the duty of the present
+> - Shashi Tharoor
+
+## Basic Definitions
+
+<div style={{textAlign: 'center'}}>
+
+![data-milky-way.png](./assets/data-milky-way.png)
+
+Databases, NoSQL, Data Warehouses, Data Lakes, Spark…and many other terms in this domain space!
+
+</div>
+
+You've probably come across at least a few of these terms, but you might be wondering what these technologies do and how do they fit together with one another in the vast landscape of Data Engineering and AI.
+
+We'll get started with understanding if the data is OLTP or OLAP in nature.
+
+
+## OLTP vs. OLAP
+
+#### OLTP (Online Transactional Processing)
+Makes sure that the systems can keep up with high volumes of transactions but often very small and fast in nature (e.g. online banking, FinTech application)
+
+Typical use cases and implementations:
+* Application databases
+* Caches
+* SQL and NoSQL ("Not Only SQL") - lots of diverse technologies in the OLTP space.
+
+
+##### Bonus Content:  Application Databases: NoSQL vs SQL
+If you do not know the key differences between SQL and NoSQL, have a look at the following overview (~10m detour): [NoSQL vs SQL](https://www.mongodb.com/nosql-explained/nosql-vs-sql)
+
+### OLAP (Online Analytical Processing)
+Makes sure that you can crunch through millions or billions of rows of data for your complex and large theories, where they need to run some fancy aggregation or calculations for data Analytics purposes
+
+Typical use cases:
+* **Data Warehouses**: A way to implement data models in a database to cater to OLAP style workloads.
+* **Data Lakes**: Have emerged strongly within the last 5-10 years to more exclusively match the requirements of large data workloads.
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-v3PhEtOuxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+**Watch:** Understand your workload first: OLTP vs. OLAP
+
+**Read:** [The Difference Between OLTP and OLAP](https://techdifferences.com/difference-between-oltp-and-olap.html#:~:text=OLTP%20and%20OLAP%20both%20are,is%20an%20analytical%20processing%20system.&text=The%20basic%20difference%20between%20OLTP,online%20database%20query%20answering%20system.)
+
+</div>
+
+## From Database to Data Lake
+
+### Step 1: Database to Data Warehouse
+Please have a look at either the video or the article.
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FxQG65OhXAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+**Watch:** Database vs. Data Warehouse
+
+**Read:** [The Difference Between a Database and a Data Warehouse](https://panoply.io/data-warehouse-guide/the-difference-between-a-database-and-a-data-warehouse/)
+</div>
+
+### Step 2: Data Warehouse to Data Lake
+Let's take it one step further and have a look at the more commonly found implementation today, the Data Lake.
+
+<div style={{textAlign: 'center'}}>
+
+**Read:** [Data Warehouse vs Data Lake](https://panoply.io/data-warehouse-guide/data-warehouse-vs-data-lake/)
+
+</div>
+
+## Focus of this course: OLAP workloads
+**Why are we focusing more on OLAP than OLTP?**
+* OLTP databases (sometimes interchangeably referred to as application databases) are a
+topic concerning stability and performance of your operations / live applications
+* OLTP data models and tech stacks for different problems/businesses vary a lot more
+than those for OLAP workloads!
+* When people/customers talk about developing Data & AI, Analytics, Data Science, Machine Learning,
+they’re most likely referring to OLAP-style workloads.

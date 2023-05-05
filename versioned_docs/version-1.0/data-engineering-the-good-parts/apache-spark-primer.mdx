@@ -1,0 +1,62 @@
+---
+sidebar_position: 8
+---
+
+# Apache Spark Primer
+
+## Introduction to Spark
+**A Must-Read:** [Slides from Brooke Wenig](https://brookewenig.com/SparkOverview.html#/)
+
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/35Mjaa1YWTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+</div>
+
+Important comment upon Frank Kane’s video
+  * Scala is only faster than Python if you’re writing a lot of custom UDFs or data structures with RDDs.
+  If you’re using built-in Spark functions, then performance is **identical**
+  * Most modern Spark users are shifting towards a Python codebase to take advantage of modern data science and machine learning tools - see next slides for empirical evidence 😉
+
+Takeaways
+  * What is the difference between Transformations (lazy evaluation) and Actions?
+  * What is the difference between Driver and Worker nodes
+
+
+[Spark SQL Programming Guide](http://spark.apache.org/docs/3.1.1/sql-getting-started.html) (Python or Scala recommended)
+
+## Are You Still a Python Hater?
+
+<div style={{textAlign: 'center'}}>
+
+![spark-usage-2013.png](./assets/spark-usage-2013.png)
+![spark-usage-2020.png](./assets/spark-usage-2020.png)
+
+</div>
+
+
+## Data + AI Summit 2020
+One of the keynote presentations from the Chief Architect of Databricks
+<div style={{textAlign: 'center'}}>
+
+<figure class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-vJLTEOdLvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Project Zen: Making Spark Pythonic | Reynold Xin | Keynote Data + AI Summit EU 2020
+</figure>
+
+</div>
+
+* Heading towards taking advantage of idiomatic Python with type hints
+* Improving Python debugging is on the Databricks roadmap
+* There’s no denying the rich ecosystem of libraries, especially for advanced analytics & ML
+
+## Are you a Pandaphile?
+Try Databricks [Koalas](https://koalas.readthedocs.io/en/latest/index.html)
+* PySpark but using Pandas syntax and APIs
+* If you’re interested, try it out and let us know what you think!
+* However for the rest of this course, we’ll teaching you the following APIs separately:
+  * Spark DataFrames
+  * Pandas

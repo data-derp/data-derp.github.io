@@ -1,0 +1,81 @@
+---
+sidebar_position: 3
+authors: [syed-tw, kelseymok]
+minutesToComplete: 20
+---
+
+# Spark Structured Streaming
+
+Spark Structured Streaming is the streaming module of the Apache Spark framework. It provides a fast, scalable, fault-tolerant stream processing engine built on top of Spark SQL module with multi-delivery semantics. In fact, Spark Streaming APIs are an extension or superset of Spark SQL API. The module, by default, provides a low latency (with end-to-end latencies as low as 100 milliseconds) micro-batching features. Additionally, from Spark 2.3 onwards, a new low-latency processing mode called Continuous Processing was introduced, which can achieve end-to-end latencies as low as 1 millisecond with at-least-once guarantees. Please note that Continuous mode is still experimental as of Spark 3.x.
+
+Reading and Writing in Spark Structured Streaming is different from reading and writing in Spark SQL (used in batch transformations).
+
+Here is an example of a CSV file read in Spark SQL:
+
+```python
+temp_df = spark.read \
+        .option("header", "True") \
+        .format("csv") \
+        .load(file_path2)
+```
+
+And a similar example in Spark Structured Streaming where we read data from a socket source. Note: there are other [sources](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#creating-streaming-dataframes-and-streaming-datasets) available in the API, such as: File Source, Kafka Source and Rating Source.
+
+```python
+lines = spark \
+    .readStream \
+    .format("socket") \
+    .option("host", "localhost") \
+    .option("port", 9999) \
+    .load()
+```
+
+A few interesting points to note from the above code snippets :
+
+1. The read operations in both the examples are quite similar (spark.read in case of Spark SQL and a similar spark.readStream for Spark Streaming).
+2. Both the examples create dataframes (temp_df and lines df).
+3. Both examples use the same optimised Spark SQL engine.
+4. The Spark SQL example uses the format operation to specify the format of data being read. Quite similarly, the Spark Streaming example uses the format operation to specify the source from where the data is read.
+5. Options is another useful operation which can be seen in both the example
+6. Finally the load method, which in case of Spark SQL starts loading the data from the given path, whereas in case of Spark Streaming, it starts a read thread from the given source.
+
+There are similarities in writing the data too. Let us see this again with an example.
+
+This is how the write code is written in Spark SQL:
+
+```python
+df.write\
+    .option("header", "true")\
+    .format("csv")\
+    .save(f'{OUTPUT_DIR}/sample-write')
+```
+
+A similar example in Spark Streaming for writing a stream:
+
+```python
+query = lines_DF \
+    .writeStream \
+    .outputMode("append") \
+    .format("console") \
+    .start()
+```
+
+A few notes about the two “write” code snippets :
+
+1. The write operations in both the examples are again quite similar (spark.write in case of Spark SQL and a similar spark.writeStream for Spark Streaming).
+2. Both the examples write their respective dataframes (df for Spark SQL and lines_DF for Spark Streaming) to an external location .
+3. Both examples use the same optimised Spark SQL engine while writing the data.
+4. The Spark SQL example uses the format operation to specify the format in which the data is written. Quite similarly, the Spark Streaming example uses the format operation to specify where the data would be written. Spark Streaming calls it a sink (console in the above example. Details on other types of sinks can be found [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks))
+5. Finally the “save” method in Spark SQL example which is a Spark Action and triggers the write to the external location. The corresponding Action in Spark Streaming is “start” which triggers the write thread to the console.
+
+Now in the write example for Spark Streaming code snippet above, you might have observed that an operation called “outputMode” is being used. This operation specifies what gets written to the output sink. There are few output mode options available as follows :
+
+1. **Append Mode (Default)** - Append mode is like an “insert only” operation. This mode is most useful for stateless use cases where we want to just process the data on a per-micro batch without maintaining any state across the micro batches.
+2. **Update Mode (Default)** - This mode is like an upsert operation where the old records are updated and new records are added.
+3. **Complete Mode (Default)** - This is the mode where all the data is maintained and stored by Spark run time. This mode is most useful in stateful use cases where we want to maintain state across the micro batches.
+
+More details regarding output modes can be found [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes).
+
+**References (Bonus)**
+
+A complete reference structured streaming including all the concepts explained above can be found [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
