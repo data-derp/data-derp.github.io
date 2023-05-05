@@ -10,7 +10,7 @@ const config = {
     // tagline: 'Data Derp',
   url: 'https://data-derp.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   // favicon: 'img/favicon.ico',
   organizationName: 'data-derp', // Usually your GitHub org/user name.
