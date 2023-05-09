@@ -5,14 +5,13 @@ minutesToComplete: 190
 
 # Vanilla Spark on your Local Machine (Bonus)
 
-Goal: what does Spark look like on your local machine?
-
+Every wonder what Spark looks like when it's run on your local machine? Let's join Syed as he walks you through some of the Vanilla Spark basics!
 ## Running Spark locally: Spark Shell & UI
 
 - Basics of Spark Shell
 - Basics of Spark UI
-    - Can be seen through spark shells
-    - Also in the Databricks Notebooks ????
+    - Can be seen through Spark Shells
+    - Also in the Databricks Notebooks
 
 <div style={{textAlign: 'center'}}>
 
