@@ -106,7 +106,7 @@ Hadoop is great if you're a data scientist who knows how to code in MapReduce or
 
 :::
 
-In addition to the learning curve, the performance was surprisingly slow for BI users. They would have expected that compared to the warehouse, they woul dhave had performance gains but in fact the queries were running a lot slower on hadoop than on the traditional data warehouses.
+In addition to the learning curve, the performance was surprisingly slow for BI users. They would have expected that compared to the warehouse, they would have had performance gains but in fact the queries were running a lot slower on hadoop than on the traditional data warehouses.
 
 Excerpt:
 
@@ -168,7 +168,7 @@ Now looking at the above table, we know that writing to the disk and network com
 Spark also provides fault tolerance like Hadoop but with significantly reduced latency in the following way :
 
 1. It keeps all data immutable and in memory, thus avoiding disk writes, by keeping data in memory.
-2. It provides Scala like chains of operations (called transformations) and keep a track of it in its light weight client side process called as Spark Driver.
+2. It provides Scala like chains of operations (called transformations) and keeps track of it in its light weight client side process called as Spark Driver.
 3. In the event of a node failure, it finds a new node, copies the partition data on that node and just simply plays the tracked operations in step 2 above.
 
 Additionally Spark provides rich APIs in Scala, Python, Java and R. Lastly, unlike hadoop, it makes data shuffle optional by making it necessary only when using certain spark operations (formally called wide transformations in Spark) like joins, groupBy etc.
@@ -203,8 +203,8 @@ Cloud Revolution: [Why object storage wins over Hadoop-based storage](https://ww
 Time for **unified analytics/query engines** such as **Spark** and **Presto** to shine 💫
 
 - [Spark](https://www.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch01.html) & [Presto](https://prestodb.io/overview.html)
-  Both engines excel when running analytical queries against data stored on Object Storage (e.g. Amazon S3, Azure Blob Storage)
-  Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce which read/writes data via disk only)
+  - Both engines excel when running analytical queries against data stored on Object Storage (e.g. Amazon S3, Azure Blob Storage)
+  - Both engines take advantage of **both memory and disk** (unlike Hadoop MapReduce which read/writes data via disk only)
 
 **Spark** (much more on this later) is **extremely popular for programmatic (Python/Scala/Java/R) use-cases** but can also support SQL queries.
 
