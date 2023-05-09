@@ -39,14 +39,14 @@ minutesToComplete: 10
 <details>
 <summary>Why did people start moving from traditional databases and data warehouses to HDFS for Big Data Analytics in the mid 2000s?</summary>
 
-Traditional relational databases and data warehouses relied on vertical scaling which required expensive/specialized hardware and was hard to plan for
+Traditional relational databases and data warehouses relied on vertical scaling which required expensive/specialized hardware and was hard to plan for.
 HDFS and MapReduce allowed for horizontal scalability with cheap commodity hardware.
 </details>
 
 <details>
     <summary>And subsequently, why did people move from HDFS to Object Storage for Big Data Analytics?</summary>
 
-Cloud-based Object Storage is super scalable and cheap, far more than HDFS (which is only often used in on-prem environments these days). It was also great for storing all sorts of file formats (unstructured text, images, video, etc.)
+Cloud-based Object Storage is super scalable and cheap, far more than HDFS (which is only often used in on-prem environments these days). It was also great for storing all sorts of file formats (unstructured text, images, video, etc.).
 Most modern cloud-based Data Lakes are built-on Object Storage technologies.
 Modern query engines such as Apache Spark, Presto, Dremio, etc. can efficiently scan data laying on object stores. To summarize:
 object storage + (on-demand) query engines = fully decoupled storage and compute
