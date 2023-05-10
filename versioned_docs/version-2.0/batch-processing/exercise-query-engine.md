@@ -3,16 +3,6 @@ sidebar_position: 14
 minutesToComplete: 10
 ---
 # Exercise: Query your Data
+We [previously talked a little bit about Query Engines](../data-engineering-the-good-parts/03-data-milky-way-brief-history-part-2-evolution.mdx#cloud-revolution). Query Engines  allow us to query our Data Lakes / unstructured data. There are many Query Engines currently in the market (at the time of writing) including AWS Athena, Presto, Trino, Dremio, Databricks SQL. 
 
-
-<div style={{textAlign: 'center'}}>
-
-<figure class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/FWweHyUP8m8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</figure>
-
-</div>
-
-For this exercise, you'll jump into Databricks SQL (query engine) to view your data. Experiment with a few joins!
-
-A question to consider: why do you need a cluster to run SQL queries?
+For this exercise, we'll jump into Databricks SQL to view, explore, and query our data. Follow the instructions [here](https://github.com/data-derp/exercise-ev-databricks/tree/main/view-data-in-dbx-sql) to get started!
