@@ -75,5 +75,23 @@ To implement the above example, we will use the netcat application (Socket Sourc
         .format("console") \
         .option('truncate', 'false') \
         .start()
-
     ```
+ 5. You can get the complete code of this example here [hyperlink]
+
+Run the application
+1. Open a fresh terminal window and open netcat at port `9999` as shown below:
+   ![Start-NetCat.png](./assets/Start-NetCat.png)
+2. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
+   ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
+3. You should be able to see the first empty batch with `window`, `symbol` and `totalPrice` columns.
+4. Let us now send `2023-04-24 12:00:05,AAPL,500` as data from netcat terminal.
+5. You should be able to see this data with corresponding time window being created in Pycharm output as below:
+   ![Tumbling-Window-Batch-1.png](./assets/Tumbling-Window-Batch-1.png)
+6. Try sending a similar data with changed price in the same time window with a changed timestamp: `2023-04-24 12:00:45,AAPL,600`. You should be able to see the ‘totalPrice’ column being aggregated in the same time window as below:
+   ![Tumbling-Window-Batch-2.png](./assets/Tumbling-Window-Batch-2.png)
+7. Send data for the next time window for the same symbol: `2023-04-24 12:01:10,AAPL,100`. You will see another record with the next window created and the latest price as below:
+   ![Tumbling-Window-Batch-3.png](./assets/Tumbling-Window-Batch-3.png)
+8. Try sending another set of data for the new Time Window: `2023-04-24 12:01:25,AAPL,200`. You should be able to see the new window being updated with the latest aggregate price. The previous window remains unchanged as seen below.
+   ![Tumbling-Window-Batch-4.png](./assets/Tumbling-Window-Batch-4.png)
+
+You’ve now implemented aggregations across Tumbling Time Windows!
