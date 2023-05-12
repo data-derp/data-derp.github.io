@@ -95,3 +95,67 @@ Run the application
    ![Tumbling-Window-Batch-4.png](./assets/Tumbling-Window-Batch-4.png)
 
 You’ve now implemented aggregations across Tumbling Time Windows!
+
+### Handing Late Data
+
+You might have noticed that the above program is maintaining the data in the statestore forever, even though the Spark Application managed to segregate it into Tumbling Time Windows of 1 minute each. To further validate this, try sending some data to an older window `2023-04-24 12:00:50,AAPL,100` assuming that it has arrived a bit late to your application. You will see the older window being updated with the latest aggregate of 1200 as below:
+![Tumbling-Window-Batch-5.png](./assets/Tumbling-Window-Batch-5.png)
+What happened ? The application retains all the data because we have defined the output mode as `Complete`. As we have understood in the `Output modes` section [hyperlink], `Complete` output mode is designed to retain the data in the `statestore` forever. If we want our Spark Application to clean up the data for older windows and also stop accepting any late data in those windows (often a business decision/requirement), we will have to add what Spark calls as `Watermark` to the application code.
+
+### Data Clean Up with Watermarks
+Watermarks are the expiry threshold that we set up in our programs after which the older windows and their data expire. This expiry threshold for watermarks is usually driven by business requirements. Since the older windows cease to exist when watermarks are set, any late data arriving for those windows is also ignored by Spark Applications. Let us make a few changes to our Tumbling Windows Application to enable watermarks to see them in action below (You can find the complete code of this implementation here[hyperlink]):
+
+1. Add the following Watermark code ([watermarks documentation](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#handling-late-data-and-watermarking))  to the Tumbling Windows Code, just before the `groupBy` clause for the 1 minute window as below. We are keeping the Watermark expiry threshold of 2 minutes.
+   ```python
+   # Group the data by window and word and compute the count of each group
+    windowedWords = stocksDF\
+        .withWatermark("EventTime", "2 minute") \
+        .groupBy(window("EventTime", "1 minute"), stocksDF.symbol)\
+        .agg(sum("price").alias("totalPrice"))
+   ```
+
+ 2. Change the output mode to `update` in the output sink as below
+    ```python
+    # This is like writing the data to the sink, console in this case
+    query = windowedWords \
+        .writeStream \
+        .outputMode("update") \
+        .format("console") \
+        .option('truncate', 'false') \
+        .start()
+    ```
+
+Let us now test this program with data streamed from the netcat application
+
+1. Open a fresh terminal window and open netcat at port `9999` as shown below:
+   ![Start-NetCat.png](./assets/Start-NetCat.png)
+2. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
+   ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
+3. You should be able to see the first empty batch with ‘window’, ‘symbol’ and ‘totalPrice’ columns.
+4. Let us now send `2023-04-24 12:00:05,AAPL,500` as data from netcat terminal
+5. You should be able to see this data with corresponding time window being created in PyCharm output as below. You might see an empty batch too but it is safe to ignore it as it is coming due to introducing Watermarks in our application code.
+   ![Tumbling-Window-Batch-1.png](./assets/Tumbling-Window-Batch-1.png)
+6. Try sending a similar data with changed price in the same time window with a changed timestamp: `2023-04-24 12:00:45,AAPL,600`. You should be able to see the `totalPrice` column being aggregated in the same time window as below:
+   ![Tumbling-Window-Batch-2.png](./assets/Tumbling-Window-Batch-2.png)
+7. Let us send the data for the next time window for the same symbol `2023-04-24 12:01:10,AAPL,100`. You will see just the new record for the next time window as below.
+   ![Tumbling-Window-Watermark-Batch-5.png](./assets/Tumbling-Window-Watermark-Batch-5.png)
+8. The previous time window [2023-04-24 12:00:00, 2023-04-24 12:01:00] is nicely preserved in the statestore, it is just not displayed above (this is a feature). To validate this, try sending some data to the previous window `2023-04-24 12:00:50,AAPL,100`. The previous window will now appear. This time the next window [2023-04-24 12:01:00, 2023-04-24 12:02:00] will be missing but that’s alright isn’t it?
+   ![Tumbling-Window-Watermark-Batch-7.png](./assets/Tumbling-Window-Watermark-Batch-7.png)
+9. Late data is still being processed by our application. That is because the Event data has still not reached the Watermark boundary. The Watermark boundary is calculated using the following formula:
+    - Max (Event Time) - Watermark = Watermark Boundary
+
+   We can check if the Watermark Boundary has reached for the late data sent above. The time at which the latest event was sent is **12:01:10** (as per 2023-04-24 12:01:10,AAPL,100 record). So the calculation will be
+    - 12:01:10 - 2 mins (120 seconds) = 11:59:10
+
+   This means that all the windows ending before 11:59:10 will expire. The ending time window for our late data is 12:01:00 which is greater than the Watermark Boundary therefore the late date is processed  by our application.
+10. Let us now send the data that will create the new 3rd window `2023-04-24 12:03:10,AAPL,100` record. We should see a new window created for this data:
+    ![Tumbling-Window-Watermark-Batch-8.png](./assets/Tumbling-Window-Watermark-Batch-8.png)
+11. Calculate the Watermark boundary again:
+    - 12:03:10 - 2 mins (120 seconds) = 12:01:10
+12. The Watermark boundary comes as **12:01:10** as seen above. This is later than the end time window of our very first window which is **12:01:00**. This means if we send the late data again to the very first window, it should not be processed and also the data for that window should be dropped from the statestore. So let us send `2023-04-24 12:00:50,AAPL,100` again from our terminal. You should see the batch coming up empty as below. That is just Spark’s way of showing that the older window is dropped and that the watermark is working. :-)
+    ![Tumbling-Window-Watermark-Batch-10.png](./assets/Tumbling-Window-Watermark-Batch-10.png)
+
+
+
+
+
