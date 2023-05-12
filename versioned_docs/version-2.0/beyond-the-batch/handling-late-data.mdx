@@ -39,4 +39,41 @@ Our application should receive the above data and create a 1 minute tumbling tim
 To implement the above example, we will use the netcat application (Socket Source) from our previous examples [hyperlink] to simulate data streaming from the stock market application. Note: the full application code below can be found here[hyperlink to .py file]; please follow the README[hyperlink] to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
 
 1. Start with reading the data from the source
-   ![Tumbling-Window-Data-Read.png](./assets/Tumbling-Window-Data-Read.png)
+   ```python
+    spark = SparkSession \
+        .builder \
+        .appName("Tumbling Window Wordcount") \
+        .getOrCreate()
+
+    spark.sparkContext.setLogLevel("ERROR")
+
+    socketStreamDF = spark.readStream \
+        .format("socket") \
+        .option("host", "localhost") \
+        .option("port", 9999) \
+        .load()
+    ```
+2. Split the data and create columns like `EventTime`, `Symbol` and `Price` and store the reference in `stocksDF` dataframe
+    ```python
+    stocksDF = socketStreamDF.withColumn("value", split("value", ","))\
+        .withColumn("EventTime", to_timestamp(col("value")[0], "yyyy-MM-dd HH:mm:ss")) \
+        .withColumn("symbol", col("value")[1]).withColumn("price", col("value")[2].cast(DoubleType()))
+    ```
+3. Create a Time Window of 1 minute. Note that Time Windows are created by using the `groupBy` transformation followed by some kind of aggregation. This essentially means that we are creating aggregating windows of 1 minute each which will later on help to decide which events to keep or discard.
+    ```python
+   # Group the data by window and word and compute the count of each group
+    windowedWords = stocksDF\
+        .groupBy(window("EventTime", "1 minute"), stocksDF.symbol)\
+        .agg(sum("price").alias("totalPrice"))
+    ```
+ 4. Lastly, write the data to the output console sink:
+    ```python
+    # This is like writing the data to the sink, console in this case
+    query = windowedWords \
+        .writeStream \
+        .outputMode("complete") \
+        .format("console") \
+        .option('truncate', 'false') \
+        .start()
+
+    ```
