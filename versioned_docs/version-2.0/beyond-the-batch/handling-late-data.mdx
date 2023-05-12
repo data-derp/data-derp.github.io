@@ -5,3 +5,38 @@ minutesToComplete: 45
 ---
 
 # Handling Late Data
+
+We have seen that Spark Structured applications can store and aggregate data across micro-batches (Stateful streaming)[hyperlink]. Spark runtime stores this data in what Spark calls a `statestore`. This statestore uses the executor memory of the worker machines. Now a couple of questions have probably crossed your mind:
+
+1. Does Spark statestore store the data forever? Yes, at least until the application crashes or it is brought down for routine housekeeping. Spark Streaming applications are designed to handle these kinds of interruptions in this fashion.
+2. Should we keep the data in the statestore of the Spark Streaming Application forever? Well, not really, for 2 reasons below:
+   1. As mentioned above, the statestore uses the executor memory which is finite and will sooner or later get exhausted. This usually results in either the Spark job being stuck for a very long time or ultimately crashing.
+   2. The use case might not require you to store the data forever. For example, you may have an application where you would want to see the running totals of the invoices of the last 1 hour. Every hour, you would want to move the data to an external storage and clean the statestore.
+
+Above are just a few examples where you might not want to maintain the data in your application forever. This is where the concept of windows and late data comes into picture.
+
+## Time Windows
+
+Windows are an important temporal concept for managing data and its state in Spark Streaming applications. They are the time intervals on which we can segregate and aggregate the incoming streaming data from the source. The time for which such windows are created is usually the Event Time i.e the timestamp for which the data was generated at the source. Please note that the aforementioned Event Time is different from the Trigger time, which is the start time of the micro-batch by the Spark runtime. Also note that Time Windows are used only for Stateful Spark Streaming applications because, afterall, we are trying to efficiently manage the state so that our applications do not store the data forever.
+
+There are two types of Time Windows in Spark Streaming:
+
+- Tumbling Time windows
+- Sliding Time windows
+
+### Tumbling Time windows
+
+Tumbling Windows are fixed, non-overlapping and contiguous (or back-to-back) time windows that we can create based on the Event time. For Eg. A 15 minute tumbling window can be created for data generated between 12:00 PM to 12:15 PM, 12:15 PM to 12:30 PM and so on. Let us understand the concept of tumbling window in more detail with the help of an example below:
+
+Let’s say we are developing an application which is processing the data generated from a stock market application. The stock market application is sending the following data to our application on periodic basis
+
+| EventTime | Symbol | Price  |
+| :-------: | :----: | ------ |
+|  String   | String | String |
+
+Our application should receive the above data and create a 1 minute tumbling time window. Also, to demonstrate the windowing aggregates, our application should sum up all the prices for the stock symbol generated within each time window of 1 min.
+
+To implement the above example, we will use the netcat application (Socket Source) from our previous examples [hyperlink] to simulate data streaming from the stock market application. Note: the full application code below can be found here[hyperlink to .py file]; please follow the README[hyperlink] to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
+
+1. Start with reading the data from the source
+   ![Tumbling-Window-Data-Read.png](./assets/Tumbling-Window-Data-Read.png)
