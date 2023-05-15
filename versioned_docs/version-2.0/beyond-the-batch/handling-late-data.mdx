@@ -193,11 +193,11 @@ We can see this Sliding Window in action:
 
    Let us take a moment now to summarize the total number of sliding windows we have in the state store as of
 
-   |                   Window                   | Maximum Price | Persisted in statestore ? | Appears in the output ? |
-   | :----------------------------------------: | :-----------: | :-----------------------: | :---------------------: |
-   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] |      450      |            Yes            |           Yes           |
-   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] |      500      |            Yes            |           Yes           |
-   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            Yes            |           No            |
+   |                   Window                   | Maximum Price | Persisted in statestore ?  | Appears in the output ?    |
+   | :----------------------------------------: | :-----------: | :-----------------------:  | :---------------------:    |
+   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] |      450      |            True            |           True             |
+   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] |      500      |            True            |           True             |
+   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            True            |           False            |
 
 7. Let us now send another data event from netcat as **2023-04-24 12:05:31,AAPL,460** and check the output below
    ![Sliding-Window-Batch-4.png](./assets/Sliding-Window-Batch-4.png)
