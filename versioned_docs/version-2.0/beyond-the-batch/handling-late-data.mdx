@@ -137,14 +137,14 @@ Let us now test this program with data streamed from the netcat application
 2. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
    ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
 3. You should be able to see the first empty batch with ‘window’, ‘symbol’ and ‘totalPrice’ columns.
-4. Let us now send `2023-04-24 12:00:05,AAPL,500` as data from netcat terminal
+4. Let us now send **2023-04-24 12:00:05,AAPL,500** as data from netcat terminal
 5. You should be able to see this data with corresponding time window being created in PyCharm output as below. You might see an empty batch too but it is safe to ignore it as it is coming due to introducing Watermarks in our application code.
    ![Tumbling-Window-Batch-1.png](./assets/Tumbling-Window-Batch-1.png)
-6. Try sending a similar data with changed price in the same time window with a changed timestamp: `2023-04-24 12:00:45,AAPL,600`. You should be able to see the `totalPrice` column being aggregated in the same time window as below:
+6. Try sending a similar data with changed price in the same time window with a changed timestamp: **2023-04-24 12:00:45,AAPL,600**. You should be able to see the `totalPrice` column being aggregated in the same time window as below:
    ![Tumbling-Window-Batch-2.png](./assets/Tumbling-Window-Batch-2.png)
-7. Let us send the data for the next time window for the same symbol `2023-04-24 12:01:10,AAPL,100`. You will see just the new record for the next time window as below.
+7. Let us send the data for the next time window for the same symbol **2023-04-24 12:01:10,AAPL,100**. You will see just the new record for the next time window as below.
    ![Tumbling-Window-Watermark-Batch-5.png](./assets/Tumbling-Window-Watermark-Batch-5.png)
-8. The previous time window [2023-04-24 12:00:00, 2023-04-24 12:01:00] is nicely preserved in the statestore, it is just not displayed above (this is a feature). To validate this, try sending some data to the previous window `2023-04-24 12:00:50,AAPL,100`. The previous window will now appear. This time the next window [2023-04-24 12:01:00, 2023-04-24 12:02:00] will be missing but that’s alright isn’t it?
+8. The previous time window **[2023-04-24 12:00:00, 2023-04-24 12:01:00]** is nicely preserved in the statestore, it is just not displayed above (this is a feature). To validate this, try sending some data to the previous window **2023-04-24 12:00:50,AAPL,100**. The previous window will now appear. This time the next window **[2023-04-24 12:01:00, 2023-04-24 12:02:00]** will be missing but that’s alright isn’t it?
    ![Tumbling-Window-Watermark-Batch-7.png](./assets/Tumbling-Window-Watermark-Batch-7.png)
 9. Late data is still being processed by our application. That is because the Event data has still not reached the Watermark boundary. The Watermark boundary is calculated using the following formula:
 
@@ -156,11 +156,11 @@ Let us now test this program with data streamed from the netcat application
 
    This means that all the windows ending before 11:59:10 will expire. The ending time window for our late data is 12:01:00 which is greater than the Watermark Boundary therefore the late date is processed by our application.
 
-10. Let us now send the data that will create the new 3rd window `2023-04-24 12:03:10,AAPL,100` record. We should see a new window created for this data:
+10. Let us now send the data that will create the new 3rd window **2023-04-24 12:03:10,AAPL,100** record. We should see a new window created for this data:
     ![Tumbling-Window-Watermark-Batch-8.png](./assets/Tumbling-Window-Watermark-Batch-8.png)
 11. Calculate the Watermark boundary again:
     - 12:03:10 - 2 mins (120 seconds) = 12:01:10
-12. The Watermark boundary comes as **12:01:10** as seen above. This is later than the end time window of our very first window which is **12:01:00**. This means if we send the late data again to the very first window, it should not be processed and also the data for that window should be dropped from the statestore. So let us send `2023-04-24 12:00:50,AAPL,100` again from our terminal. You should see the batch coming up empty as below. That is just Spark’s way of showing that the older window is dropped and that the watermark is working. :-)
+12. The Watermark boundary comes as **12:01:10** as seen above. This is later than the end time window of our very first window which is **12:01:00**. This means if we send the late data again to the very first window, it should not be processed and also the data for that window should be dropped from the statestore. So let us send **2023-04-24 12:00:50,AAPL,100** again from our terminal. You should see the batch coming up empty as below. That is just Spark’s way of showing that the older window is dropped and that the watermark is working. :-)
     ![Tumbling-Window-Watermark-Batch-10.png](./assets/Tumbling-Window-Watermark-Batch-10.png)
 
 ### Sliding Time Windows
@@ -178,15 +178,15 @@ We can see this Sliding Window in action:
 3. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
    ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
 4. You should be able to see the first empty batch with `window`, `symbol` and `MaximumPrice` columns.
-5. Let us start with sending the first event from netcat as `2023-04-24 12:05:15,AAPL,500`. The output can be seen below:
+5. Let us start with sending the first event from netcat as **2023-04-24 12:05:15,AAPL,500**. The output can be seen below:
    ![Sliding-Window-Batch-1.png](./assets/Sliding-Window-Batch-1.png)
-   Two time windows are displayed in the output. The event time of the streaming data is 12:05:15 so as expected, the window [2023-04-24 12:05:00, 2023-04-24 12:06:00] is displayed. Additionally, our event (streamed at 12:05:15) also is a member of the preceding and overlapping window [2023-04-24 12:04:30, 2023-04-24 12:05:30]. Because the window duration is 1 minute and the sliding time is 30 seconds, this event falls into two windows.
+   Two time windows are displayed in the output. The event time of the streaming data is 12:05:15 so as expected, the window **[2023-04-24 12:05:00, 2023-04-24 12:06:00]** is displayed. Additionally, our event (streamed at 12:05:15) also is a member of the preceding and overlapping window **[2023-04-24 12:04:30, 2023-04-24 12:05:30]**. Because the window duration is 1 minute and the sliding time is 30 seconds, this event falls into two windows.
 
-6. Let us send another data event from netcat as `2023-04-24 12:04:31,AAPL,450` and check the output below:
+6. Let us send another data event from netcat as **2023-04-24 12:04:31,AAPL,450** and check the output below:
    ![Sliding-Window-Batch-3.png](./assets/Sliding-Window-Batch-3.png)
-   The data was streamed at 12:04:31 with a price of 450. This is a member of the [2023-04-24 12:04:30, 2023-04-24 12:05:30] window. Now this window already had the MaximumPrice of 500 from the previous micro-batch. The resulting aggregated value under MaximumPrice remains at 500 because the existing value (500) is greater than the value of the event of the current microbatch (450).
+   The data was streamed at 12:04:31 with a price of 450. This is a member of the **[2023-04-24 12:04:30, 2023-04-24 12:05:30]** window. Now this window already had the MaximumPrice of 500 from the previous micro-batch. The resulting aggregated value under MaximumPrice remains at 500 because the existing value (500) is greater than the value of the event of the current microbatch (450).
 
-   Since we have defined the `sliding time` as 30 seconds, the value (450) streamed at 12:04:31 also registers itself in the [2023-04-24 12:04:00, 2023-04-24 12:05:00] time window, which is why we also see that window in the above output.
+   Since we have defined the `sliding time` as 30 seconds, the value (450) streamed at 12:04:31 also registers itself in the **[2023-04-24 12:04:00, 2023-04-24 12:05:00]** time window, which is why we also see that window in the above output.
 
    Let us take a moment now to summarize the total number of sliding windows we have in the state store as of
 
@@ -196,12 +196,12 @@ We can see this Sliding Window in action:
    | [2023-04-24 12:04:30, 2023-04-24 12:05:30] |      500      |            Yes            |           Yes           |
    | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            Yes            |           No            |
 
-7. Let us now send another data event from netcat as `2023-04-24 12:05:31,AAPL,460` and check the output below
+7. Let us now send another data event from netcat as **2023-04-24 12:05:31,AAPL,460** and check the output below
    ![Sliding-Window-Batch-4.png](./assets/Sliding-Window-Batch-4.png)
 
-   The data was streamed at 12:05:31 with 460 as the price. This registers it under the [2023-04-24 12:05:00, 2023-04-24 12:06:00] window which already has the MaximumPrice of 500 from the previous micro-batch and because 500 is greater than 460, the MaximumPrice is remains at 500. This additionally validates that the window had been in the statestore from the previous micro-batch.
+   The data was streamed at **12:05:31** with **460** as the price. This registers it under the **[2023-04-24 12:05:00, 2023-04-24 12:06:00]** window which already has the MaximumPrice of 500 from the previous micro-batch and because 500 is greater than 460, the MaximumPrice is remains at 500. This additionally validates that the window had been in the statestore from the previous micro-batch.
 
-   Like the previous micro-batch, the event also registers itself in the [2023-04-24 12:05:30, 2023-04-24 12:06:30] time window, which is also displayed in the above output.
+   Like the previous micro-batch, the event also registers itself in the **[2023-04-24 12:05:30, 2023-04-24 12:06:30]** time window, which is also displayed in the above output.
 
    In summary, we have 4 windows in statestore now as below
 
@@ -212,7 +212,7 @@ We can see this Sliding Window in action:
    | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            Yes            |           Yes           |
    | [2023-04-24 12:05:30, 2023-04-24 12:06:30] |      460      |            Yes            |           Yes           |
 
-8. Let’s send an event in the time range of the oldest window that we have in the statestore to prove that it still exists. Send a data event from netcat as `2023-04-24 12:04:32,AAPL,470` and check the output:
+8. Let’s send an event in the time range of the oldest window that we have in the statestore to prove that it still exists. Send a data event from netcat as **2023-04-24 12:04:32,AAPL,470** and check the output:
    ![Sliding-Window-Batch-6.png](./assets/Sliding-Window-Batch-6.png)
 
    We do indeed see the oldest window appearing with the MaximumPrice of 470 and we also see a second window. The 3rd and 4th windows are not displayed, but from previous experience, we know that they are still in the statestore !
@@ -233,7 +233,7 @@ Similar to our Tumbling Windows example, we’ll also need to handle late data i
    | [2023-04-24 12:04:30, 2023-04-24 12:05:30] | 500           | Yes                       | Yes                      |
    | [2023-04-24 12:05:00, 2023-04-24 12:06:00] | 500           | Yes                       | No                      |
    | [2023-04-24 12:05:30, 2023-04-24 12:06:30] | 460           | Yes                       | No                      |
-2. Send a new event:  `2023-04-24 12:07:01,AAPL,480` and check the output:
+2. Send a new event:  **2023-04-24 12:07:01,AAPL,480** and check the output:
    ![Sliding-Window-Batch-7.png](./assets/Sliding-Window-Batch-7.png)
    There is nothing unexpected here. We have two new windows created making it a total of 6 active sliding windows:
 
@@ -246,15 +246,15 @@ Similar to our Tumbling Windows example, we’ll also need to handle late data i
    | [2023-04-24 12:06:30, 2023-04-24 12:07:30] | 480           | Yes                       | Yes                     |
    | [2023-04-24 12:07:00, 2023-04-24 12:08:00] | 480           | Yes                       | Yes                     |
 
-3. Send a new event `2023-04-24 12:04:33,AAPL,490` from the terminal. This should hypothetically register itself with  two windows in the statestore: [2023-04-24 12:04:00, 2023-04-24 12:05:00] and [2023-04-24 12:04:30, 2023-04-24 12:05:30]
+3. Send a new event **2023-04-24 12:04:33,AAPL,490** from the terminal. This should hypothetically register itself with  two windows in the statestore: **[2023-04-24 12:04:00, 2023-04-24 12:05:00]** and **[2023-04-24 12:04:30, 2023-04-24 12:05:30]**
    ![Sliding-Window-Batch-9.png](./assets/Sliding-Window-Batch-9.png)
-   However, we only see that it has registered itself with the second window ([2023-04-24 12:04:30, 2023-04-24 12:05:30]). When in doubt, check the Watermark Expiry Threshold, using the below formula:
+   However, we only see that it has registered itself with the second window (**[2023-04-24 12:04:30, 2023-04-24 12:05:30]**). When in doubt, check the Watermark Expiry Threshold, using the below formula:
    - Max (Event Time) - Watermark = Watermark Boundary
 
    The event time from the data sent in previous step is 12:07:01 (represents the max event time) so the calculation is represented as:
    - 12:07:01 - 2 minutes (Watermark) = 12:05:01
 
-   Our current Watermark Expiry Threshold is therefore 12:05:01, which is later than the    end interval of our very first Window ([2023-04-24 12:04:00, 2023-04-24 12:05:00]), which in turn explains why our data was not registered against that window. In other words,  our very first window  expired and no additional data can be registered here (it is ignored). The data shown above is from our 2nd window ([2023-04-24 12:04:30, 2023-04-24 12:05:30]). This is within the Watermark Expiry Threshold;  therefore, the 2nd window is still active and exists in the statestore. The other 4 windows are also in the statestore but are simply not displayed.
+   Our current Watermark Expiry Threshold is therefore 12:05:01, which is later than the    end interval of our very first Window (**[2023-04-24 12:04:00, 2023-04-24 12:05:00]**), which in turn explains why our data was not registered against that window. In other words,  our very first window  expired and no additional data can be registered here (it is ignored). The data shown above is from our 2nd window (**[2023-04-24 12:04:30, 2023-04-24 12:05:30]**). This is within the Watermark Expiry Threshold;  therefore, the 2nd window is still active and exists in the statestore. The other 4 windows are also in the statestore but are simply not displayed.
 
 ### Conclusion
 In this section, we’ve learned about how to aggregate data in both Tumbling and Sliding Time Windows which is used in situations where aggregations are made on [near] real-time data. We’ve additionally learned how to handle late data with both types of Windows, which is a very common and realistic occurrence, and under what circumstances data remains in the statestore.
