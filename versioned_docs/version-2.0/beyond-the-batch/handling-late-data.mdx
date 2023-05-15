@@ -28,13 +28,16 @@ There are two types of Time Windows in Spark Streaming:
 
 Tumbling Windows are fixed, non-overlapping and contiguous (or back-to-back) time windows that we can create based on the Event time. For Eg. A 15 minute tumbling window can be created for data generated between 12:00 PM to 12:15 PM, 12:15 PM to 12:30 PM and so on. Let us understand the concept of tumbling window in more detail with the help of an example below:
 
-Let’s say we are developing an application which is processing the data generated from a stock market application. The stock market application is sending the following data to our application on periodic basis
+Let’s say we are developing an application which is processing the data generated from a stock market application. The stock market application is sending data in the following on periodic basis to our application:
 
-| EventTime | Symbol | Price  |
-| :-------: | :----: | ------ |
-|  String   | String | String |
 
-Our application should receive the above data and create a 1 minute tumbling time window. Also, to demonstrate the windowing aggregates, our application should sum up all the prices for the stock symbol generated within each time window of 1 min.
+| Field | Type |
+| :-------: | :----: |
+|  EventTime   | String |
+|  Symbol   | String |
+|  Price   | String |
+
+Our application should receive the above data and create a **1 minute tumbling time window**. Also, to demonstrate the windowing aggregates, our application should sum up all the prices for the stock symbol generated within each time window of 1 minute.
 
 To implement the above example, we will use the netcat application (Socket Source) from our previous examples [hyperlink] to simulate data streaming from the stock market application. Note: the full application code below can be found here[hyperlink to .py file]; please follow the README[hyperlink] to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
 
@@ -205,12 +208,12 @@ We can see this Sliding Window in action:
 
    In summary, we have 4 windows in statestore now as below
 
-   |                   Window                   | Maximum Price | Persisted in statestore ? | Appears in the output ? |
+   |                   Window                   | Maximum Price | Persisted in statestore | Appears in the output |
    | :----------------------------------------: | :-----------: | :-----------------------: | :---------------------: |
-   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] |      450      |            Yes            |           No            |
-   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] |      500      |            Yes            |           No            |
-   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            Yes            |           Yes           |
-   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] |      460      |            Yes            |           Yes           |
+   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] |      450      |            True            |           False            |
+   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] |      500      |            True            |           False            |
+   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] |      500      |            True            |           True           |
+   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] |      460      |            True            |           True           |
 
 8. Let’s send an event in the time range of the oldest window that we have in the statestore to prove that it still exists. Send a data event from netcat as **2023-04-24 12:04:32,AAPL,470** and check the output:
    ![Sliding-Window-Batch-6.png](./assets/Sliding-Window-Batch-6.png)
@@ -227,24 +230,24 @@ Similar to our Tumbling Windows example, we’ll also need to handle late data i
    ![Sliding-Window-Batch-6.png](./assets/Sliding-Window-Batch-6.png)
    Note that the following 4 windows are in the statestore:
 
-   | Window | Maximum Price                     | Persisted in statestore ? | Appears in the output ? |
+   | Window | Maximum Price                     | Persisted in statestore | Appears in the output |
    | :----------------------------------------: | :-----------: | :-----------------------: | :---------------------: |
-   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] | 470           | Yes                       | Yes                      |
-   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] | 500           | Yes                       | Yes                      |
-   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] | 500           | Yes                       | No                      |
-   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] | 460           | Yes                       | No                      |
+   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] | 470           | True                       | True                      |
+   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] | 500           | True                       | True                      |
+   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] | 500           | True                       | False                      |
+   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] | 460           | True                       | False                      |
 2. Send a new event:  **2023-04-24 12:07:01,AAPL,480** and check the output:
    ![Sliding-Window-Batch-7.png](./assets/Sliding-Window-Batch-7.png)
    There is nothing unexpected here. We have two new windows created making it a total of 6 active sliding windows:
 
-   | Window | Maximum Price                     | Persisted in statestore ? | Appears in the output ? |
+   | Window | Maximum Price                     | Persisted in statestore | Appears in the output |
    | :----------------------------------------: | :-----------: | :-----------------------: | :---------------------: |
-   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] | 470           | Yes                       | No                      |
-   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] | 500           | Yes                       | No                      |
-   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] | 500           | Yes                       | No                      |
-   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] | 460           | Yes                       | No                      |
-   | [2023-04-24 12:06:30, 2023-04-24 12:07:30] | 480           | Yes                       | Yes                     |
-   | [2023-04-24 12:07:00, 2023-04-24 12:08:00] | 480           | Yes                       | Yes                     |
+   | [2023-04-24 12:04:00, 2023-04-24 12:05:00] | 470           | True                       | False                      |
+   | [2023-04-24 12:04:30, 2023-04-24 12:05:30] | 500           | True                       | False                      |
+   | [2023-04-24 12:05:00, 2023-04-24 12:06:00] | 500           | True                       | False                      |
+   | [2023-04-24 12:05:30, 2023-04-24 12:06:30] | 460           | True                       | False                      |
+   | [2023-04-24 12:06:30, 2023-04-24 12:07:30] | 480           | True                       | True                     |
+   | [2023-04-24 12:07:00, 2023-04-24 12:08:00] | 480           | True                       | True                     |
 
 3. Send a new event **2023-04-24 12:04:33,AAPL,490** from the terminal. This should hypothetically register itself with  two windows in the statestore: **[2023-04-24 12:04:00, 2023-04-24 12:05:00]** and **[2023-04-24 12:04:30, 2023-04-24 12:05:30]**
    ![Sliding-Window-Batch-9.png](./assets/Sliding-Window-Batch-9.png)
