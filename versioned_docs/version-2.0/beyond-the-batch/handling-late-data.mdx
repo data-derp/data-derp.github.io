@@ -6,7 +6,7 @@ minutesToComplete: 45
 
 # Handling Late Data
 
-We have seen that Spark Structured applications can store and aggregate data across micro-batches [link](./stateful-vs-stateless-streaming.mdx). Spark runtime stores this data in what Spark calls a `statestore`. This statestore uses the executor memory of the worker machines. Now a couple of questions have probably crossed your mind:
+We have seen that [Spark Structured applications can store and aggregate data across micro-batches](./stateful-vs-stateless-streaming.mdx). Spark runtime stores this data in what Spark calls a `statestore`. This statestore uses the executor memory of the worker machines. Now a couple of questions have probably crossed your mind:
 
 1. Does Spark statestore store the data forever? Yes, at least until the application crashes or it is brought down for routine housekeeping. Spark Streaming applications are designed to handle these kinds of interruptions in this fashion.
 2. Should we keep the data in the statestore of the Spark Streaming Application forever? Well, not really, for 2 reasons below:
