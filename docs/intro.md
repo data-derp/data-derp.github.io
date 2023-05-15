@@ -1,13 +1,3 @@
----
-sidebar_position: 1
----
+# Nothing to see here
 
-# Tour Agenda
-* Data Engineering: The Good Parts
-* Data Ingestion
-* Data Transformation
-* Data Visualisation
-* Data Science & Interpretability
-* Beyond the Batch
-* Making Big Data Work
-* Data Mesh
+Check out ../versioned_docs/version-1.0 instead.
