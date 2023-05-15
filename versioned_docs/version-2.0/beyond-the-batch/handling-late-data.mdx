@@ -6,7 +6,7 @@ minutesToComplete: 45
 
 # Handling Late Data
 
-We have seen that Spark Structured applications can store and aggregate data across micro-batches (Stateful streaming)[hyperlink]. Spark runtime stores this data in what Spark calls a `statestore`. This statestore uses the executor memory of the worker machines. Now a couple of questions have probably crossed your mind:
+We have seen that Spark Structured applications can store and aggregate data across micro-batches [link](./stateful-vs-stateless-streaming.mdx). Spark runtime stores this data in what Spark calls a `statestore`. This statestore uses the executor memory of the worker machines. Now a couple of questions have probably crossed your mind:
 
 1. Does Spark statestore store the data forever? Yes, at least until the application crashes or it is brought down for routine housekeeping. Spark Streaming applications are designed to handle these kinds of interruptions in this fashion.
 2. Should we keep the data in the statestore of the Spark Streaming Application forever? Well, not really, for 2 reasons below:
@@ -39,7 +39,7 @@ Let’s say we are developing an application which is processing the data genera
 
 Our application should receive the above data and create a **1 minute tumbling time window**. Also, to demonstrate the windowing aggregates, our application should sum up all the prices for the stock symbol generated within each time window of 1 minute.
 
-To implement the above example, we will use the netcat application (Socket Source) from our previous examples [hyperlink] to simulate data streaming from the stock market application. Note: the full application code below can be found here[hyperlink to .py file]; please follow the README[hyperlink] to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
+To implement the above example, we will use the netcat application (Socket Source) from our previous [examples](./checkpointing.mdx) to simulate data streaming from the stock market application. Note: the full application code below can be found [here](https://github.com/data-derp/exercise-vanilla-spark/tree/main/src); please follow the [README](https://github.com/data-derp/exercise-vanilla-spark/tree/main#readme) to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
 
 1. Start with reading the data from the source
 
@@ -81,7 +81,7 @@ To implement the above example, we will use the netcat application (Socket Sourc
        .option('truncate', 'false') \
        .start()
    ```
-5. You can get the complete code of this example here [hyperlink]
+5. You can get the complete code of this example [here](https://github.com/data-derp/exercise-vanilla-spark/blob/main/src/11%20-%20StreamingTumblingWindow.py)
 
 Run the application
 
@@ -106,11 +106,11 @@ You’ve now implemented aggregations across Tumbling Time Windows!
 
 You might have noticed that the above program is maintaining the data in the statestore forever, even though the Spark Application managed to segregate it into Tumbling Time Windows of 1 minute each. To further validate this, try sending some data to an older window `2023-04-24 12:00:50,AAPL,100` assuming that it has arrived a bit late to your application. You will see the older window being updated with the latest aggregate of 1200 as below:
 ![Tumbling-Window-Batch-5.png](./assets/Tumbling-Window-Batch-5.png)
-What happened ? The application retains all the data because we have defined the output mode as `Complete`. As we have understood in the `Output modes` section [hyperlink], `Complete` output mode is designed to retain the data in the `statestore` forever. If we want our Spark Application to clean up the data for older windows and also stop accepting any late data in those windows (often a business decision/requirement), we will have to add what Spark calls as `Watermark` to the application code.
+What happened ? The application retains all the data because we have defined the output mode as `Complete`. As we have understood in the `Output modes` [section](./spark-structured-streaming.mdx), `Complete` output mode is designed to retain the data in the `statestore` forever. If we want our Spark Application to clean up the data for older windows and also stop accepting any late data in those windows (often a business decision/requirement), we will have to add what Spark calls as `Watermark` to the application code.
 
 ### Data Clean Up with Watermarks
 
-Watermarks are the expiry threshold that we set up in our programs after which the older windows and their data expire. This expiry threshold for watermarks is usually driven by business requirements. Since the older windows cease to exist when watermarks are set, any late data arriving for those windows is also ignored by Spark Applications. Let us make a few changes to our Tumbling Windows Application to enable watermarks to see them in action below (You can find the complete code of this implementation here[hyperlink]):
+Watermarks are the expiry threshold that we set up in our programs after which the older windows and their data expire. This expiry threshold for watermarks is usually driven by business requirements. Since the older windows cease to exist when watermarks are set, any late data arriving for those windows is also ignored by Spark Applications. Let us make a few changes to our Tumbling Windows Application to enable watermarks to see them in action below (You can find the complete code of this implementation [here](https://github.com/data-derp/exercise-vanilla-spark/blob/main/src/12%20-%20StreamingTumblingWindowWithWatermark.py)):
 
 1. Add the following Watermark code ([watermarks documentation](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#handling-late-data-and-watermarking)) to the Tumbling Windows Code, just before the `groupBy` clause for the 1 minute window as below. We are keeping the Watermark expiry threshold of 2 minutes.
 
