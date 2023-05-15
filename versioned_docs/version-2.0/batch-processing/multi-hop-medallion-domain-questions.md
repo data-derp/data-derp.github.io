@@ -2,8 +2,8 @@
 sidebar_position: 1
 minutesToComplete: 5
 ---
-# Breakdown of the Multi-Hop Architecture
-Recall that the Multi-Hop Architecture comprises 3 stages: Bronze, Silver, and Gold.
+# The Multi-Hop/Medallion Architecture, Applied
+Recall that the Multi-Hop/Medallion Architecture comprises 3 stages: Bronze, Silver, and Gold.
 
 ![bronze-silver-gold.png](./assets/bronze-silver-gold.png)
 
