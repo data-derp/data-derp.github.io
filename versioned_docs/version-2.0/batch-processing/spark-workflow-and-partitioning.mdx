@@ -96,7 +96,47 @@ Either!
 [Reference](https://blog.scottlogic.com/2018/03/22/apache-spark-performance.html#:~:text=A%20shuffle%20occurs%20when%20data,likely%20on%20a%20different%20executor.)
 </div>
 
-In general, another way to optimise for speed is to reduce shuffling, which can bottleneck performance as your data is merging all results back together. It's important to know which actions shuffle and which do not in the DataFrame API.
+<!--In general, another way to optimise for speed is to reduce shuffling, which can bottleneck performance as your data is merging all results back together. It's important to know which actions shuffle and which do not in the DataFrame API.-->
+
+### Spark Operations
+
+There are 2 kind of operations available in Apache Spark
+1. **Transformations**
+
+   Transformations are lazy operations which usually create or transform the data in one or other way. For example:
+
+   a) **range (1,10)** transformation creates a dataset of 10 variables ranging from 0 to 9.
+
+   b) **filter(x > 10)** will return all variables greater than 10 from the dataset by the name x.
+
+   Transformations themselves are of two types:
+
+   a) **Narrow Transformations**: These transformations do not entail any network  communication (e.g. range and filter transformations)
+
+   b) **Wide Transformations**: These transformations do entail network communication (e.g. groupBy, joins, repartition). Wide Transformations usually result in redistributing data across partitions (also known as shuffling of data, section below)). Redistribution is defining behaviour in wide transformations.For example,  a `groupBy` redistributes  data across partitions by the key on which grouping is needed. A `join` redistributes data across partitions to match joining keys.
+
+2. **Actions**
+
+   Actions in Spark are eager operations that trigger the execution of logic. For example, a `count` action triggers a job to count the number of variable created or present in a dataset. A `collect` collects all the data from the partitions and returns some output. Actions are usually written towards the end of your code after all the transformations are completed.
+
+### Shuffles in Spark
+
+Wide operations within Spark trigger an event known as the shuffle. The shuffle is Spark’s mechanism for redistribution. This typically involves copying data across executors and machines, making the shuffle a complex and costly operation and should be avoided as much as possible, unless it is absolutely necessary.
+
+### Operations that create a shuffle
+
+Shuffles in Spark usually come into the picture when a wide transformation (like groupBy, joins, repartition etc) is used in transformation logic. Let us take the example of a `groupBy` transformation to understand this better. Spark programs usually read the data in the form of in-memory partitions. The data in these partitions is distributed across different machines on the cluster and is by default not grouped on a particular field. If we apply `groupBy` on a certain field like `country` for example, the Spark runtime will have to shuffle the data across the initial in-memory partitions to make sure that all the data from the same country  moves to the same partition.
+
+### Acceptable Shuffles and Avoiding Shuffles
+
+As you might have guessed by now, shuffling is a necessary evil, especially for wide transformations in Spark. A data shuffle happens if we are using transformations like groupBy, joins and repartition. Since shuffles are expensive, the best way to avoid them would be to:
+
+1. As you might have guessed by now, shuffling is a necessary evil, especially for wide transformations in Spark. A data shuffle happens if we are using transformations like groupBy, joins and repartition. Since shuffles are expensive, the best way to avoid them would be to:
+   write your logic  using narrow transformations like map, flatmaps and filter.
+2. use wide transformations only when required and no other alternative is available in narrow transformations.
+3. use wide transformations as late as possible or towards the end of your logic (e.g.join only at the end of your logic)
+
+
 
 ## Resources (Bonus)
 
