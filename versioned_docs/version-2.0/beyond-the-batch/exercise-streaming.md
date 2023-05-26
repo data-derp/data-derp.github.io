@@ -1,5 +1,5 @@
 ---
-authors: [syed-tw, kelseymok]
+authors: [syed, kmok]
 minutesToComplete: 30
 sidebar_position: 11
 ---
