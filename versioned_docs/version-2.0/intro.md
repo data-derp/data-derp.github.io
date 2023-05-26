@@ -12,6 +12,8 @@ The left-navigation bar lists topics in the order that they should be consumed. 
 * exercises
 * self-quizzes
 
+Sections marked **BONUS** are not part of core content, and we can recommend going through them only if you have time or interest. Often these are related topics but create too much overhead on the core Data Engineering content. Don't stress about them, you can always come back to it later!
+
 ## Prerequisites
 This training uses Python and concepts from SQL and eventually moves on to more complex Data Engineering architectures. If you're unfamiliar with Python and SQL concepts, feel free to browse the [Prerequisites](./prerequisites) section to brush up on your skills and self-assess yourself.
 
