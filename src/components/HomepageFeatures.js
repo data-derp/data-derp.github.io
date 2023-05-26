@@ -16,16 +16,17 @@ const FeatureList = [
     title: 'Real World Slice',
     img: require('../../static/img/real-world-slice.png').default,
     description: (
-      <>
+      // <>
           <ul style={{ listStyleType: "none" }}>
               <li>Storage</li>
               <li>Data Ingestion</li>
               <li>Data Transformation</li>
+              <li>Levels of Curation (Medallion Architecture)</li>
               <li>Visualisation</li>
               <li>Streaming</li>
               <li>Business Value</li>
           </ul>
-      </>
+      // </>
     ),
   },
   {
@@ -34,7 +35,7 @@ const FeatureList = [
     description: (
       <>
           <ul style={{ listStyleType: "none" }}>
-              <li>Projecting and Visualising CO2 emissions vs. Global temperature</li>
+              <li>Wrangle EV Charging Data</li>
               <li>Perform analytics to interpret and communicate findings to stakeholders</li>
               <li>Treat data problems mindfully</li>
           </ul>
@@ -49,10 +50,9 @@ const FeatureList = [
           <>
               <ul style={{ listStyleType: "none" }}>
                   <li>Data Curiosity</li>
-                  <li>Basic Understanding of AWS</li>
-                  <li>Docker</li>
-                  <li>Terraform</li>
                   <li>Python</li>
+                  <li>SQL</li>
+                  <li>Comfort with multi-system architectures</li>
               </ul>
 
           </>
@@ -71,7 +71,10 @@ const FeatureList = [
                   <li>Intro to Modern Data Science</li>
                   <li>Intro to Streaming Technologies</li>
                   <li>Challenges with Big Data</li>
-                  <li>Data Mesh Paradigm</li>
+                  <li>Delta Lake</li>
+                  <li>Platform- and consumer-thinking</li>
+                  <li>Data Lakehouse</li>
+                  <li>Data Mesh</li>
               </ul>
           </>
       ),
@@ -81,13 +84,11 @@ const FeatureList = [
       // img: require('../../static/img/real-world-scenario.png').default,
       description: (
           <>
-              <ul style={{ listStyleType: "none" }}>
+              <ul style={{ listStyleType: "none"}}>
                   <li>Databricks exercises</li>
-                  <li>Ingesting data into AWS S3</li>
                   <li>Data Wrangling in Apache Spark</li>
                   <li>Interactive Analysis via Notebooks</li>
                   <li>Data Visualization & Storytelling</li>
-                  <li>Practice with Kafka</li>
                   <li>Practice with Spark Streaming</li>
                   <li>Intro to Delta Lake</li>
               </ul>
