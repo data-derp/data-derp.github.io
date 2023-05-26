@@ -28,6 +28,8 @@ To get started with Databricks:
 :warning: **WARNING:** Databricks, outside the community edition and free trial, incurs compute costs. The configuration for the compute resources here is documented and should keep costs low but it is your responsibility to ensure that your 
 compute resources (clusters) are shut down by the end of the day. There is an auto-termination policy in the suggested configuration, but it only triggers when there has been no activity for 30 minutes; if you have a streaming job running, it will continue to run forever and incur costs (both compute and storage).
 
+**Key Takeaway:** don't forget to delete and turn off your clusters when you're not using them!
+
 ## Contributors
 The content in this training is curated by passionate contributors from all over the globe. If you see any areas for improvement, things that don't make sense, and [hopefully not] mistakes/broken links, please feel free to [create a Github Issue](https://github.com/data-derp/data-derp.github.io/issues/new) or submit a PR on the relevant Github repository:
 * This site's [Github repo](https://github.com/data-derp/data-derp.github.io)
