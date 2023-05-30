@@ -10,7 +10,7 @@ In this exercise, we'll walk through a demo of Delta Lake, provided by Databrick
 <div style={{textAlign: 'center'}}>
 
 <figure class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/BMO90DI82Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/BMO90DI82Dc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
 </figure>
 
 </div>

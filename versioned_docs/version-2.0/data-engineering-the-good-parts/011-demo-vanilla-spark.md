@@ -23,7 +23,7 @@ Every wonder what Spark looks like when it's run on your local machine? Let's jo
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -43,7 +43,7 @@ To practice the concepts and examples that are demonstrated in the above video, 
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -61,7 +61,7 @@ To practice the concepts and examples that are demonstrated in the above video, 
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -79,7 +79,7 @@ To practice the concepts and examples that are demonstrated in the above video, 
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -97,7 +97,7 @@ To practice the concepts and examples that are demonstrated in the above video, 
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -115,7 +115,7 @@ To practice the concepts and examples that are demonstrated in the above video, 
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -137,7 +137,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -155,7 +155,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -173,7 +173,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -191,7 +191,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -209,7 +209,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -227,7 +227,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -245,7 +245,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -263,7 +263,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -281,7 +281,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -299,7 +299,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -317,7 +317,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -335,7 +335,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -353,7 +353,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -371,7 +371,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -389,7 +389,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -407,7 +407,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -425,7 +425,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -443,7 +443,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -461,7 +461,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -479,7 +479,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 
@@ -497,7 +497,7 @@ Starting from the video below, a Git repo is used to demonstrate the examples in
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
+    allowfullscreen="allowfullscreen"
   ></iframe>
 </figure>
 

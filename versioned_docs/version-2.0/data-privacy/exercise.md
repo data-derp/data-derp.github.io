@@ -14,6 +14,6 @@ If you're having trouble with the exercise, check out the follow-along video:
 
 <div style={{textAlign: 'center'}} > 
 <figure class="video-container">
-    <iframe src="https://www.youtube.com/embed/Vnv9Tm2oD84" id="ytplayer"  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+    <iframe src="https://www.youtube.com/embed/Vnv9Tm2oD84" id="ytplayer"  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen" mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
 </figure>
 </div>
