@@ -42,14 +42,13 @@ sidebar_position: 2
 
 
 Pros:
-* Decoupled storage and compute
+* [For Snowflake and BigQuery] Decoupled storage and compute
 * Excellent for BI, Reporting, Dashboarding
 
 Cons
 * Your data gets locked away in a proprietary data format
-* SQL only, limited programmatic support (sometimes needed for ML/AI use-cases)
+* SQL only, limited programmatic support (often needed for ML/AI use-cases)
 * Limited support for unstructured data (e.g. text, images, audio, video)
-
 
 ### (Vanilla) Cloud Data Lakes
 
@@ -73,7 +72,7 @@ Cons
 * Not as fast as a database/data warehouse for interactive needs (e.g. dashboards with several drilldowns/complex queries)
 
 ### Can we get the best of both worlds?
-Data Lakehouse
+*...enter the Data Lakehouse*
 <div style={{textAlign: 'center'}}>
 
 ![lakehouse-paradigm.png](./assets/lakehouse-paradigm.png)
@@ -85,10 +84,10 @@ Source: [Databricks](https://databricks.com/blog/2020/01/30/what-is-a-data-lakeh
 ## Example Lakehouse Contenders
 
 **Databricks**
-* [Webpage](https://databricks.com/)
-* [Photon engine](https://docs.databricks.com/runtime/photon.html): taking advantage of modern hardware with C++
-* [Delta Lake](https://docs.databricks.com/runtime/photon.html) ensures data reliability and consistency
-* [Databricks SQL](https://databricks.com/product/databricks-sql):
+* [Webpage - Demo Hub](https://www.databricks.com/discover/demos)
+* [Photon engine](https://aws.amazon.com/blogs/apn/using-databricks-sql-on-photon-to-power-your-aws-lake-house/): taking advantage of modern hardware with C++
+* [Delta Lake](https://youtu.be/BMO90DI82Dc) scalable, efficient open format on the lake but with ACID capabilities and data reliability
+* [Databricks SQL](https://youtu.be/cfq0gR5SMZQ):
     * Takes advantage of Delta Lake for data integrity
     * Photon for fast, interactive queries
 
@@ -114,4 +113,12 @@ Source: [Databricks](https://databricks.com/blog/2020/01/30/what-is-a-data-lakeh
 [Azure](https://techcommunity.microsoft.com/t5/analytics-on-azure/simplify-your-lakehouse-architecture-with-azure-databricks-delta/ba-p/2027272): Azure Databricks, Azure Synapse Ecosystem, etc.
 
 ## Takeaways
-Big Data Technology is rapidly maturing to support the needs of Data Mesh
+Big Data technologies/architectures such as Lakehouse are rapidly maturing to support the needs of Data Mesh
+
+<div style={{textAlign: 'center'}} > 
+<figure class="video-container">
+    <iframe src="https://www.youtube.com/embed/a00rdlNtW98" id="ytplayer"  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen" mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
+</figure>
+
+*[Thoughtworks Data Mesh Conference: Data Mesh and Lakehouse - Matei Zaharia, Databricks](https://youtu.be/a00rdlNtW98)*
+</div>
