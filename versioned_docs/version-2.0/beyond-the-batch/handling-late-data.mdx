@@ -39,7 +39,7 @@ Let’s say we are developing an application which is processing the data genera
 
 Our application should receive the above data and create a **1 minute tumbling time window**. Also, to demonstrate the windowing aggregates, our application should sum up all the prices for the stock symbol generated within each time window of 1 minute.
 
-To implement the above example, we will use the netcat application (Socket Source) from our previous [examples](./checkpointing.mdx) to simulate data streaming from the stock market application. Note: the full application code below can be found [here](https://github.com/data-derp/exercise-vanilla-spark/tree/main/src); please follow the [README](https://github.com/data-derp/exercise-vanilla-spark/tree/main#readme) to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the “Event Time, Symbol, Price” from the source:
+To implement the above example, we will use the netcat application (Socket Source) from our previous [examples](./checkpointing.mdx) to simulate data streaming from the stock market application. Note: the full application code below can be found [here](https://github.com/data-derp/exercise-vanilla-spark/tree/main/src); please follow the [README](https://github.com/data-derp/exercise-vanilla-spark/tree/main#readme) to ensure that all dependencies are satisfied before running it. We will start by writing the Spark Streaming code for the above application requirement to receive the `Event Time, Symbol, Price` from the source:
 
 1. Start with reading the data from the source
 
@@ -69,7 +69,7 @@ To implement the above example, we will use the netcat application (Socket Sourc
    # Group the data by window and word and compute the count of each group
    windowedWords = stocksDF\
        .groupBy(window("EventTime", "1 minute"), stocksDF.symbol)\
-       .agg(sum("price").alias("totalPrice"))
+       .agg(max("price").alias("maxPrice"))
    ```
 4. Lastly, write the data to the output console sink:
    ```python
@@ -89,22 +89,22 @@ Run the application
    ![Start-NetCat.png](./assets/Start-NetCat.png)
 2. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
    ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
-3. You should be able to see the first empty batch with `window`, `symbol` and `totalPrice` columns.
+3. You should be able to see the first empty batch with `window`, `symbol` and `maxPrice` columns.
 4. Let us now send `2023-04-24 12:00:05,AAPL,500` as data from netcat terminal.
 5. You should be able to see this data with corresponding time window being created in Pycharm output as below:
    ![Tumbling-Window-Batch-1.png](./assets/Tumbling-Window-Batch-1.png)
-6. Try sending a similar data with changed price in the same time window with a changed timestamp: `2023-04-24 12:00:45,AAPL,600`. You should be able to see the ‘totalPrice’ column being aggregated in the same time window as below:
+6. Try sending a similar data with changed price in the same time window with a changed timestamp: `2023-04-24 12:00:45,AAPL,600`. You should be able to see the `maxPrice` column showing the maximum price of `600` as shown below:
    ![Tumbling-Window-Batch-2.png](./assets/Tumbling-Window-Batch-2.png)
 7. Send data for the next time window for the same symbol: `2023-04-24 12:01:10,AAPL,100`. You will see another record with the next window created and the latest price as below:
    ![Tumbling-Window-Batch-3.png](./assets/Tumbling-Window-Batch-3.png)
-8. Try sending another set of data for the new Time Window: `2023-04-24 12:01:25,AAPL,200`. You should be able to see the new window being updated with the latest aggregate price. The previous window remains unchanged as seen below.
+8. Try sending another set of data for the new Time Window: `2023-04-24 12:01:25,AAPL,200`. You should be able to see the new window being updated with the latest maximum price. The previous window remains unchanged as seen below.
    ![Tumbling-Window-Batch-4.png](./assets/Tumbling-Window-Batch-4.png)
 
 You’ve now implemented aggregations across Tumbling Time Windows!
 
 ### Handing Late Data
 
-You might have noticed that the above program is maintaining the data in the statestore forever, even though the Spark Application managed to segregate it into Tumbling Time Windows of 1 minute each. To further validate this, try sending some data to an older window `2023-04-24 12:00:50,AAPL,100` assuming that it has arrived a bit late to your application. You will see the older window being updated with the latest aggregate of 1200 as below:
+You might have noticed that the above program is maintaining the data in the statestore forever, even though the Spark Application managed to segregate it into Tumbling Time Windows of 1 minute each. To further validate this, try sending some data to an older window `2023-04-24 12:00:50,AAPL,700` assuming that it has arrived a bit late to your application. You will see the older window being updated with the latest maximum price of `700` as below:
 ![Tumbling-Window-Batch-5.png](./assets/Tumbling-Window-Batch-5.png)
 What happened ? The application retains all the data because we have defined the output mode as `Complete`. As we have understood in the `Output modes` [section](./spark-structured-streaming.mdx), `Complete` output mode is designed to retain the data in the `statestore` forever. If we want our Spark Application to clean up the data for older windows and also stop accepting any late data in those windows (often a business decision/requirement), we will have to add what Spark calls as `Watermark` to the application code.
 
@@ -119,7 +119,7 @@ Watermarks are the expiry threshold that we set up in our programs after which t
     windowedWords = stocksDF\
         .withWatermark("EventTime", "2 minute") \
         .groupBy(window("EventTime", "1 minute"), stocksDF.symbol)\
-        .agg(sum("price").alias("totalPrice"))
+        .agg(max("price").alias("maxPrice"))
    ```
 
 2. Change the output mode to `update` in the output sink as below
@@ -139,15 +139,15 @@ Let us now test this program with data streamed from the netcat application
    ![Start-NetCat.png](./assets/Start-NetCat.png)
 2. Run the above program from Pycharm. Press Ctrl+Shift+R on your keyboard to run this. Alternatively, you can also open the program in Pycharm and press the execute button as shown below.
    ![Pycharm-Run-Program.png](./assets/Pycharm-Run-Program.png)
-3. You should be able to see the first empty batch with ‘window’, ‘symbol’ and ‘totalPrice’ columns.
+3. You should be able to see the first empty batch with `window`, `symbol` and `maxPrice` columns.
 4. Let us now send **2023-04-24 12:00:05,AAPL,500** as data from netcat terminal
 5. You should be able to see this data with corresponding time window being created in PyCharm output as below. You might see an empty batch too but it is safe to ignore it as it is coming due to introducing Watermarks in our application code.
    ![Tumbling-Window-Batch-1.png](./assets/Tumbling-Window-Batch-1.png)
-6. Try sending a similar data with changed price in the same time window with a changed timestamp: **2023-04-24 12:00:45,AAPL,600**. You should be able to see the `totalPrice` column being aggregated in the same time window as below:
+6. Try sending a similar data with changed price in the same time window with a changed timestamp: **2023-04-24 12:00:45,AAPL,600**. You should be able to see the `maxPrice` column being updated to `600` in the same time window as below:
    ![Tumbling-Window-Batch-2.png](./assets/Tumbling-Window-Batch-2.png)
 7. Let us send the data for the next time window for the same symbol **2023-04-24 12:01:10,AAPL,100**. You will see just the new record for the next time window as below.
    ![Tumbling-Window-Watermark-Batch-5.png](./assets/Tumbling-Window-Watermark-Batch-5.png)
-8. The previous time window **[2023-04-24 12:00:00, 2023-04-24 12:01:00]** is nicely preserved in the statestore, it is just not displayed above (this is a feature). To validate this, try sending some data to the previous window **2023-04-24 12:00:50,AAPL,100**. The previous window will now appear. This time the next window **[2023-04-24 12:01:00, 2023-04-24 12:02:00]** will be missing but that’s alright isn’t it?
+8. The previous time window **[2023-04-24 12:00:00, 2023-04-24 12:01:00]** is nicely preserved in the statestore, it is just not displayed above (this is a feature). To validate this, try sending some data to the previous window **2023-04-24 12:00:50,AAPL,700**. The previous window will now appear with the latest `maxPrice`. This time the next window **[2023-04-24 12:01:00, 2023-04-24 12:02:00]** will be missing but that’s alright isn’t it?
    ![Tumbling-Window-Watermark-Batch-7.png](./assets/Tumbling-Window-Watermark-Batch-7.png)
 9. Late data is still being processed by our application. That is because the Event data has still not reached the Watermark boundary. The Watermark boundary is calculated using the following formula:
 
