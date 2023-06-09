@@ -28,7 +28,7 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/data-derp/data-derp.github.io/tree/master/docs',
           showLastUpdateAuthor: true,
-          lastVersion: '1.0',
+          lastVersion: '2.0',
           versions: {
             "1.0": {
               label: '1.0',
@@ -42,12 +42,12 @@ const config = {
             },
           },
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/data-derp/data-derp.github.io/tree/master/blog',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   editUrl:
+        //     'https://github.com/data-derp/data-derp.github.io/tree/master/blog',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
