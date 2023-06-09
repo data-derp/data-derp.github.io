@@ -19,6 +19,12 @@ const baseAuthors = {
         title: "Curator",
         url: "https://github.com/syed-tw",
         imageURL: "https://github.com/syed-tw.png"
+    },
+    tklae: {
+        name: "Tim Kläsener",
+        title: "Curator",
+        url: "https://github.com/tklae",
+        imageURL: "https://github.com/tklae.png"
     }
 }
 

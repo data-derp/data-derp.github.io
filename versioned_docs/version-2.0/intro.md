@@ -15,7 +15,7 @@ The left-navigation bar lists topics in the order that they should be consumed. 
 Sections marked **BONUS** are not part of core content, and we can recommend going through them only if you have time or interest. Often these are related topics but create too much overhead on the core Data Engineering content. Don't stress about them, you can always come back to it later!
 
 ## Prerequisites
-This training uses Python and concepts from SQL and eventually moves on to more complex Data Engineering architectures. If you're unfamiliar with Python and SQL concepts, feel free to browse the [Prerequisites](./prerequisites) section to brush up on your skills and self-assess yourself.
+This training uses Python and concepts from SQL and eventually moves on to more complex Data Engineering architectures. If you're unfamiliar with Python and SQL concepts, feel free to browse the [Python](./prerequisites/python.mdx) and [SQL](./prerequisites/sql.mdx) prerequisite sections to brush up on your skills and self-assess yourself.
 
 ## Required Software
 Our goal is to get you learning fast. We use Databricks notebooks in this training which requires a Databricks workspace. We do this to prevent environment-setup and environment inconsistencies. 
