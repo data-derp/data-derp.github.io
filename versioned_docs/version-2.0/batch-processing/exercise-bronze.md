@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 minutesToComplete: 60
+authors: [kmok]
 ---
 
 # Exercise: Bronze

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 minutesToComplete: 60
+authors: [plaosunthara]
 ---
 
 # Exercise: Gentle Introduction to Spark

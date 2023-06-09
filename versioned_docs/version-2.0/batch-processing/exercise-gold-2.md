@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 minutesToComplete: 60
+authors: [kmok]
 ---
 
 # Exercise: Gold

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 30
 minutesToComplete: 190
+authors: [syed]
 ---
 
 # Vanilla Spark on your Local Machine (Bonus)

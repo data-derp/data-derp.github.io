@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 minutesToComplete: 15
+authors: [kmok]
 ---
 
 # Basics of a Data Platform

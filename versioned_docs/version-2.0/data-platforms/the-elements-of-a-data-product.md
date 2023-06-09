@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 minutesToComplete: 15
+authors: [kmok]
 ---
 
 # The Elements of a Data Product

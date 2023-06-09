@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 minutesToComplete: 30
+authors: [kmok]
 ---
 
 # Common Landmarks of Data Processing

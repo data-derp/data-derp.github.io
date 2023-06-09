@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 minutesToComplete: 3
+authors: [kmok]
 ---
 
 # Batch vs. Streaming

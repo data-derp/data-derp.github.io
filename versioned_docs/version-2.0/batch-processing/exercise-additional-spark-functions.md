@@ -1,6 +1,7 @@
 ---
 sidebar_position: 30
 minutesToComplete: 5
+authors: [kmok]
 ---
 
 # Additional Spark Functions (Bonus)
