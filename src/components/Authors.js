@@ -31,6 +31,12 @@ const baseAuthors = {
         title: "Contributor",
         url: "https://github.com/richardbor",
         imageURL: "https://github.com/richardbor.png"
+    },
+    kris: {
+        name: "Kris Simon",
+        title: "Curator",
+        url: "https://github.com/petershaw",
+        imageURL: "https://github.com/petershaw.png"
     }
 }
 
