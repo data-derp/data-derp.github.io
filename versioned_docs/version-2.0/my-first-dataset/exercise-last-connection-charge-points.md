@@ -8,7 +8,7 @@ minutesToComplete: 60
 
 | Question | Context |
 | --- | --- |
-| **When was the last connection time of a Charge Point?** | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it has last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. |
+| **When was the last connection time of a Charge Point?** | A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it was last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. A singular Charge Point sends a heartbeat message at a configured interval unless specified differently by the CSMS when it first registers itself. We can find out when it was last responsive by finding the timestamp of the most recent message from any OCPP action for that Charge Point. |
 
 In this exercise, we'll answer the question: **When was the last connection time of a Charge Point?**.
 
