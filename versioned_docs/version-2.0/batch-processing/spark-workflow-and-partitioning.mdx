@@ -131,8 +131,7 @@ Shuffles in Spark usually come into the picture when a wide transformation (like
 
 As you might have guessed by now, shuffling is a necessary evil, especially for wide transformations in Spark. A data shuffle happens if we are using transformations like groupBy, joins and repartition. Since shuffles are expensive, the best way to avoid them would be to:
 
-1. As you might have guessed by now, shuffling is a necessary evil, especially for wide transformations in Spark. A data shuffle happens if we are using transformations like groupBy, joins and repartition. Since shuffles are expensive, the best way to avoid them would be to:
-   write your logic  using narrow transformations like map, flatmaps and filter.
+1. write your logic  using narrow transformations like map, flatmaps and filter.
 2. use wide transformations only when required and no other alternative is available in narrow transformations.
 3. use wide transformations as late as possible or towards the end of your logic (e.g.join only at the end of your logic)
 
