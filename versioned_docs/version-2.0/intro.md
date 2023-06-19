@@ -32,6 +32,6 @@ compute resources (clusters) are shut down by the end of the day. There is an au
 **Key Takeaway:** don't forget to delete and turn off your clusters when you're not using them!
 
 ## Contributors
-The content in this training is curated by passionate contributors from all over the globe. If you see any areas for improvement, things that don't make sense, and [hopefully not] mistakes/broken links, please feel free to [create a Github Issue](https://github.com/data-derp/data-derp.github.io/issues/new) or submit a PR on the relevant Github repository:
+The content in this training is curated by passionate contributors from all over the globe. If you see any areas for improvement, things that don't make sense, and [hopefully not] mistakes/broken links, please feel free to [create a Github Issue](https://github.com/data-derp/data-derp.github.io/issues/new) or submit a PR to the relevant Github repository (via forking):
 * This site's [Github repo](https://github.com/data-derp/data-derp.github.io)
 * Remainder of the [repos](https://github.com/data-derp)
