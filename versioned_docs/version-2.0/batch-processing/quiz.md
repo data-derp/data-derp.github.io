@@ -16,7 +16,7 @@ It’s not human-readable (compressed) and requires software to read/print it.
 <details>
 <summary>When first ingesting from a data source, why do you maintain a copy of the raw data as close to the original format as possible?</summary>
 * You want to maintain your original source of truth in case of bugs/logic changes
-* You don’t want to realize months down the line that you’ve accidentally been overwriting/tampering with the raw data and that it’s no longer irrecoverable!
+* You don’t want to realize months down the line that you’ve accidentally been overwriting/tampering with the raw data and that it’s no longer recoverable!
 * If (..or more like when) ever you want to fix/update your data transformation logic, it’s also good to have an optimized copy of your raw data (e.g. in Parquet vs plain text) so that your re-processing doesn’t take as long!
 * It also helps to debug by breaking the steps into an ingestion step and transformation steps.
 </details>
@@ -50,6 +50,7 @@ In standard SQL, it aggregates rows that share the same grouping key into a sing
 
 
 <details><summary>What’s one scenario where using Window functions are advantageous over GroupBy aggregations?</summary>
+
 Have a look at [this example](https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html)
 
 Basically, Window functions allow you to maintain all of your original rows (without having to collapse/summarize them per group)
@@ -58,6 +59,7 @@ Of course, there are times when you’d want to aggregate instead of window as w
 </details>
 
 <details><summary>What kinds of operations often induce shuffling in your Spark job?</summary>
+
 [“Wide Transformations/Dependencies”](https://databricks.com/glossary/what-are-transformations) such as joins, aggregations, window functions. Implication: they can really slow down your Spark job. [Concise summary here.](https://databricks.com/glossary/what-are-transformations)
 </details>
 
@@ -73,11 +75,7 @@ via broadcast join (small join tables) OR partition your data such that data for
 <details><summary>What’s a good rule of thumb for partitioning?</summary>
 Partition on columns that you would typically do a filter/groupBy 
 
-A partition should ideally contain anywhere between 256MB - 2GB of data. Too many small partitions (each containing kilobytes means you have lots of small files - that’s bad!)
+A partition should ideally contain anywhere between 256MB - 1GB of data. Too many small partitions (each containing kilobytes means you have lots of small files - that’s bad!)
 
 For the small file reason above, you generally shouldn’t partition on high cardinality columns
 </details>
-
-
-
-
