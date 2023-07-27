@@ -4,7 +4,9 @@ minutesToComplete: 20
 ---
 
 # Apache Spark
-Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python, and R, and an optimised engine that supports general execution graphs. It also supports a rich set of higher-level tools including Spark SQL for SQL and structured data processing, pandas API on Spark for pandas workloads, MLlib for machine learning, GraphX for graph processing, and Structured Streaming for incremental computation and stream processing. [source](https://spark.apache.org/docs/2.0.1/)
+Apache Spark is a unified analytics engine for large-scale data processing. It provides high-level APIs in Java, Scala, Python, and R, and an optimised engine that supports general execution graphs. It also supports a rich set of higher-level tools including Spark SQL for SQL and structured data processing, pandas API on Spark for pandas workloads, MLlib for machine learning, GraphX for graph processing, and Structured Streaming for incremental computation and stream processing. 
+
+[Source: Apache Spark](https://spark.apache.org/docs/2.0.1/)
 
 ## Apache Spark Topology
 
@@ -21,9 +23,11 @@ There are several useful things to note about this architecture:
 2. Upon submission of Spark jobs, each Spark Application gets its own executor processes (executors are like JVM runtimes), which stay up for the duration of the whole application and run tasks in multiple threads. This has the benefit of isolating applications from each other, on both the scheduling side (each driver schedules its own tasks) and executor side (tasks from different applications run in different JVMs). However, it also means that data cannot be shared across different Spark applications without writing it to an external storage system.
 3. Spark is agnostic to the underlying cluster manager. If it can acquire executor processes which communicate with each other, it is relatively easy to run Spark Applications even on a cluster manager that also supports other applications (e.g. Mesos/YARN/Kubernetes).
 4. The driver program must listen for and accept incoming connections from its executors throughout its lifetime. As such, the driver program must be network addressable from the worker nodes.
-5. Because the driver schedules tasks on the cluster, it should be run close to the worker nodes, preferably on the same local area network. [source](https://spark.apache.org/docs/latest/cluster-overview.html)
+5. Because the driver schedules tasks on the cluster, it should be run close to the worker nodes, preferably on the same local area network. 
 
-## What is a transformation ? What is an action ?
+[Source: Apache Spark](https://spark.apache.org/docs/latest/cluster-overview.html)
+
+## What is a transformation? What is an action?
 Spark offers two different kinds of operations:
 
 1. **Transformations**
@@ -44,14 +48,14 @@ Spark offers two different kinds of operations:
 
     Actions in Spark are eager operations that trigger the execution of logic. For example, a count action triggers a job to count the number of variables created or present in a dataset. A collect collects all the data from the partitions and returns some output. Actions are usually written towards the end of your code after all the transformations are completed.
 
-## How are transformations and actions evaluated in Spark (as a distributed system) ?
+## How are transformations and actions evaluated in Spark (as a distributed system)?
 Transformations and Actions are evaluated differently in Spark which lends its processing efficiency. Transformations are lazy operations which usually create or transform the data and are not evaluated until an action operation is called. Let us take a very simple example of the below code to understand this better:
 
 ```
 spark.range(1,1000)
 ```
 The above transformation creates a dataset. This dataset gets created on the worker machines as a number of input partition objects encapsulating the data. Input partitions are the in-memory JVM objects containing parts of the dataset that is being created here.  These input partition objects in turn are distributed across worker machines.
-[Learn more about it here (bonus).](https://data-derp.github.io/docs/2.0/data-engineering-the-good-parts/demo-vanilla-spark#spark-input-partitions-stages-and-dags)
+[Bonus: Learn more about input partitions here!](https://data-derp.github.io/docs/2.0/data-engineering-the-good-parts/demo-vanilla-spark#spark-input-partitions-stages-and-dags)
 
 However, since Spark employs Lazy Loading, the partition objects do not get created in the memory of the worker machines unless an action is triggered. So let us add an action to the above code:
 ```
@@ -66,10 +70,10 @@ When this program is submitted on the driver machine of the Spark cluster, the f
 5. The partition count totals are shuffled over (more on this in the later sections) to one of the identified work machines which does the overall count.
 6. The overall count is sent back to the driver. The driver shows the output on the console.
 
-Learn more about Spark Tasks and Operations [here](https://data-derp.github.io/docs/2.0/data-engineering-the-good-parts/demo-vanilla-spark#spark-tasks-and-operations)
+[Bonus: Learn more about Spark Tasks and Operations!](https://data-derp.github.io/docs/2.0/data-engineering-the-good-parts/demo-vanilla-spark#spark-tasks-and-operations)
 
 
-## What makes Spark fast and relevant to our data work ?
+## What makes Spark fast and relevant to our data work?
 
 Spark is fast and most relevant to the data work due to its following characteristics:
 1. **Lazily Loaded**
@@ -78,7 +82,7 @@ Spark is fast and most relevant to the data work due to its following characteri
 
 2. **DAG-based**
 
-   Instead of running the transformations one by one as soon as it receives them, Spark stores   these transformations in a DAG (Directed Acyclic Graph), and as soon as it receives an action, it runs the whole DAG and delivers the requested output. This enables it to optimise its execution based on the job’s DAG, instead of running the transformations sequentially one after the other. [source](https://www.invivoo.com/en/why-is-spark-fast-and-how-to-make-it-run-faster-part-ii-the-spark-magic/)
+   Instead of running the transformations one by one as soon as it receives them, Spark stores   these transformations in a DAG (Directed Acyclic Graph), and as soon as it receives an action, it runs the whole DAG and delivers the requested output. This enables it to optimise its execution based on the job’s DAG, instead of running the transformations sequentially one after the other. [Source: Invivoo](https://www.invivoo.com/en/why-is-spark-fast-and-how-to-make-it-run-faster-part-ii-the-spark-magic/)
 
 3. **In Memory Computation with an optional Caching Component**
 
@@ -91,7 +95,7 @@ Spark is fast and most relevant to the data work due to its following characteri
     1. Java/Python programming languages are not distributed in nature and are designed to run on single machines set up with a very small amount of data. Spark is designed to work in a distributed environment with huge amounts of data such that it distributes the data appropriately to optimise the job; this would be a manual effort in Kubernetes.
     2. A Java/Python program in Kubernetes would not provide features mentioned above (lazy loading, DAGs, In Memory computations etc). In fact, should the need arise,  Spark already has an option of running it on Kubernetes as the distributed platform. This brings in all the features of Spark to the distributed characteristics of Kubernetes
 
-This is completely separate to running [Spark on Kubernetes](https://spark.apache.org/docs/latest/running-on-kubernetes.html), and at the time of writing, there is a common opinion that it is extremely difficult to manage and maintain, signalled by a large variety of SaaS solutions that exist for that offering.
+This is completely separate to running [Spark on Kubernetes](https://spark.apache.org/docs/latest/running-on-kubernetes.html), and at the time of writing, there is a common opinion that it is extremely difficult to manage and maintain, signalled by a large variety of SaaS solutions that exist for that offering. Of course, this is always up for debate. :)
 
 
 
