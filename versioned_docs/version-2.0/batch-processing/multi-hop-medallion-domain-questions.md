@@ -20,7 +20,7 @@ Let's bring back the domain questions from our earlier exercises and the steps t
 | Windows and Rows | Unpack JSON in StopTransaction Request (withColumn, from_json) |
 | Cleanup | Unpack StartTransaction Response (withColumn, from_json) |
 |  | Unpack StartTransaction Request (withColumn, from_json) |
-| | Find the matching StartTransaction Requests (left join) | 
+| | Find the matching StartTransaction Requests (inner join) | 
 | | Join Start and Stop data (left join) |
 | | Convert the start_timestamp and stop_timestamp fields to timestamp type (to_timestamp, withColumn) |
 | | Calculate the Charge Transaction Duration (total_time) (withColumn, cast, maths) |
@@ -50,7 +50,7 @@ And of course, the Gold transformation Step will feature various transformations
 | :---: | :---: |
 | Windows and Rows | Find all StopTransaction (filter) |
 | Cleanup | Join with StartTransaction Responses, matching on transaction_id (left join) |
-| | Find the matching StartTransaction Requests (left join) |
+| | Find the matching StartTransaction Requests (inner join) |
 | | Calculate the total_time (withColumn, cast, maths) |
 | | Calculate total_energy (withColumn, cast) |
 | | Calculate total_parking_time (explode, filter, window, groupBy) |
