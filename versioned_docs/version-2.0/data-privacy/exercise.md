@@ -10,7 +10,7 @@ Follow [these instructions](https://github.com/data-derp/exercise-data-security)
 **Note** This exercise uses a domain (CO2) from an older iteration of this training.
 
 ## Follow Along (Bonus)
-If you're having trouble with the exercise, check out the follow-along video:
+If you're having trouble with the exercise (or looking to see this demonstrated in a domain), check out the follow-along video:
 
 <div style={{textAlign: 'center'}} > 
 <figure class="video-container">
