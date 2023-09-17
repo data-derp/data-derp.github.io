@@ -11,45 +11,52 @@ We often use both to ensure the full functionality of a data application. Unit T
 ## Unit Tests
 Take for example the following transformation code. It first filters a DataFrame on action and message type, unpacks a json string into json, selects/drops certain columns, and then casts a timestamp column (type String) into a timestamp type. For explanatory purposes, this is not too complex, but it has a variety of behaviours.
 ```python showLineNumbers
-    input_df.filter((input_df.action == "StartTransaction") & (input_df.message_type == 2))
-    .withColumn("new_body",from_json(col("body"), StructType([
-            StructField("connector_id", IntegerType(), True),
-            StructField("id_tag", StringType(), True),
-            StructField("meter_start", IntegerType(), True),
-            StructField("timestamp", StringType(), True),
-            StructField("reservation_id", IntegerType(), True),
-        ])
-    )). \
-    withColumn("connector_id", input_df.new_body.connector_id). \
-    withColumn("id_tag", input_df.new_body.id_tag). \
-    withColumn("meter_start", input_df.new_body.meter_start). \
-    withColumn("timestamp", input_df.new_body.timestamp). \
-    withColumn("reservation_id", input_df.new_body.reservation_id). \
-    drop("new_body"). \
-    drop("body"). \
-    withColumn("timestamp", to_timestamp(col("timestamp")))
+input_df.filter((input_df.action == "StartTransaction") & (input_df.message_type == 2))
+.withColumn("new_body",from_json(col("body"), StructType([
+        StructField("connector_id", IntegerType(), True),
+        StructField("id_tag", StringType(), True),
+        StructField("meter_start", IntegerType(), True),
+        StructField("timestamp", StringType(), True),
+        StructField("reservation_id", IntegerType(), True),
+    ])
+)). \
+withColumn("connector_id", input_df.new_body.connector_id). \
+withColumn("id_tag", input_df.new_body.id_tag). \
+withColumn("meter_start", input_df.new_body.meter_start). \
+withColumn("timestamp", input_df.new_body.timestamp). \
+withColumn("reservation_id", input_df.new_body.reservation_id). \
+drop("new_body"). \
+drop("body"). \
+withColumn("timestamp", to_timestamp(col("timestamp")))
 ```
-We could hypothetically write a variety of unit tests for, but we could further improve future development by breaking up the logic and testing each, ensuring that when new changes, it would be easy to pin-point where something has gone wrong.
+:::info
 
-To break down this logic into several testable parts, we'll first extract the filtering logic into its own function:
+Would you be able to write a 1 simple unit test that tests the entirety of this logic?
+
+:::
+
+If you answered no, you're correct. While you could hypothetically write a single unit test, it would be terribly long, would miss edge cases, and it would be a nightmare to debug. The more ideal approach would be to write a variety of unit tests that would further improve future development by breaking up the logic. By doing this, it ensures that when new transformations are added, it would be easy to understand what it does (self-describing function name) and to debug when something has gone wrong.
+
+We would need to break down this logic into several testable parts. For example, we'll first extract the filtering logic into its own function:
 ```python showLineNumbers
-def filter_data(input_df: DataFrame) -> DataFrame:
+def filter_by_start_transaction_and_request(input_df: DataFrame) -> DataFrame:
     return input_df.filter((input_df.action == "StartTransaction") & (input_df.message_type == 2))
 ```
-Note that the input AND output are both DataFrames.  Next we call the function via the [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html). The [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html) is powerful in that it allows us to chain custom Dataframe functions (which are in turn, independent and testable).
+:::info
+Note that the input AND output are both DataFrames.  
+:::
 
-```python
-df.transform(filter_data)
-```
+A unit test provides a mock of the incoming data and tests ONLY that the expected data is returned, namely the number of resulting records and the values of significant columns.
 
-Lastly, our unit test provides a mock of the incoming data and tests ONLY that the expected data is returned, namely the number of resulting records and the values of significant columns.
-
+:::info
+The following test is written in the format that is used in the previously-used Databricks exercises which might look different than invocations from testing frameworks like Pytest.
+:::
 ```python showLineNumbers
 import pandas as pd
 from typing import Callable
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
-def test_filter_data_unit(spark, f: Callable):
+def test_filter_by_start_transaction_and_request_unit(spark, f: Callable):
     input_pandas = pd.DataFrame([
         {
             "action": "StartTransaction",
@@ -86,16 +93,40 @@ def test_filter_data_unit(spark, f: Callable):
 
     print("All tests pass! :)")
     
-test_filter_data_unit(spark, filter_data)  #=> This call could be replaced by a testing framework, such as Pytest.
+test_filter_by_start_transaction_and_request_unit(spark, filter_by_start_transaction_and_request)  
+#=> ^^^ This call could be replaced by a testing framework, such as Pytest.
 ```
 
-Imagine how long this test would be if we had to test our original piece of logic! We could then test the remainder of the logic in a similar fashion.
+In our production code, we can call our custom function via the [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html). 
+
+```python
+df.transform(filter_by_start_transaction_and_request)
+```
+
+
+The [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html) is powerful in that it allows us to chain custom Dataframe functions (which are in turn, independent and testable).
+
+```python
+df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function)
+```
+
+We would then proceed with testing the remainder of the logic in a similar fashion. 
 
 ## E2E Tests
-An E2E works similarly but instead of mocking the starting position of data, we are using a much more comprehensive dataset which may be much closer to production data than the mocked data used in the Unit Tests. Of course, the mocked data in the unit tests must be representative of production data, but it is shaped in a controlled way to ensure that we truly test one aspect of the logic. For E2E tests, some Data Engineers sometimes choose to use real production data which is dangerous because it could contain confidential and personal information (which gets checked into version control). On the other hand, testing data that is only somewhat production-like could result in inaccurate or missing logic due to the nuances in production data. The sensible to default is to first truly understand the data and its nature and create a representation of data that is production-like and contains such nuances. Sometimes, it takes time to construct a representation of production data as the longer you work with the data, the more you learn about it. This is still magnitudes better practice (and safer!) than using real production data for your E2E tests. 
+An E2E works similarly but we test the output of the entire transformation journey, from the start to a designated target/end, instead of a single transformation function (as we did with Unit Tests). There are two important aspects that differentiate E2E tests from Unit tests:
+1. E2E tests make an assertion on the output of data based on multiple functions called together, for example `df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function)`, as opposed to unit tests which test a single function
+2. In order to test the "full journey", including all functions transformations, the dataset under test might need to be more comprehensive and shaped closer to production data to capture nuances, as opposed to unit test data which heavily mocks data to truly test one aspect of the logic.
 
+For E2E tests, some Data Engineers sometimes choose to use real production data which is dangerous because it could contain confidential and personal information (which gets checked into version control). On the other hand, testing data that is only somewhat production-like could result in inaccurate or missing logic due to the nuances in production data. The sensible to default is to first truly understand the data and its nature and create a representation of data that is production-like and contains such nuances. Sometimes, it takes time to construct a representation of production data as the longer you work with the data, the more you learn about it. This is still magnitudes better practice (and safer!) than using real production data for your E2E tests. 
+
+Let's say we'd like to test the journey, with our E2E data under test stored in `df`:
+```python
+df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function)
+```
+
+Our E2E test might look like:
 ```python showLineNumbers
-def test_filter_data_e2e(result_df: DataFrame):
+def test_e2e(result_df: DataFrame):
     result_count = result_df.count()
     expected_count = 2599
     assert result_count == expected_count, f"Expected {expected_count}, but got {result_count}"
@@ -110,7 +141,8 @@ def test_filter_data_e2e(result_df: DataFrame):
 
     print("All tests pass! :)")
 
-test_filter_data_e2e(df.transform(filter_data))
+test_e2e(df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function))  
+#=> ^^^ This call could be replaced by a testing framework, such as Pytest.
 ```
 
 Our E2E test takes the full transformation of our production-like dataset and validates the expected count and expected significant values in the DataFrame (similar to the Unit Test, with the only difference that the Unit test uses mocked data, devoid of most other columns). Because E2E tests are often expensive (time and compute) to run, these are often used sparingly. In the previous exercises, we ran E2E tests after every function definition and Unit Test for the benefit of learning, but in reality, we might abstain from running it at that level of frequency. 
