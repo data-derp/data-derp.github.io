@@ -124,6 +124,10 @@ Let's say we'd like to test the journey, with our E2E data under test stored in 
 df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function)
 ```
 
+:::info
+The following test is written in the format that is used in the previously-used Databricks exercises which might look different than invocations from testing frameworks like Pytest.
+:::
+
 Our E2E test might look like:
 ```python showLineNumbers
 def test_e2e(result_df: DataFrame):
