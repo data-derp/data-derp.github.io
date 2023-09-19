@@ -97,14 +97,14 @@ test_filter_by_start_transaction_and_request_unit(spark, filter_by_start_transac
 #=> ^^^ This call could be replaced by a testing framework, such as Pytest.
 ```
 
-In our production code, we can call our custom function via the [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html). 
+In our production code, we can call our custom function via the [transform function](https://spark.apache.org/docs/3.4.0/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.transform.html). 
 
 ```python
 df.transform(filter_by_start_transaction_and_request)
 ```
 
 
-The [transform function](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.functions.transform.html) is powerful in that it allows us to chain custom Dataframe functions (which are in turn, independent and testable).
+The [transform function](https://spark.apache.org/docs/3.4.0/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.transform.html) is powerful in that it allows us to chain custom Dataframe functions (which are in turn, independent and testable).
 
 ```python
 df.transform(filter_by_start_transaction_and_request).transform(some_other_awesome_function)
