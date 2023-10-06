@@ -112,7 +112,7 @@ Now let try running the latest updated example again as below:
    ![Stateful-Output1.png](./assets/Stateful-Output1.png)
 5. Now try sending similar data with repeated words from the terminal as below
    ![Stateful-data2.png](./assets/Stateful-data2.png)
-6. You should be see the repeated words being aggregated in the output as shown below
+6. You should be able to see the repeated words being aggregated in the output as shown below
    ![Stateful-Output2.png](./assets/Stateful-Output2.png)
 
 As you might have guessed, since we added the aggregation logic to our program and also changed the output mode, the data streamed from the netcat terminal is stored and aggregated across multiple micro-batches. This makes our program a stateful Spark Streaming application.

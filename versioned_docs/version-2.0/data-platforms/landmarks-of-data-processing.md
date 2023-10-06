@@ -7,7 +7,7 @@ authors: [kmok]
 # Common Landmarks of Data Processing
 Once the scope of a Data Product has been defined and it is clear what question is to be answered and the data requirements (accuracy, freshness, etc) have been defined, we can start to think about the steps in Data Processing. It is necessary to understand the scope and requirements because it will help us understand what types of tech and processing that is required. For example, if the data is required to be near-real time, we might choose to transform less (saves time) and use streaming technologies. If the data is required to be processed once per month, we might choose to batch process our data (saves money).
 
-Regardless of whether or we are doing batch processing or streaming, there are a few landmarks which we can look out for in the world of data processing. 
+Regardless of whether or not we are doing batch processing or streaming, there are a few landmarks which we can look out for in the world of data processing. 
 * Data Source
 * Ingestion
 * Transformation
@@ -39,7 +39,7 @@ Some important questions to ask yourself when selecting a data source are:
 This step is the action of reading from the data source. In batch processing, we often read or ingest data as-is or close to as-is so that it allows us to debug or reprocess data in case of pipeline/processing failures. In streaming, we read directly from a stream, like a Kafka Topic or AWS Kinesis Stream.
 
 ## Transformation
-Once the data has been ingested, transformation logic aggregates and shapes the data into a form that can be easily underestood and analysed, or used downstream in another pipeline. In batch processing, we sometimes see this in the form of Bronze, Silver, Gold stages (called "multi-hop" architecture) which represent increasingly curated levels of data. While they're a helpful guideline, it's not required to use the Bronze, Silver, and Gold multi-hop architecture strictly - sometimes it is enough to think through your problem and determine relevant and pragmatic stages from there.
+Once the data has been ingested, transformation logic aggregates and shapes the data into a form that can be easily understood and analysed, or used downstream in another pipeline. In batch processing, we sometimes see this in the form of Bronze, Silver, Gold stages (called "multi-hop" architecture) which represent increasingly curated levels of data. While they're a helpful guideline, it's not required to use the Bronze, Silver, and Gold multi-hop architecture strictly - sometimes it is enough to think through your problem and determine relevant and pragmatic stages from there.
 
 <div style={{textAlign: 'center'}}>
 
