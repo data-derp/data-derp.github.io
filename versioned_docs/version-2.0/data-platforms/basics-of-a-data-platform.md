@@ -13,7 +13,7 @@ A lightweight platform enables teams on the platform to both find and access dat
 
 * Event Streaming Technology
 * Data Storage in various forms
-* Data Catalogue to help find and data
+* Data Catalogue to help find and access data
 * ML and Data Engineer tooling (e.g. Spark, other cloud-native Data-services)
 * Common libraries or templates to speed up the process of experimentation
 * Data Lineage tooling
@@ -22,7 +22,7 @@ A lightweight platform enables teams on the platform to both find and access dat
 A Data Product aims to answer a specific domain question to help a business make a decision or transform data according to a complex domain construct so that others can reuse the output shape of data. Data Products can be in the form of a simple data transformation or more complex ML models. They are cross-functional teams, very closely involve the Consumer or Decision-maker, and employ many Software Development sensible defaults like iterative development, deploying small changes, testing, and continuous deployment.
 
 ### Lightweight Data Governance
-In order for a Platform to be in harmony, it requires some lightweight governance to help communicate the needs of the products back to the self-serve platform, ensure that the Platform has a clear goal and its collaborators understand it, ensure that the Platform continues to deliver value to the company, and is a lighthouse for good engineering and data practices. This is a distributed group with representatives from multiple levels in multiple disciplinaries. The purpose of this team is set some lightweight guidelines to ensure the success of every participant in the platform and the success of the company, not to rule by command and control. This group is often comprised of forward-thinking and people- and business-understanding individuals from all areas of the platform.
+In order for a Platform to be in harmony, it requires some lightweight governance to help communicate the needs of the products back to the self-serve platform, ensure that the Platform has a clear goal and its collaborators understand it, ensure that the Platform continues to deliver value to the company, and is a lighthouse for good engineering and data practices. This is a distributed group with representatives from multiple levels in multiple disciplinaries. The purpose of this team is set some lightweight guidelines to ensure the success of every participant in the platform and the success of the company, not to rule by command and control. This group is often comprised of forward-thinking people- and business-understanding individuals from all areas of the platform.
 
 ## The Guiding Light: FAIR Principles
 The most successful Platforms are guided by the [FAIR Principles](https://www.go-fair.org/fair-principles/) whose ultimate goal is to ensure data sharing. Hanging on to your data and keeping it a secret is out-of-date behaviour. The following text is directly from [Go-FAIR](https://www.go-fair.org/fair-principles/). The principles refer to three types of entities: data (or any digital object), metadata (information about that digital object), and infrastructure. For instance, principle F4 defines that both metadata and data are registered or indexed in a searchable resource (the infrastructure component).
