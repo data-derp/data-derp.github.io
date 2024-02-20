@@ -8,8 +8,11 @@ window.addEventListener("load", function (event) {
     }
 
     const asides = document.getElementsByTagName('aside');
-    if (asides.length > 0) {
+    const mains = document.getElementsByTagName('main');
+    console.log("++", asides, mains)
+    if (asides.length > 0 && mains.length > 0) {
         asides[0].style.display = 'none'
+        mains[0].style.maxWidth = 'none'
     }
 });
 
