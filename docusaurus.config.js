@@ -19,8 +19,8 @@ const config = {
     staticDirectories: ['public', 'static'],
     scripts: [
         {
-          src: '/js/nav.js',
-          async: false
+            src: '/js/nav.js',
+            async: false
         }
     ],
     presets: [
