@@ -25,7 +25,7 @@ It’s not human-readable (compressed) and requires software to read/print it.
 <summary>When should you use ETL vs ELT, why?</summary>
 <ul>
 <li>ETL is great for workloads that are reused by many consumers so it makes sense to shape the data consistently sooner rather than later</li>
-<li> ELT is great for consumers who need some flexibility. With respect to speed, ELT can sometimes be a bit slow and wasteful as you have to often re-process/re-transform the raw data all over again</li>
+<li> ELT is great for consumers who need some flexibility. With respect to speed, ELT can sometimes be a bit slow and wasteful as you have to often re-process/re-transform the raw data all over again.</li>
 At the end the day, it depends what makes the most sense for your use-case!
 </ul>
 </details>
