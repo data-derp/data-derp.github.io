@@ -57,11 +57,11 @@ query = words \
 query.awaitTermination()
 ```
 
-As you can see above, the exploded and splitted data in the ‘words’ dataframe is further written to a writeStream. The output mode is 'append' and the output sink is 'console'. The thread is started in the last line with 'awaitTermination' operation. You can find this code and [the instructions to set it up in Pycharm here.](https://data-derp.github.io/docs/2.0/data-engineering-the-good-parts/demo-vanilla-spark)
+As you can see above, the exploded and splitted data in the ‘words’ dataframe is further written to a writeStream. The output mode is 'append' and the output sink is 'console'. The thread is started in the last line with 'awaitTermination' operation. You can find this code and the instructions to set it up in Pycharm [here](https://github.com/data-derp/exercise-vanilla-spark/tree/main?tab=readme-ov-file#readme). We highly recommend to set up the vanilla spark repo (specially the section **Repo set up in Pycharm**) before proceeding. This will enable you to practice all the examples of House 9 locally.
 
 Now let's try and run this example with the below steps :
 
-Note: the following examples use netcat. This is generally pre-installed; if it isn’t please follow the instructions to install it for [MacOS](https://nmap.org/download.html#macosx) and [Windows](https://nmap.org/download.html#windows).
+**Note:** the following examples use netcat. This is generally pre-installed; if it isn’t please follow the instructions to install it for [MacOS](https://nmap.org/download.html#macosx) and [Windows](https://nmap.org/download.html#windows).
 
 1. Open a terminal in your machine and run 'nc -lk 9999' command. This will open a socket connection on your local machine at port 9999. You are now ready to send data to the above program as per the screenshot below
    ![Start-NetCat.png](./assets/Start-NetCat.png)
