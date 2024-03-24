@@ -26,7 +26,8 @@ Checkpoints in Spark can be leveraged to their full benefit if we fulfill the fo
 2. Use a source (e.g. File Source, Kafka Source) from which data can be replayed (this is useful for incomplete data in a certain micro-batch).
 3. Processing logic is consistent and idempotent (the same result is obtained when given the same input data)
 
-Let us now look at an example of how checkpoints are actually created. We will use the same Stateful Streaming Wordcount code from previous sections[hyperlink] and add checkpointing code to it.
+Let us now look at an example of how checkpoints are actually created. We will use the same Stateful Streaming
+Wordcount code from previous [sections](https://data-derp.github.io/docs/2.0/beyond-the-batch/stateful-vs-stateless-streaming/) and add checkpointing code to it.
 
 1. In the writestream code of Stateful Streaming Wordcount example, add one more option to enable checkpoints when the program runs as shown below (make sure that you are giving a location somewhere in the user directory of your local machine as the other locations might not give the privilege to your program to create a directory and write data to it)
    ![Checkpoint-Code.png](./assets/Checkpoint-Code.png)
