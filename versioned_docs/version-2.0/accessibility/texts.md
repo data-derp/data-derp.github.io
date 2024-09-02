@@ -3,14 +3,16 @@ sidebar_position: 3
 minutesToComplete: 15
 ---
 
-# Text Accessibility for data engineering and presentation
+# Text accessibility for data engineering and presentation
 
 When working with or presenting data or data related information, it's a good idea to adhere to proven accessibility 
 principles. These standards are inspired by web design accessibility practices as well as standards from print to 
-ensure that all users, including those with disabilities, can access and comprehend the content we present.   
+ensure that all users, including those with disabilities, can access and comprehend the content we present.  
+
 Text accessibility focuses on making written content easy to read and understand for everyone, regardless of their 
 physical or cognitive abilities. This includes considering visual impairments, cognitive challenges, and language 
 barriers.   
+
 Let's have a look at different elements of text accessibility, provide practical guidelines for improving the 
 readability and usability of our content, and explain why each point is important.
 
@@ -21,8 +23,10 @@ readability and usability of our content, and explain why each point is importan
 The size of the presented text is fundamental to accessibility. Small text can be difficult to read, especially for 
 users with visual impairments. Larger text is easier to read, reducing eye strain and making it accessible to a wider 
 audience.   
+
 It can be helpful to give context to the data, without context you may lose your audience. Delight your readers with 
 easy-to-read texts and don't tire them out.   
+
 This applies both to descriptive content and to legends, notes and information.
 
 ### Adjustable Text Size
@@ -111,6 +115,7 @@ Using plain language and short sentences ensures the content is accessible to a 
 cognitive impairments or lower literacy levels. Complex words and sentence structures can alienate or confuse users. 
 This does not imply that the text must get boring. Sometimes nested sentences don't give more information, but hide 
 essential information behind clever-sounding phrases.
+
 In certain cases, not using a domain specific language  and instead trying to specifically avoid the common words or 
 names can lead to misunderstandings, especially when talking to a more advanced audience.
 
