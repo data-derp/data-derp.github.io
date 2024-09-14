@@ -45,6 +45,8 @@ The type of font used can significantly impact readability. Sans-serif fonts, su
 are generally easier to read on screens compared to serif fonts. Avoiding overly decorative fonts ensures the text is 
 straightforward and readable.
 
+There are also fonts that are specifically designed with accessibility in mind, such as "[Atkinson Hyperlegible](https://brailleinstitute.org/freefont)" or "[OpenDyslexic](https://opendyslexic.org/)".
+
 - **Good Example**: Using a Sans-serif font for body text.
 - **Bad Example**: Using a decorative font like Comic Sans or a complex script font for body text.
 
