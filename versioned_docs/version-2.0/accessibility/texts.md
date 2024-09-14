@@ -203,7 +203,7 @@ offline without losing important information. Print stylesheets can format conte
 The language we use should be respectful and inclusive. Using person-first language and avoiding outdated or offensive 
 terms helps to create a more inclusive environment.
 
-- **Good Example**: "Person with a disability" instead of "disabled person."
+- **Good Example**: "Person with a disability" (people-first language) or "disabled person" (identity-first language).
 - **Bad Example**: "Handicapped" or other outdated terms.
 
 [Link to a disability language style guide](https://ncdj.org/style-guide/)
