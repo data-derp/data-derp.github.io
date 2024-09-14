@@ -143,6 +143,8 @@ those who may not be familiar with the terms. This practice aids comprehension a
 - **Good Example**: "HyperText Markup Language (HTML) is used to create web pages."
 - **Bad Example**: "HTML is used to create web pages." (without explaining HTML)
 
+When working with <abbr title="HyperText Markup Language">HTML</abbr>, semantic elements can also be used to describe abbreviations and their meaning, namely `<abbr>`, potentially in combination with `<dfn>`. See also [MDN Web Docs on defining an abbreviation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr#defining_an_abbreviation).
+
 ## Reading Level
 
 ### Appropriate Reading Level
