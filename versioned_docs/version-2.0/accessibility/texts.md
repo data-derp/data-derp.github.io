@@ -45,6 +45,8 @@ The type of font used can significantly impact readability. Sans-serif fonts, su
 are generally easier to read on screens compared to serif fonts. Avoiding overly decorative fonts ensures the text is 
 straightforward and readable.
 
+There are also fonts that are specifically designed with accessibility in mind, such as "[Atkinson Hyperlegible](https://brailleinstitute.org/freefont)" or "[OpenDyslexic](https://opendyslexic.org/)".
+
 - **Good Example**: Using a Sans-serif font for body text.
 - **Bad Example**: Using a decorative font like Comic Sans or a complex script font for body text.
 
@@ -141,6 +143,8 @@ those who may not be familiar with the terms. This practice aids comprehension a
 - **Good Example**: "HyperText Markup Language (HTML) is used to create web pages."
 - **Bad Example**: "HTML is used to create web pages." (without explaining HTML)
 
+When working with <abbr title="HyperText Markup Language">HTML</abbr>, semantic elements can also be used to describe abbreviations and their meaning, namely `<abbr>`, potentially in combination with `<dfn>`. See also [MDN Web Docs on defining an abbreviation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr#defining_an_abbreviation).
+
 ## Reading Level
 
 ### Appropriate Reading Level
@@ -203,7 +207,7 @@ offline without losing important information. Print stylesheets can format conte
 The language we use should be respectful and inclusive. Using person-first language and avoiding outdated or offensive 
 terms helps to create a more inclusive environment.
 
-- **Good Example**: "Person with a disability" instead of "disabled person."
+- **Good Example**: "Person with a disability" (people-first language) or "disabled person" (identity-first language).
 - **Bad Example**: "Handicapped" or other outdated terms.
 
 [Link to a disability language style guide](https://ncdj.org/style-guide/)
