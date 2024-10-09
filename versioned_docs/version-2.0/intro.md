@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-authors: [kmok, plaosunthara, syed, tklae, kris]
+authors: [kmok, plaosunthara, syed, tklae, kris, knut, marius]
 ---
 
 # Welcome!
