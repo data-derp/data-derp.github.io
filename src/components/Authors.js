@@ -37,6 +37,18 @@ const baseAuthors = {
         title: "Curator",
         url: "https://github.com/KrisSimon",
         imageURL: "https://github.com/KrisSimon.png"
+    },
+    knut: {
+        name: "Knut Gravel",
+        title: "Contributor",
+        url: "https://github.com/qutax",
+        imageURL: "https://github.com/qutax.png"
+    },
+    marius: {
+        name: "Marius Hilleke",
+        title: "Contributor",
+        url: "https://github.com/marius-tw",
+        imageURL: "https://github.com/marius-tw.png"
     }
 }
 
